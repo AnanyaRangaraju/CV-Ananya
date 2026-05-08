@@ -491,18 +491,18 @@ export const articleRegistry: ArticleConfig[] = [
     seo: {
       es: {
         title: 'Career-Ops: Agente IA que Automatiza Mi Búsqueda de Empleo',
-        description: 'Case study: agente IA multi-agente que evalúa ofertas en 10 dimensiones, crea CV con IA personalizados por oferta y automatiza aplicaciones. 631 evaluaciones.',
+        description: 'Case study: agente IA multi-agente que evalúa ofertas con scoring multi-dimensional, crea CV con IA personalizados por oferta y automatiza aplicaciones. 631 evaluaciones.',
       },
       en: {
         title: 'Career-Ops: How I Built My Own AI Job Search Tool',
-        description: 'Case study: AI job search tool built as a multi-agent system. AI resume builder, 10D scoring, automated job application with HITL. 631 evaluations.',
+        description: 'Case study: AI job search tool built as a multi-agent system. AI resume builder, multi-dimensional scoring, automated job application with HITL. 631 evaluations.',
       },
     },
     sectionLabels: {
       es: {
         'the-problem': 'El Problema',
         'architecture': 'Multi-Agent System',
-        'scoring': 'Scoring 10D',
+        'scoring': 'Scoring A-F',
         'pipeline': 'El Pipeline',
         'pdf': 'AI Resume Builder',
         'before-after': 'Antes/Después',
@@ -514,7 +514,7 @@ export const articleRegistry: ArticleConfig[] = [
       en: {
         'the-problem': 'The Problem',
         'architecture': 'Multi-Agent System',
-        'scoring': '10D Scoring',
+        'scoring': 'A-F Scoring',
         'pipeline': 'The Pipeline',
         'pdf': 'AI Resume Builder',
         'before-after': 'Before/After',

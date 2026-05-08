@@ -7,16 +7,16 @@ export const careerOpsContent = {
     readingTime: '18 min de lectura',
     seo: {
       title: 'Career-Ops: Agente IA que Automatiza Mi Búsqueda de Empleo',
-      description: 'Case study: agente IA multi-agente que evalúa ofertas en 10 dimensiones, crea CV con IA personalizados por oferta y automatiza aplicaciones. 631 evaluaciones.',
+      description: 'Case study: agente IA multi-agente que evalúa ofertas con scoring multi-dimensional, crea CV con IA personalizados por oferta y automatiza aplicaciones. 631 evaluaciones.',
     },
     nav: {
       breadcrumbHome: 'Inicio',
       breadcrumbCurrent: 'Career-Ops',
     },
     header: {
-      kicker: 'Case Study: De proyecto personal a 42.9K+ stars',
+      kicker: 'Case Study: De proyecto personal a 43.4K+ stars',
       h1: 'Career-Ops: Cómo un Agente IA Automatizó Mi Búsqueda de Empleo',
-      subtitle: 'Construí un sistema multi-agente para automatizar mi búsqueda de empleo. Funcionó: ahora soy Head of Applied AI. Luego lo abrí como open source y se hizo viral — 42.9K+ estrellas en GitHub.',
+      subtitle: 'Construí un sistema multi-agente para automatizar mi búsqueda de empleo. Funcionó: ahora soy Head of Applied AI. Luego lo abrí como open source y se hizo viral — 43.4K+ estrellas en GitHub.',
       badge: 'Misión cumplida',
       date: '17 mar 2026',
     },
@@ -24,10 +24,10 @@ export const careerOpsContent = {
       { value: '631', label: 'Evaluaciones' },
       { value: '302', label: 'Apps procesadas' },
       { value: '12', label: 'Modos' },
-      { value: '10', label: 'Dimensiones' },
+      { value: 'A-F', label: 'Grade scoring' },
       { value: '680', label: 'URLs dedup' },
     ],
-    tldr: 'Un sistema multi-agente construido con Claude Code que automatiza la búsqueda de empleo: evalúa ofertas con scoring de 10 dimensiones (A-F), genera PDFs ATS-optimized personalizados, rellena formularios vía Playwright y procesa en batch con workers paralelos. HITL: la IA analiza, yo decido. Open source bajo MIT — 42.9K+ estrellas, 2.600+ en Discord.',
+    tldr: 'Un sistema multi-agente construido con Claude Code que automatiza la búsqueda de empleo: evalúa ofertas con scoring multi-dimensional (A-F), genera PDFs ATS-optimized personalizados, rellena formularios vía Playwright y procesa en batch con workers paralelos. HITL: la IA analiza, yo decido. Open source bajo MIT — 43.4K+ estrellas, 2.700+ en Discord.',
     manifesto: 'Companies use AI to filter candidates. I just gave candidates AI to choose companies.',
     metaCallout: 'La ironía: construí un sistema multi-agente para buscar trabajo en multi-agente. El sistema demostró las competencias que los puestos pedían — mejor que cualquier entrevista. Y no, no es hacer trampa: Career-Ops automatiza el análisis, no la decisión.',
     closingCallback: 'El sistema demostró lo que cualquier entrevista no podía: en la era IA, lo que construyes con IA es el CV que te contrata.',
@@ -51,8 +51,8 @@ export const careerOpsContent = {
     },
     sections: {
       intro: {
-        hook: 'Construí un sistema de IA para buscar trabajo. Funcionó — ahora soy Head of Applied AI. Luego lo publiqué en GitHub y explotó: 42.9K+ estrellas, viral, artículos en Francia, China y Corea. La primera semana buscando trabajo en IA lo hice todo manual. La segunda semana ya no aplicaba — estaba construyendo Career-Ops.',
-        body: '631 evaluaciones después, Career-Ops filtraba mejor que yo. Un AI job search tool construido como multi-agent system: lee ofertas, las puntúa en 10 dimensiones, genera CV personalizados y prepara aplicaciones. Yo revisaba y decidía. La IA hacía el trabajo analítico. El sistema demostró exactamente las competencias que los puestos pedían — y eso no pasó desapercibido.',
+        hook: 'Construí un sistema de IA para buscar trabajo. Funcionó — ahora soy Head of Applied AI. Luego lo publiqué en GitHub y explotó: 43.4K+ estrellas, viral, artículos en Francia, China y Corea. La primera semana buscando trabajo en IA lo hice todo manual. La segunda semana ya no aplicaba — estaba construyendo Career-Ops.',
+        body: '631 evaluaciones después, Career-Ops filtraba mejor que yo. Un AI job search tool construido como multi-agent system: lee ofertas, las puntúa multi-dimensional, genera CV personalizados y prepara aplicaciones. Yo revisaba y decidía. La IA hacía el trabajo analítico. El sistema demostró exactamente las competencias que los puestos pedían — y eso no pasó desapercibido.',
       },
       theProblem: {
         heading: '¿Por Qué Necesité Automatizar Mi Búsqueda de Empleo?',
@@ -95,9 +95,10 @@ export const careerOpsContent = {
       },
       scoring: {
         heading: '¿Cómo Evalúa Career-Ops Cada Oferta?',
-        body: 'Cada oferta pasa por un framework de evaluación con 10 dimensiones ponderadas. El resultado es un score numérico (1-5) y un grade A-F. No todas las dimensiones pesan igual — Role Match y Skills Alignment son gate-pass: si fallan, el score final cae.',
+        // HISTORIC: pre-launch private rubric had 10 sub-axes. Public tool consolidated to 6 categorical dimensions on April 4, 2026 — see career-ops.org/methodology for current canonical.
+        body: 'Mi rubric privado pre-launch tenía 10 sub-ejes ponderados (los que veas en la tabla). Cuando publiqué career-ops como open source el 4 de abril de 2026, los consolidé en **6 dimensiones categóricas** para el tool público. Esta página documenta el framework que usé para evaluar 631 ofertas en marzo 2026 — el rubric canonical actual vive en [career-ops.org/methodology](https://career-ops.org/methodology). El resultado siempre es un score numérico (1-5) y un grade A-F.',
         dimensions: {
-          headers: ['Dimensión', 'Qué Mide', 'Peso'],
+          headers: ['Sub-eje (rubric privado)', 'Qué Medía', 'Peso'],
           rows: [
             ['Role Match', 'Alineación entre requisitos y proof points del CV', 'Gate-pass'],
             ['Skills Alignment', 'Overlap de stack técnico', 'Gate-pass'],
@@ -127,7 +128,7 @@ export const careerOpsContent = {
         body: 'auto-pipeline es el modo estrella. Una URL entra, y sale un report de evaluación, un PDF personalizado y una línea en el tracker. Zero intervención manual hasta la revisión final.',
         steps: [
           { label: 'Extraer JD.', detail: 'Playwright navega a la URL, extrae el contenido estructurado de la oferta.' },
-          { label: 'Evaluar 10D.', detail: 'Claude lee JD + CV + portfolio y genera scoring en las 10 dimensiones.' },
+          { label: 'Evaluar A-F.', detail: 'Claude lee JD + CV + portfolio y genera scoring multi-dimensional con grade.' },
           { label: 'Generar report.', detail: 'Markdown con 6 bloques: resumen ejecutivo, CV match, nivel, compensación, personalización y probabilidad de entrevista.' },
           { label: 'Generar PDF.', detail: 'HTML template + keyword injection + adaptive framing. Puppeteer renderiza a PDF.' },
           { label: 'Registrar tracker.', detail: 'TSV con company, role, score, grade, URL. Auto-merge vía script Node.js.' },
@@ -174,7 +175,7 @@ export const careerOpsContent = {
         heading: 'Antes y Después',
         headers: ['Dimensión', 'Manual', 'Career-Ops'],
         rows: [
-          ['Evaluación', 'Leer JD, mapeo mental', '10D scoring automático, grade A-F'],
+          ['Evaluación', 'Leer JD, mapeo mental', 'Scoring A-F automático multi-dimensional'],
           ['CV', 'PDF genérico', 'PDF personalizado, ATS-optimized'],
           ['Aplicación', 'Formulario manual', 'Playwright auto-fill'],
           ['Tracking', 'Spreadsheet o nada', 'TSV + dedup automático'],
@@ -243,7 +244,7 @@ export const careerOpsContent = {
           },
           {
             title: 'Abre el código cuando ya no lo necesites',
-            detail: 'Career-Ops fue privado mientras lo usaba. Cuando conseguí el trabajo, lo publiqué. En una semana tenía 42.9K estrellas. La lección: el mejor momento para abrir un proyecto es cuando ya demostró su valor en producción real.',
+            detail: 'Career-Ops fue privado mientras lo usaba. Cuando conseguí el trabajo, lo publiqué. En una semana tenía 43.4K estrellas. La lección: el mejor momento para abrir un proyecto es cuando ya demostró su valor en producción real.',
           },
           {
             title: 'Por qué lo mantengo MIT',
@@ -260,7 +261,7 @@ export const careerOpsContent = {
         ctaSecondaryLabel: 'Ver el código en GitHub',
         ctaSecondaryHref: 'https://github.com/santifer/career-ops',
         communityHeading: '¿Dudas? Pregunta a la comunidad',
-        communityBody: '2.600+ builders ya usan Career-Ops y comparten tips, plantillas y configuraciones en Discord.',
+        communityBody: '2.700+ builders ya usan Career-Ops y comparten tips, plantillas y configuraciones en Discord.',
         communityLabel: 'Únete al Discord',
         communityHref: 'https://discord.gg/8pRpHETxa4',
       },
@@ -302,11 +303,11 @@ export const careerOpsContent = {
         },
         {
           q: 'Qué tipo de IA usa Career-Ops?',
-          a: 'Career-Ops no es un chatbot ni un wrapper de API. Es un sistema multi-agente donde Claude Code actúa como cerebro: razona sobre cada oferta, evalúa el fit contra tu perfil en 10 dimensiones, y toma decisiones de filtrado. Cada uno de los 12 modos es un skill file con su propio contexto y reglas. Para navegación web usa Playwright. Para PDFs usa Puppeteer. El procesamiento batch lanza workers paralelos en tmux. No hay fine-tuning ni modelos custom — es Claude estándar con contexto muy preciso.',
+          a: 'Career-Ops no es un chatbot ni un wrapper de API. Es un sistema multi-agente donde Claude Code actúa como cerebro: razona sobre cada oferta, evalúa el fit contra tu perfil multi-dimensional (rubric canonical en career-ops.org/methodology), y toma decisiones de filtrado. Cada uno de los 12 modos es un skill file con su propio contexto y reglas. Para navegación web usa Playwright. Para PDFs usa Puppeteer. El procesamiento batch lanza workers paralelos en tmux. No hay fine-tuning ni modelos custom — es Claude estándar con contexto muy preciso.',
         },
         {
           q: 'Quién creó Career-Ops?',
-          a: 'Lo creé yo, Santiago Fernández de Valderrama (santifer). Lo construí para mi propia búsqueda de empleo en IA — después de 16 años fundando y vendiendo un negocio de reparación de móviles. El sistema evaluó 631 ofertas y me ayudó a conseguir mi rol actual como Head of Applied AI. Cuando dejé de necesitarlo, lo publiqué como open source. En una semana llegó a 42.9K+ estrellas en GitHub. La comunidad en Discord ya supera las 2.600 personas: discord.gg/8pRpHETxa4',
+          a: 'Lo creé yo, Santiago Fernández de Valderrama (santifer). Lo construí para mi propia búsqueda de empleo en IA — después de 16 años fundando y vendiendo un negocio de reparación de móviles. El sistema evaluó 631 ofertas y me ayudó a conseguir mi rol actual como Head of Applied AI. Cuando dejé de necesitarlo, lo publiqué como open source. En una semana llegó a 43.4K+ estrellas en GitHub. La comunidad en Discord ya supera las 2.700 personas: discord.gg/8pRpHETxa4',
         },
       ],
     },
@@ -317,16 +318,16 @@ export const careerOpsContent = {
     readingTime: '18 min read',
     seo: {
       title: 'Career-Ops: How I Built My Own AI Job Search Tool',
-      description: 'Case study: AI job search tool built as a multi-agent system. AI resume builder, 10D scoring, automated job application with HITL. 631 evaluations.',
+      description: 'Case study: AI job search tool built as a multi-agent system. AI resume builder, multi-dimensional scoring, automated job application with HITL. 631 evaluations.',
     },
     nav: {
       breadcrumbHome: 'Home',
       breadcrumbCurrent: 'Career-Ops',
     },
     header: {
-      kicker: 'Case Study: From side project to 42.9K+ stars',
+      kicker: 'Case Study: From side project to 43.4K+ stars',
       h1: 'Career-Ops: How I Built an AI Job Search System That Got Me Hired',
-      subtitle: 'I built a multi-agent system to automate my job search. It worked — I am now Head of Applied AI. Then I open-sourced it and it went viral — 42.9K+ GitHub stars.',
+      subtitle: 'I built a multi-agent system to automate my job search. It worked — I am now Head of Applied AI. Then I open-sourced it and it went viral — 43.4K+ GitHub stars.',
       badge: 'Mission accomplished',
       date: 'Mar 17, 2026',
     },
@@ -334,10 +335,10 @@ export const careerOpsContent = {
       { value: '631', label: 'Evaluations' },
       { value: '302', label: 'Apps processed' },
       { value: '12', label: 'Modes' },
-      { value: '10', label: 'Dimensions' },
+      { value: 'A-F', label: 'Grade scoring' },
       { value: '680', label: 'URLs deduped' },
     ],
-    tldr: 'A multi-agent system built with Claude Code that automates the job search: scores offers across 10 dimensions (A-F), generates ATS-optimized PDFs per offer, fills forms via Playwright, and batch-processes with parallel workers. HITL design: AI analyzes, I decide. Open source under MIT — 42.9K+ stars, 2,600+ on Discord.',
+    tldr: 'A multi-agent system built with Claude Code that automates the job search: scores offers multi-dimensional (A-F), generates ATS-optimized PDFs per offer, fills forms via Playwright, and batch-processes with parallel workers. HITL design: AI analyzes, I decide. Open source under MIT — 43.4K+ stars, 2,700+ on Discord.',
     manifesto: 'Companies use AI to filter candidates. I just gave candidates AI to choose companies.',
     metaCallout: 'The irony: I built a multi-agent system to search for multi-agent roles. The system demonstrated the competencies better than any interview could. And no, it is not gaming the system: Career-Ops automates analysis, not decisions.',
     closingCallback: 'The system proved what no interview could: in the AI era, what you build with AI is the resume that gets you hired.',
@@ -361,8 +362,8 @@ export const careerOpsContent = {
     },
     sections: {
       intro: {
-        hook: 'I built an AI system to search for a job. It worked — I am now Head of Applied AI. Then I published it on GitHub and it exploded: 42.9K+ stars, viral, articles in France, China, and Korea. Week one of my AI job search was all manual. By week two I had stopped applying — I was building Career-Ops.',
-        body: '631 evaluations later, Career-Ops was filtering better than I was. An AI-powered job search tool built as a multi-agent system: reads job descriptions, scores them across 10 dimensions, generates personalized resumes, and prepares applications. I reviewed and decided. The AI did the analytical work. The system demonstrated exactly the competencies the target roles required — and that did not go unnoticed.',
+        hook: 'I built an AI system to search for a job. It worked — I am now Head of Applied AI. Then I published it on GitHub and it exploded: 43.4K+ stars, viral, articles in France, China, and Korea. Week one of my AI job search was all manual. By week two I had stopped applying — I was building Career-Ops.',
+        body: '631 evaluations later, Career-Ops was filtering better than I was. An AI-powered job search tool built as a multi-agent system: reads job descriptions, scores them multi-dimensional, generates personalized resumes, and prepares applications. I reviewed and decided. The AI did the analytical work. The system demonstrated exactly the competencies the target roles required — and that did not go unnoticed.',
       },
       theProblem: {
         heading: 'Why Did I Need to Automate My Job Search?',
@@ -405,9 +406,10 @@ export const careerOpsContent = {
       },
       scoring: {
         heading: 'How Does Career-Ops Evaluate Each Job Offer?',
-        body: 'Every offer runs through an evaluation framework with 10 weighted dimensions. The output: a numeric score (1-5) and an A-F grade. Not all dimensions carry equal weight — Role Match and Skills Alignment are gate-pass: if they fail, the final score drops.',
+        // HISTORIC: pre-launch private rubric had 10 sub-axes. Public tool consolidated to 6 categorical dimensions on April 4, 2026 — see career-ops.org/methodology for current canonical.
+        body: 'My private pre-launch rubric had 10 weighted sub-axes (shown in the table). When I open-sourced career-ops on April 4, 2026, I consolidated these into **6 categorical dimensions** for the public tool. This page documents the framework I used to evaluate 631 offers in March 2026 — the canonical current rubric lives at [career-ops.org/methodology](https://career-ops.org/methodology). Output is always a numeric score (1-5) and an A-F grade.',
         dimensions: {
-          headers: ['Dimension', 'What It Measures', 'Weight'],
+          headers: ['Sub-axis (private rubric)', 'What It Measured', 'Weight'],
           rows: [
             ['Role Match', 'Alignment between requirements and CV proof points', 'Gate-pass'],
             ['Skills Alignment', 'Tech stack overlap', 'Gate-pass'],
@@ -437,7 +439,7 @@ export const careerOpsContent = {
         body: 'auto-pipeline is the flagship mode. A URL goes in, and out comes an evaluation report, a personalized PDF, and a tracker entry. Zero manual intervention until final review.',
         steps: [
           { label: 'Extract JD.', detail: 'Playwright navigates to the URL, extracts structured content from the offer.' },
-          { label: 'Evaluate 10D.', detail: 'Claude reads JD + CV + portfolio and generates scoring across all 10 dimensions.' },
+          { label: 'Evaluate A-F.', detail: 'Claude reads JD + CV + portfolio and generates multi-dimensional scoring with grade.' },
           { label: 'Generate report.', detail: 'Markdown with 6 blocks: executive summary, CV match, level, compensation, personalization, and interview probability.' },
           { label: 'Generate PDF.', detail: 'HTML template + keyword injection + adaptive framing. Puppeteer renders to PDF.' },
           { label: 'Register tracker.', detail: 'TSV with company, role, score, grade, URL. Auto-merge via Node.js script.' },
@@ -484,7 +486,7 @@ export const careerOpsContent = {
         heading: 'Before and After',
         headers: ['Dimension', 'Manual', 'Career-Ops'],
         rows: [
-          ['Evaluation', 'Read JD, mental mapping', '10D automated scoring, A-F grade'],
+          ['Evaluation', 'Read JD, mental mapping', 'A-F automated scoring, multi-dimensional'],
           ['CV', 'Generic PDF', 'Personalized PDF, ATS-optimized'],
           ['Application', 'Manual form', 'Playwright auto-fill'],
           ['Tracking', 'Spreadsheet or nothing', 'TSV + automated dedup'],
@@ -553,7 +555,7 @@ export const careerOpsContent = {
           },
           {
             title: 'Open-source it when you no longer need it',
-            detail: 'Career-Ops was private while I was using it. When I got the job, I published it. One week later it had 42.9K stars. The lesson: the best time to open-source a project is when it has already proven its value in real production.',
+            detail: 'Career-Ops was private while I was using it. When I got the job, I published it. One week later it had 43.4K stars. The lesson: the best time to open-source a project is when it has already proven its value in real production.',
           },
           {
             title: 'Why I keep it MIT',
@@ -570,7 +572,7 @@ export const careerOpsContent = {
         ctaSecondaryLabel: 'View source on GitHub',
         ctaSecondaryHref: 'https://github.com/santifer/career-ops',
         communityHeading: 'Got questions? Ask the community',
-        communityBody: '2,600+ builders already use Career-Ops and share tips, templates, and setups on Discord.',
+        communityBody: '2,700+ builders already use Career-Ops and share tips, templates, and setups on Discord.',
         communityLabel: 'Join Discord',
         communityHref: 'https://discord.gg/8pRpHETxa4',
       },
@@ -612,11 +614,11 @@ export const careerOpsContent = {
         },
         {
           q: 'What kind of AI does Career-Ops use?',
-          a: 'Career-Ops is not a chatbot or an API wrapper. It is a multi-agent system where Claude Code acts as the brain: it reasons about each offer, evaluates fit against your profile across 10 dimensions, and makes filtering decisions. Each of the 12 modes is a skill file with its own context and rules. Web navigation uses Playwright. PDFs use Puppeteer. Batch processing launches parallel workers in tmux. No fine-tuning or custom models — standard Claude with very precise context.',
+          a: 'Career-Ops is not a chatbot or an API wrapper. It is a multi-agent system where Claude Code acts as the brain: it reasons about each offer, evaluates fit against your profile multi-dimensional (canonical rubric at career-ops.org/methodology), and makes filtering decisions. Each of the 12 modes is a skill file with its own context and rules. Web navigation uses Playwright. PDFs use Puppeteer. Batch processing launches parallel workers in tmux. No fine-tuning or custom models — standard Claude with very precise context.',
         },
         {
           q: 'Who created Career-Ops?',
-          a: 'I did — Santiago Fernández de Valderrama (santifer). I built it for my own AI job search after spending 16 years founding and selling a phone repair business. The system evaluated 631 offers and helped me land my current role as Head of Applied AI. When I no longer needed it, I published it as open source. In one week it reached 42.9K+ GitHub stars. The Discord community is now 2,600+ people: discord.gg/8pRpHETxa4',
+          a: 'I did — Santiago Fernández de Valderrama (santifer). I built it for my own AI job search after spending 16 years founding and selling a phone repair business. The system evaluated 631 offers and helped me land my current role as Head of Applied AI. When I no longer needed it, I published it as open source. In one week it reached 43.4K+ GitHub stars. The Discord community is now 2,700+ people: discord.gg/8pRpHETxa4',
         },
       ],
     },

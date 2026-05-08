@@ -239,17 +239,21 @@ async function main() {
       console.log(`  ✓ meta descriptions: ${starLabel} stars`)
     }
 
-    // index.html — same patterns in meta tags
+    // index.html — same patterns in meta tags + interactionStatistic counts on SoftwareSourceCode
     const INDEX_PATH = resolve(__dirname, '../index.html')
     const indexContent = readFileSync(INDEX_PATH, 'utf-8')
+    const starsCounterRegex = /("name": "GitHub Stars", "userInteractionCount": )\d+/
+    const forksCounterRegex = /("name": "GitHub Forks", "userInteractionCount": )\d+/
     const newIndex = indexContent
       .replace(esMetaRegex, `$1${starLabel} estrellas en GitHub$2`)
       .replace(enMetaRegex, `$1${starLabel} GitHub stars$2`)
+      .replace(starsCounterRegex, `$1${careerOpsStats.stars}`)
+      .replace(forksCounterRegex, `$1${careerOpsStats.forks}`)
 
     if (newIndex !== indexContent) {
       writeFileSync(INDEX_PATH, newIndex, 'utf-8')
       anyChanged = true
-      console.log(`  ✓ index.html meta descriptions: ${starLabel} stars`)
+      console.log(`  ✓ index.html updated: meta + interactionStatistic`)
     }
   }
 

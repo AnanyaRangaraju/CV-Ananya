@@ -162,6 +162,18 @@ async function main() {
     }
   }
 
+  // Update raw integer counter in index.html SoftwareSourceCode interactionStatistic.
+  // Uses the live API count (not rounded) since schema.org expects an exact userInteractionCount.
+  const INDEX_HTML = resolve(__dirname, '../index.html')
+  const indexContent = readFileSync(INDEX_HTML, 'utf-8')
+  const discordCounterRegex = /("name": "Discord Members", "userInteractionCount": )\d+/
+  const newIndexContent = indexContent.replace(discordCounterRegex, `$1${members}`)
+  if (newIndexContent !== indexContent) {
+    writeFileSync(INDEX_HTML, newIndexContent, 'utf-8')
+    anyWritten = true
+    console.log(`  ✓ index.html interactionStatistic Discord → ${members}`)
+  }
+
   console.log(anyWritten ? '\n✓ Discord stats updated.\n' : '\n✓ Discord stats already up to date.\n')
 }
 

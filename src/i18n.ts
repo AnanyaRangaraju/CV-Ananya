@@ -3,13 +3,13 @@ export const seo = {
     title:
       'santifer | Applied AI Operator · Builder of Career-Ops',
     description:
-      'Multi-agent systems builder. Applied AI Operator con 2 case studies en producción. Creador de Career-Ops (43.4K+ ⭐). 16 años llevando IA a producción.',
+      'Multi-agent systems builder. Applied AI Operator con 2 case studies en producción. Creador de Career-Ops (43.5K+ ⭐). 16 años llevando IA a producción.',
   },
   en: {
     title:
       'santifer | Applied AI Operator · Builder of Career-Ops',
     description:
-      'Multi-agent systems builder. Applied AI Operator with 2 production case studies live. Creator of Career-Ops (43.4K+ ⭐). 16 years shipping AI at scale.',
+      'Multi-agent systems builder. Applied AI Operator with 2 production case studies live. Creator of Career-Ops (43.5K+ ⭐). 16 years shipping AI at scale.',
   },
 };
 
@@ -190,7 +190,7 @@ export const translations = {
           tech: ['Claude Code', 'Batch Architecture', 'WebSearch', 'HITL Design'],
           link: 'career-ops.org',
           linkUrl: 'https://career-ops.org?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '43.4K',
+          stars: '43.5K',
           forks: '9.1K',
           caseStudyUrl: '/career-ops',
           caseStudyLabel: 'Leer: AI Job Search multi-agente',
@@ -575,14 +575,14 @@ export const translations = {
       replies: '102',
       retweets: '496',
       likes: '3.9K',
-      views: '542.3K',
+      views: '542.4K',
       cta: 'Ver en X',
       url: 'https://x.com/santifer/status/2041403685696053741',
     },
     redditPosts: [
       {
         hook: 'Construí un sistema de búsqueda de empleo con Claude Code que puntuó 740+ ofertas y me consiguió trabajo. Acabo de hacerlo open source.',
-        upvotes: '2806',
+        upvotes: '2801',
         comments: '249',
         subreddit: 'r/ClaudeAI',
         cta: 'Leer en Reddit',
@@ -598,7 +598,7 @@ export const translations = {
       },
       {
         hook: 'Construí un agente IA con WhatsApp + voz en n8n que gestiona el 90% de la atención al cliente. Vendí el negocio y el comprador lo mantuvo sin mí.',
-        upvotes: '325',
+        upvotes: '324',
         comments: '68',
         subreddit: 'r/n8n',
         cta: 'Leer en Reddit',
@@ -1046,7 +1046,7 @@ export const translations = {
           tech: ['Claude Code', 'Batch Architecture', 'WebSearch', 'HITL Design'],
           link: 'career-ops.org',
           linkUrl: 'https://career-ops.org?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '43.4K',
+          stars: '43.5K',
           forks: '9.1K',
           caseStudyUrl: '/career-ops-system',
           caseStudyLabel: 'Case Study: AI Job Search',
@@ -1427,14 +1427,14 @@ export const translations = {
       replies: '102',
       retweets: '496',
       likes: '3.9K',
-      views: '542.3K',
+      views: '542.4K',
       cta: 'View on X',
       url: 'https://x.com/santifer/status/2041403685696053741',
     },
     redditPosts: [
       {
         hook: 'I built an AI job search system with Claude Code that scored 740+ offers and landed me a job. Just open sourced it.',
-        upvotes: '2806',
+        upvotes: '2801',
         comments: '249',
         subreddit: 'r/ClaudeAI',
         cta: 'Read on Reddit',
@@ -1450,7 +1450,7 @@ export const translations = {
       },
       {
         hook: 'I built a WhatsApp + voice AI agent in n8n that handles 90% of customer service. Sold the business, the buyer kept it running without me.',
-        upvotes: '325',
+        upvotes: '324',
         comments: '68',
         subreddit: 'r/n8n',
         cta: 'Read on Reddit',

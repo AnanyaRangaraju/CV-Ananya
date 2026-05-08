@@ -3,15 +3,18 @@ import { Link } from 'react-router-dom'
 import { MapPin, Mail, ExternalLink, Award, GraduationCap, Briefcase, ChevronRight, Clock, Newspaper, HelpCircle, Users } from 'lucide-react'
 import { aboutContent, type AboutLang } from './about-i18n'
 
-const SOCIAL_LINKS = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/santifer' },
-  { name: 'GitHub', url: 'https://github.com/santifer' },
-  { name: 'YouTube', url: 'https://www.youtube.com/@santifer_io' },
-  { name: 'X / Twitter', url: 'https://x.com/santifer' },
-  { name: 'Dev.to', url: 'https://dev.to/santifer' },
-  { name: 'Substack', url: 'https://santifer.substack.com' },
-  { name: 'Stack Overflow', url: 'https://stackoverflow.com/users/32541743' },
-  { name: 'ORCID', url: 'https://orcid.org/0009-0006-2192-7210' },
+// `rel: 'me'` is the IndieAuth standard for declaring profiles/sites the person controls.
+// Used here for cross-domain entity ownership signals (parsed by Mastodon, Bluesky, KG crawlers).
+const SOCIAL_LINKS: { name: string; url: string; rel?: string }[] = [
+  { name: 'Career-Ops', url: 'https://career-ops.org', rel: 'me noopener noreferrer' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/santifer', rel: 'me noopener noreferrer' },
+  { name: 'GitHub', url: 'https://github.com/santifer', rel: 'me noopener noreferrer' },
+  { name: 'YouTube', url: 'https://www.youtube.com/@santifer_io', rel: 'me noopener noreferrer' },
+  { name: 'X / Twitter', url: 'https://x.com/santifer', rel: 'me noopener noreferrer' },
+  { name: 'Dev.to', url: 'https://dev.to/santifer', rel: 'me noopener noreferrer' },
+  { name: 'Substack', url: 'https://santifer.substack.com', rel: 'me noopener noreferrer' },
+  { name: 'Stack Overflow', url: 'https://stackoverflow.com/users/32541743', rel: 'me noopener noreferrer' },
+  { name: 'ORCID', url: 'https://orcid.org/0009-0006-2192-7210', rel: 'me noopener noreferrer' },
   { name: 'Crunchbase', url: 'https://www.crunchbase.com/person/santiago-fernandez-de-valderrama' },
   { name: 'Wikidata', url: 'https://www.wikidata.org/wiki/Q138710224' },
 ]
@@ -277,7 +280,7 @@ export default function AboutPage({ lang = 'es' }: { lang?: AboutLang }) {
                 key={link.name}
                 href={link.url}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel={link.rel ?? 'noopener noreferrer'}
                 className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
               >
                 <ExternalLink className="w-3 h-3 text-primary shrink-0" />

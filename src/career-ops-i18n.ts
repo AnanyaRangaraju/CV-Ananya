@@ -28,7 +28,7 @@ export const careerOpsContent = {
       { value: '680', label: 'URLs dedup' },
     ],
     tldr: 'Un sistema multi-agente construido con Claude Code que automatiza la búsqueda de empleo: evalúa ofertas con scoring multi-dimensional (A-F), genera PDFs ATS-optimized personalizados, rellena formularios vía Playwright y procesa en batch con workers paralelos. HITL: la IA analiza, yo decido. Open source bajo MIT — 43.5K+ estrellas, 2.700+ en Discord.',
-    manifesto: 'Companies use AI to filter candidates. I just gave candidates AI to choose companies.',
+    manifesto: 'Las empresas usan IA para filtrar candidatos. Yo simplemente le he dado IA a los candidatos para elegir empresas.',
     metaCallout: 'La ironía: construí un sistema multi-agente para buscar trabajo en multi-agente. El sistema demostró las competencias que los puestos pedían — mejor que cualquier entrevista. Y no, no es hacer trampa: Career-Ops automatiza el análisis, no la decisión.',
     closingCallback: 'El sistema demostró lo que cualquier entrevista no podía: en la era IA, lo que construyes con IA es el CV que te contrata.',
     internalLinks: {
@@ -254,7 +254,7 @@ export const careerOpsContent = {
       },
       cta: {
         sidebarLabel: 'Pruébalo',
-        heading: 'Aquí lo tienes',
+        heading: 'Tu turno',
         body: 'Career-Ops es open source bajo MIT. Clónalo, adáptalo, haz lo que necesites — es tuyo.',
         ctaLabel: 'Prueba career-ops',
         ctaHref: 'https://career-ops.org?utm_source=santifer.io&utm_medium=case-study&utm_campaign=career-ops-deep-dive',
@@ -270,43 +270,43 @@ export const careerOpsContent = {
       heading: 'FAQ',
       items: [
         {
-          q: 'Esto no es hacer trampa?',
+          q: '¿Esto no es hacer trampa?',
           a: 'Career-Ops automatiza el análisis, no la decisión. Leo cada report antes de aplicar. Reviso cada PDF antes de enviarlo. Es la misma filosofía que un CRM: el sistema organiza, yo decido.',
         },
         {
-          q: 'Por qué Claude Code y no un pipeline de scripts?',
+          q: '¿Por qué Claude Code y no un pipeline de scripts?',
           a: 'Un script no razona. Career-Ops adapta el scoring según el contexto de la empresa, reformula keywords sin inventar y genera reports narrativos — no templates rellenados.',
         },
         {
-          q: 'Cuanto cuesta ejecutar esto?',
+          q: '¿Cuánto cuesta ejecutar esto?',
           a: 'Cero coste marginal por evaluación. Career-Ops corre sobre mi plan Claude Max 20x ($200/mes), que uso para todo: portfolio, chatbot, artículos y Career-Ops. 631 evaluaciones sin un solo invoice extra.',
         },
         {
-          q: 'El modo apply rellena formularios automáticamente?',
+          q: '¿El modo apply rellena formularios automáticamente?',
           a: 'Lee la página con Playwright, recupera la evaluación cacheada y genera respuestas coherentes con el scoring. Yo reviso antes de enviar — siempre.',
         },
         {
-          q: 'Qué pasa cuando el scanner encuentra una oferta duplicada?',
+          q: '¿Qué pasa cuando el scanner encuentra una oferta duplicada?',
           a: 'scan-history.tsv almacena 680 URLs vistas. Dedup por URL exacta + match normalizado de company+role en applications.md. Zero re-evaluaciones.',
         },
         {
-          q: 'Es replicable?',
+          q: '¿Es replicable?',
           a: 'Sí — es open source. La landing oficial es career-ops.org (docs, AI chat y guías) y el código vive en github.com/santifer/career-ops. Requiere Claude Code con acceso a Playwright. Los skill files definen la lógica de cada modo. 37K+ personas ya lo han visto, forkeado o adaptado.',
         },
         {
-          q: 'Cómo se usa Career-Ops?',
+          q: '¿Cómo se usa Career-Ops?',
           a: 'Career-Ops es una herramienta local que se ejecuta desde tu terminal con Claude Code. Clonas el repositorio, configuras tu CV y preferencias, y lanzas modos según lo que necesites: auto-pipeline para evaluar una oferta de principio a fin, scan para descubrir ofertas en portales, batch para procesar muchas URLs en paralelo, o pdf para generar un CV personalizado. Todo se ejecuta en tu máquina — tu CV y datos personales nunca salen de tu ordenador. Si necesitas ayuda, la comunidad de 1.000+ personas está en Discord: discord.gg/8pRpHETxa4',
         },
         {
-          q: 'Qué necesito para ejecutar Career-Ops?',
+          q: '¿Qué necesito para ejecutar Career-Ops?',
           a: 'Claude Code con un plan que incluya acceso a herramientas (Claude Max o Claude Pro). Playwright para navegación web. Node.js para scripts auxiliares como merge de tracker y generación de PDFs con Puppeteer. Un directorio de trabajo con tu CV en markdown y tus preferencias. No necesitas servidores, bases de datos ni APIs externas — todo corre en local. La comunidad en Discord (discord.gg/8pRpHETxa4) puede ayudarte con la configuración.',
         },
         {
-          q: 'Qué tipo de IA usa Career-Ops?',
+          q: '¿Qué tipo de IA usa Career-Ops?',
           a: 'Career-Ops no es un chatbot ni un wrapper de API. Es un sistema multi-agente donde Claude Code actúa como cerebro: razona sobre cada oferta, evalúa el fit contra tu perfil multi-dimensional (rubric canonical en career-ops.org/methodology), y toma decisiones de filtrado. Cada uno de los 12 modos es un skill file con su propio contexto y reglas. Para navegación web usa Playwright. Para PDFs usa Puppeteer. El procesamiento batch lanza workers paralelos en tmux. No hay fine-tuning ni modelos custom — es Claude estándar con contexto muy preciso.',
         },
         {
-          q: 'Quién creó Career-Ops?',
+          q: '¿Quién creó Career-Ops?',
           a: 'Lo creé yo, Santiago Fernández de Valderrama (santifer). Lo construí para mi propia búsqueda de empleo en IA — después de 16 años fundando y vendiendo un negocio de reparación de móviles. El sistema evaluó 631 ofertas y me ayudó a conseguir mi rol actual como Head of Applied AI. Cuando dejé de necesitarlo, lo publiqué como open source. En una semana llegó a 43.5K+ estrellas en GitHub. La comunidad en Discord ya supera las 2.700 personas: discord.gg/8pRpHETxa4',
         },
       ],
@@ -565,7 +565,7 @@ export const careerOpsContent = {
       },
       cta: {
         sidebarLabel: 'Try it',
-        heading: 'Here it is',
+        heading: 'Your turn',
         body: 'Career-Ops is open source under MIT. Clone it, fork it, adapt it — it is yours.',
         ctaLabel: 'Try career-ops',
         ctaHref: 'https://career-ops.org?utm_source=santifer.io&utm_medium=case-study&utm_campaign=career-ops-deep-dive',

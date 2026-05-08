@@ -9,7 +9,7 @@ export const aboutContent = {
       description: 'Head of Applied AI. Creador de Career-Ops (43.5K+ ⭐ en GitHub). Construye sistemas IA en producción. Fundador de Santifer iRepair (30.000+ reparaciones, exit 2025).',
     },
     heading: 'Santiago Fernández de Valderrama',
-    manifesto: 'Las empresas usan IA para filtrar candidatos. Yo le he dado IA a los candidatos para elegir empresas.',
+    manifesto: 'Las empresas usan IA para filtrar candidatos. Yo simplemente le he dado IA a los candidatos para elegir empresas.',
     subtitle: 'Applied AI Operator · Founder · Builder of Career-Ops (43.5K+ ⭐)',
     location: 'Sevilla, España',
     lastUpdated: 'Abril 2026',

@@ -1944,8 +1944,8 @@ function App() {
           </div>
 
           {/* LICO Cosmetics */}
-          <AnimatedSection delay={0.5} className="mt-16">
-            <div className="mb-6">
+          <AnimatedSection delay={0.5} className="mt-20">
+            <div className="mb-20">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl overflow-hidden bg-[#F5F3EE] flex items-center justify-center shrink-0">
@@ -1988,8 +1988,8 @@ function App() {
           </AnimatedSection>
 
           {/* Everis */}
-          <AnimatedSection delay={0.6} className="mt-16">
-            <div className="mb-6">
+          <AnimatedSection delay={0.6}>
+            <div className="mb-20">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl overflow-hidden bg-white flex items-center justify-center shrink-0 p-1.5">

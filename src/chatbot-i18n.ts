@@ -337,11 +337,11 @@ Producción
         items: [
           {
             q: '¿Es production-grade o solo un demo?',
-            a: 'Es producción real. Lleva activo desde enero 2026, con tráfico orgánico diario, observabilidad completa y CI gate que bloquea deploys si un test falla. No es un playground.',
+            a: 'Producción real. Activo desde enero 2026 en santifer.io con tráfico orgánico diario, observabilidad completa via Langfuse, 71 evals automatizados ejecutados en cada PR, defensa anti-jailbreak en 6 capas, RAG agéntico con Supabase pgvector, y CI gate que bloquea deploys si cualquier test falla. No es un playground: cada conversación se traza, se evalúa con Sonnet en batch nocturno, y los failures alimentan el siguiente eval set.',
           },
           {
             q: '¿Cuánto costó construirlo?',
-            a: '$0 en infraestructura (free tiers de Vercel, Supabase, Langfuse). El único coste son las APIs de LLM: menos de $0.005 por conversación. El trabajo de una persona.',
+            a: '$0 en infraestructura: usa los free tiers de Vercel (edge functions), Supabase (pgvector RAG) y Langfuse Cloud (observabilidad). El único coste variable son las APIs de LLM: menos de $0.005 por conversación texto y ~$0.25 por sesión de voz (OpenAI Realtime). Construido por una sola persona usando Claude Code. Coste total marginal típico: $5-15 al mes para tráfico orgánico de portfolio.',
           },
           {
             q: '¿Por qué Claude y no GPT-4 o Gemini?',
@@ -704,11 +704,11 @@ Production
         items: [
           {
             q: 'Is this production-grade or just a demo?',
-            a: 'It\'s real production. Active since January 2026, with daily organic traffic, full observability, and a CI gate that blocks deploys if any test fails. It\'s not a playground.',
+            a: 'Real production. Live on santifer.io since January 2026 with daily organic traffic, full observability via Langfuse, 71 automated evals run on every PR, 6-layer anti-jailbreak defense, agentic RAG on Supabase pgvector, and a CI gate that blocks deploys if any test fails. Not a playground: every conversation is traced, batch-scored with Sonnet overnight, and failures feed the next eval set.',
           },
           {
             q: 'How much did it cost to build?',
-            a: '$0 in infrastructure (free tiers from Vercel, Supabase, Langfuse). The only cost is LLM APIs: less than $0.005 per conversation. One person\'s work.',
+            a: '$0 in infrastructure: free tiers from Vercel (edge functions), Supabase (pgvector RAG), and Langfuse Cloud (observability). The only variable cost is LLM APIs: under $0.005 per text conversation and ~$0.25 per voice session (OpenAI Realtime). Built solo using Claude Code. Typical marginal cost: $5-15/month for organic portfolio traffic.',
           },
           {
             q: 'Why Claude and not GPT-4 or Gemini?',

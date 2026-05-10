@@ -271,15 +271,15 @@ export const careerOpsContent = {
       items: [
         {
           q: '¿Esto no es hacer trampa?',
-          a: 'Career-Ops automatiza el análisis, no la decisión. Leo cada report antes de aplicar. Reviso cada PDF antes de enviarlo. Es la misma filosofía que un CRM: el sistema organiza, yo decido.',
+          a: 'Career-Ops automatiza el análisis, no la decisión. De las 631 ofertas que evaluó en marzo 2026, sólo 12 acabaron en aplicación porque las leí una por una y descarté el resto. Cada PDF se revisa antes de enviarse, cada report antes de aplicar, cada formulario antes de pulsar submit. El sistema organiza la información para que la decisión humana sea más rápida y mejor — la misma lógica que un CRM o un IDE.',
         },
         {
           q: '¿Por qué Claude Code y no un pipeline de scripts?',
-          a: 'Un script no razona. Career-Ops adapta el scoring según el contexto de la empresa, reformula keywords sin inventar y genera reports narrativos — no templates rellenados.',
+          a: 'Un script no razona. Career-Ops adapta el scoring según el contexto de la empresa (tamaño, stack, madurez IA), reformula keywords del CV sin inventar experiencia, y genera reports narrativos en lugar de templates rellenados. Cuando una oferta menciona "tool calling con sub-agentes", el agente recupera el caso de Jacobo y lo enmarca para esa JD específica. Un pipeline de scripts no puede hacer esto sin re-codificar la lógica para cada empresa.',
         },
         {
           q: '¿Cuánto cuesta ejecutar esto?',
-          a: 'Cero coste marginal por evaluación. Career-Ops corre sobre mi plan Claude Max 20x ($200/mes), que uso para todo: portfolio, chatbot, artículos y Career-Ops. 631 evaluaciones sin un solo invoice extra.',
+          a: 'Cero coste marginal por evaluación. Career-Ops corre sobre mi plan Claude Max 20x ($200/mes), que uso para todo: portfolio santifer.io, chatbot LLMOps, artículos del blog, Life OS y Career-Ops. 631 evaluaciones de ofertas + 354 PDFs ATS-optimized generados sin un solo invoice extra. Si lo ejecutas con Claude Pro ($20/mes) y lotes pequeños (~10 ofertas/día), también funciona; el upgrade a Max merece la pena cuando procesas 50+/día.',
         },
         {
           q: '¿El modo apply rellena formularios automáticamente?',
@@ -582,15 +582,15 @@ export const careerOpsContent = {
       items: [
         {
           q: 'Is this gaming the system?',
-          a: 'Career-Ops automates analysis, not decisions. I read every report before applying. I review every PDF before sending. Same philosophy as a CRM: the system organizes, I decide.',
+          a: 'Career-Ops automates analysis, not decisions. Of the 631 listings it evaluated in March 2026, only 12 turned into actual applications because I read each report and discarded the rest. Every PDF is reviewed before sending, every report before applying, every form before hitting submit. The system organizes information so the human decision can be faster and better — same logic as a CRM or an IDE.',
         },
         {
           q: 'Why Claude Code and not a script pipeline?',
-          a: 'A script cannot reason. Career-Ops adapts scoring based on company context, reformulates keywords without fabricating, and generates narrative reports — not filled templates.',
+          a: 'A script cannot reason. Career-Ops adapts scoring based on company context (size, stack, AI maturity), reformulates CV keywords without fabricating experience, and generates narrative reports instead of filled templates. When a JD mentions "tool calling with sub-agents", the agent retrieves the Jacobo case and frames it for that specific listing. A script pipeline cannot do this without re-coding the logic for each company.',
         },
         {
           q: 'What does it cost to run?',
-          a: 'Zero marginal cost per evaluation. Career-Ops runs on my Claude Max 20x plan ($200/mo), which I use for everything: portfolio, chatbot, articles, and Career-Ops. 631 evaluations without a single extra invoice.',
+          a: 'Zero marginal cost per evaluation. Career-Ops runs on my Claude Max 20x plan ($200/mo), which I use for everything: portfolio santifer.io, LLMOps chatbot, blog articles, Life OS, and Career-Ops. 631 listing evaluations + 354 ATS-optimized PDFs generated without a single extra invoice. With Claude Pro ($20/mo) and small batches (~10 offers/day) it also works; upgrading to Max pays off when you process 50+/day.',
         },
         {
           q: 'Does the apply mode fill forms automatically?',

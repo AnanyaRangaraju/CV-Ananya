@@ -29,8 +29,8 @@ export const careerOpsContent = {
     ],
     tldr: 'Un sistema multi-agente construido con Claude Code que automatiza la búsqueda de empleo: evalúa ofertas con scoring multi-dimensional (A-F), genera PDFs ATS-optimized personalizados, rellena formularios vía Playwright y procesa en batch con workers paralelos. HITL: la IA analiza, yo decido. Open source bajo MIT — 53.0K+ estrellas, 3.700+ en Discord.',
     starChart: {
-      alt: 'Star history de career-ops en Warpchart — de 0 a 53.0K+ estrellas en GitHub',
-      caption: 'Star history de career-ops en tiempo real — trazado con',
+      alt: 'El warp chart de career-ops — de 0 a 53.0K+ estrellas en GitHub, en vivo',
+      caption: 'El warp chart de career-ops, en tiempo real — por',
       linkLabel: 'Warpchart',
     },
     manifesto: 'Las empresas usan IA para filtrar candidatos. Yo simplemente le he dado IA a los candidatos para elegir empresas.',
@@ -345,8 +345,8 @@ export const careerOpsContent = {
     ],
     tldr: 'A multi-agent system built with Claude Code that automates the job search: scores offers multi-dimensional (A-F), generates ATS-optimized PDFs per offer, fills forms via Playwright, and batch-processes with parallel workers. HITL design: AI analyzes, I decide. Open source under MIT — 53.0K+ stars, 3,700+ on Discord.',
     starChart: {
-      alt: 'career-ops star history on Warpchart — from 0 to 53.0K+ GitHub stars',
-      caption: 'career-ops star history in real time — charted with',
+      alt: 'The career-ops warp chart — 0 to 53.0K+ GitHub stars, live',
+      caption: 'The career-ops warp chart, warpcharted in real time by',
       linkLabel: 'Warpchart',
     },
     manifesto: 'Companies use AI to filter candidates. I just gave candidates AI to choose companies.',

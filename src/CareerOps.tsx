@@ -71,7 +71,7 @@ export default function CareerOps({ lang = 'en' }: { lang?: Lang }) {
     description: t.seo.description,
     image: 'https://santifer.io/career-ops/og-career-ops.webp',
     publishedTime: '2026-03-17',
-    modifiedTime: '2026-06-02',
+    modifiedTime: '2026-06-12',
     articleTags: 'multi-agent,job search,Claude Code,ATS,batch processing,HITL,automation',
     jsonLd: buildJsonLd(lang),
     xDefaultSlug: 'career-ops',
@@ -93,7 +93,7 @@ export default function CareerOps({ lang = 'en' }: { lang?: Lang }) {
         subtitle={t.header.subtitle}
         date={t.header.date}
         dateISO="2026-03-17"
-        dateModifiedISO="2026-06-02"
+        dateModifiedISO="2026-06-12"
         readingTime={t.readingTime}
       />
 
@@ -119,13 +119,15 @@ export default function CareerOps({ lang = 'en' }: { lang?: Lang }) {
 
       <GitHubRepoBadge repo="santifer/career-ops" stars="53.0K" forks="10.6K" lang={lang} />
 
-      {/* Warpchart star history — animated SVG served as plain <img>, prerender-safe (no iframe, no hydration guard needed) */}
+      {/* The career-ops warp chart (Warpchart) — animated SVG served as plain <img>, prerender-safe (no iframe, no hydration guard needed).
+          theme=dark FIXED on purpose: site is hardcoded dark; Warpchart's dynamic day/night mode (omitting theme) follows the visitor's OS
+          prefers-color-scheme, not the host page — a light-OS visitor would get a light chart on our dark page (confirmed by warpchart via IPC). */}
       <figure className="my-8">
         <a
           href="https://warpchart.dev/r/santifer/career-ops?utm_source=santifer.io"
           target="_blank"
           rel="noopener"
-          aria-label="career-ops star history on Warpchart"
+          aria-label="The career-ops warp chart on Warpchart"
           className="block hover:opacity-90 transition-opacity"
         >
           <img

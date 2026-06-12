@@ -71,7 +71,7 @@ export default function CareerOps({ lang = 'en' }: { lang?: Lang }) {
     description: t.seo.description,
     image: 'https://santifer.io/career-ops/og-career-ops.webp',
     publishedTime: '2026-03-17',
-    modifiedTime: '2026-06-01',
+    modifiedTime: '2026-06-02',
     articleTags: 'multi-agent,job search,Claude Code,ATS,batch processing,HITL,automation',
     jsonLd: buildJsonLd(lang),
     xDefaultSlug: 'career-ops',
@@ -93,7 +93,7 @@ export default function CareerOps({ lang = 'en' }: { lang?: Lang }) {
         subtitle={t.header.subtitle}
         date={t.header.date}
         dateISO="2026-03-17"
-        dateModifiedISO="2026-06-01"
+        dateModifiedISO="2026-06-02"
         readingTime={t.readingTime}
       />
 
@@ -117,7 +117,38 @@ export default function CareerOps({ lang = 'en' }: { lang?: Lang }) {
         <PressFeatures lang={lang} />
       </div>
 
-      <GitHubRepoBadge repo="santifer/career-ops" stars="48.2K" forks="10.0K" lang={lang} />
+      <GitHubRepoBadge repo="santifer/career-ops" stars="53.0K" forks="10.6K" lang={lang} />
+
+      {/* Warpchart star history — animated SVG served as plain <img>, prerender-safe (no iframe, no hydration guard needed) */}
+      <figure className="my-8">
+        <a
+          href="https://warpchart.dev/r/santifer/career-ops?utm_source=santifer.io"
+          target="_blank"
+          rel="noopener"
+          aria-label="career-ops star history on Warpchart"
+          className="block hover:opacity-90 transition-opacity"
+        >
+          <img
+            src="https://warpchart.dev/api/chart?repo=santifer/career-ops&theme=dark&w=800&h=420"
+            alt={t.starChart.alt}
+            width={800}
+            height={420}
+            loading="lazy"
+            className="w-full rounded-2xl border border-border/50"
+          />
+        </a>
+        <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+          {t.starChart.caption}{' '}
+          <a
+            href="https://warpchart.dev?utm_source=santifer.io"
+            target="_blank"
+            rel="noopener"
+            className="text-primary hover:underline"
+          >
+            {t.starChart.linkLabel}
+          </a>
+        </figcaption>
+      </figure>
 
       <Callout className="bg-accent/10 border-accent/40">{t.tldr}</Callout>
 

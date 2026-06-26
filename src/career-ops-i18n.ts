@@ -14,9 +14,9 @@ export const careerOpsContent = {
       breadcrumbCurrent: 'Career-Ops',
     },
     header: {
-      kicker: 'Case Study: De proyecto personal a 53.2K+ stars',
+      kicker: 'Case Study: De proyecto personal a 55.8K+ stars',
       h1: 'Career-Ops: Cómo un Agente IA Automatizó Mi Búsqueda de Empleo',
-      subtitle: 'Construí un sistema multi-agente para automatizar mi búsqueda de empleo. Funcionó: ahora soy Head of Applied AI. Luego lo abrí como open source y se hizo viral — 53.2K+ estrellas en GitHub.',
+      subtitle: 'Construí un sistema multi-agente para automatizar mi búsqueda de empleo. Funcionó: ahora soy Head of Applied AI. Luego lo abrí como open source y se hizo viral — 55.8K+ estrellas en GitHub.',
       badge: 'Misión cumplida',
       date: '17 mar 2026',
     },
@@ -27,9 +27,9 @@ export const careerOpsContent = {
       { value: 'A-F', label: 'Grade scoring' },
       { value: '680', label: 'URLs dedup' },
     ],
-    tldr: 'Un sistema multi-agente construido con Claude Code que automatiza la búsqueda de empleo: evalúa ofertas con scoring multi-dimensional (A-F), genera PDFs ATS-optimized personalizados, rellena formularios vía Playwright y procesa en batch con workers paralelos. HITL: la IA analiza, yo decido. Open source bajo MIT — 53.2K+ estrellas, 3.700+ en Discord.',
+    tldr: 'Un sistema multi-agente construido con Claude Code que automatiza la búsqueda de empleo: evalúa ofertas con scoring multi-dimensional (A-F), genera PDFs ATS-optimized personalizados, rellena formularios vía Playwright y procesa en batch con workers paralelos. HITL: la IA analiza, yo decido. Open source bajo MIT — 55.8K+ estrellas, 3.800+ en Discord.',
     starChart: {
-      alt: 'El warp chart de career-ops — de 0 a 53.2K+ estrellas en GitHub, en vivo',
+      alt: 'El warp chart de career-ops — de 0 a 55.8K+ estrellas en GitHub, en vivo',
       caption: 'El warp chart de career-ops, en tiempo real — por',
       linkLabel: 'Warpchart',
     },
@@ -56,7 +56,7 @@ export const careerOpsContent = {
     },
     sections: {
       intro: {
-        hook: 'Construí un sistema de IA para buscar trabajo. Funcionó — ahora soy Head of Applied AI. Luego lo publiqué en GitHub y explotó: 53.2K+ estrellas, viral, artículos en Francia, China y Corea. La primera semana buscando trabajo en IA lo hice todo manual. La segunda semana ya no aplicaba — estaba construyendo Career-Ops.',
+        hook: 'Construí un sistema de IA para buscar trabajo. Funcionó — ahora soy Head of Applied AI. Luego lo publiqué en GitHub y explotó: 55.8K+ estrellas, viral, artículos en Francia, China y Corea. La primera semana buscando trabajo en IA lo hice todo manual. La segunda semana ya no aplicaba — estaba construyendo Career-Ops.',
         body: '631 evaluaciones después, Career-Ops filtraba mejor que yo. Un AI job search tool construido como multi-agent system: lee ofertas, las puntúa multi-dimensional, genera CV personalizados y prepara aplicaciones. Yo revisaba y decidía. La IA hacía el trabajo analítico. El sistema demostró exactamente las competencias que los puestos pedían — y eso no pasó desapercibido.',
       },
       theProblem: {
@@ -194,14 +194,14 @@ export const careerOpsContent = {
         body: 'El resultado más importante: conseguí el trabajo. Ahora soy Head of Applied AI. Career-Ops evaluó 631 ofertas, generó 354 PDFs personalizados y filtró el ruido para que yo pudiera centrarme en las oportunidades que realmente encajaban.',
         metrics: [
           { value: '631', label: 'Reports generados' },
-          { value: '53.2K+', label: 'GitHub stars' },
+          { value: '55.8K+', label: 'GitHub stars' },
           { value: '354', label: 'PDFs generados' },
           { value: '2,600+', label: 'Upvotes r/ClaudeAI' },
         ],
         aftermath: {
           heading: '¿Qué Pasó Después?',
           // HISTORIC: numbers below are week-1 viral snapshot — do not auto-update with current totals.
-          body: 'Cuando dejé de necesitar Career-Ops, lo publiqué en GitHub. En una semana pasó de repositorio privado a viral — 35K estrellas, 5K forks, y artículos en blogs de Francia, China y Corea que no me conocían de nada. Hoy supera las 48K estrellas y más de 3.700 personas en Discord se ayudan entre ellas a configurar y adaptar el sistema. El proyecto acabó demostrando más competencias que cualquier proceso de selección.',
+          body: 'Cuando dejé de necesitar Career-Ops, lo publiqué en GitHub. En una semana pasó de repositorio privado a viral — 35K estrellas, 5K forks, y artículos en blogs de Francia, China y Corea que no me conocían de nada. Hoy supera las 48K estrellas y más de 3.800 personas en Discord se ayudan entre ellas a configurar y adaptar el sistema. El proyecto acabó demostrando más competencias que cualquier proceso de selección.',
           highlights: [
             { value: '35K+', label: 'GitHub stars en 1 semana' },
             { value: '5K+', label: 'Forks' },
@@ -249,7 +249,7 @@ export const careerOpsContent = {
           },
           {
             title: 'Abre el código cuando ya no lo necesites',
-            detail: 'Career-Ops fue privado mientras lo usaba. Cuando conseguí el trabajo, lo publiqué. En una semana tenía 53.2K estrellas. La lección: el mejor momento para abrir un proyecto es cuando ya demostró su valor en producción real.',
+            detail: 'Career-Ops fue privado mientras lo usaba. Cuando conseguí el trabajo, lo publiqué. En una semana tenía 55.8K estrellas. La lección: el mejor momento para abrir un proyecto es cuando ya demostró su valor en producción real.',
           },
           {
             title: 'Por qué lo mantengo MIT',
@@ -266,7 +266,7 @@ export const careerOpsContent = {
         ctaSecondaryLabel: 'Ver el código en GitHub',
         ctaSecondaryHref: 'https://github.com/santifer/career-ops',
         communityHeading: '¿Dudas? Pregunta a la comunidad',
-        communityBody: '3.700+ builders ya usan Career-Ops y comparten tips, plantillas y configuraciones en Discord.',
+        communityBody: '3.800+ builders ya usan Career-Ops y comparten tips, plantillas y configuraciones en Discord.',
         communityLabel: 'Únete al Discord',
         communityHref: 'https://discord.gg/8pRpHETxa4',
       },
@@ -312,7 +312,7 @@ export const careerOpsContent = {
         },
         {
           q: '¿Quién creó Career-Ops?',
-          a: 'Lo creé yo, Santiago Fernández de Valderrama (santifer). Lo construí para mi propia búsqueda de empleo en IA — después de 16 años fundando y vendiendo un negocio de reparación de móviles. El sistema evaluó 631 ofertas y me ayudó a conseguir mi rol actual como Head of Applied AI. Cuando dejé de necesitarlo, lo publiqué como open source. En una semana llegó a 53.2K+ estrellas en GitHub. La comunidad en Discord ya supera las 3.700 personas: discord.gg/8pRpHETxa4',
+          a: 'Lo creé yo, Santiago Fernández de Valderrama (santifer). Lo construí para mi propia búsqueda de empleo en IA — después de 16 años fundando y vendiendo un negocio de reparación de móviles. El sistema evaluó 631 ofertas y me ayudó a conseguir mi rol actual como Head of Applied AI. Cuando dejé de necesitarlo, lo publiqué como open source. En una semana llegó a 55.8K+ estrellas en GitHub. La comunidad en Discord ya supera las 3.800 personas: discord.gg/8pRpHETxa4',
         },
       ],
     },
@@ -330,9 +330,9 @@ export const careerOpsContent = {
       breadcrumbCurrent: 'Career-Ops',
     },
     header: {
-      kicker: 'Case Study: From side project to 53.2K+ stars',
+      kicker: 'Case Study: From side project to 55.8K+ stars',
       h1: 'Career-Ops: How I Built an AI Job Search System That Got Me Hired',
-      subtitle: 'I built a multi-agent system to automate my job search. It worked — I am now Head of Applied AI. Then I open-sourced it and it went viral — 53.2K+ GitHub stars.',
+      subtitle: 'I built a multi-agent system to automate my job search. It worked — I am now Head of Applied AI. Then I open-sourced it and it went viral — 55.8K+ GitHub stars.',
       badge: 'Mission accomplished',
       date: 'Mar 17, 2026',
     },
@@ -343,9 +343,9 @@ export const careerOpsContent = {
       { value: 'A-F', label: 'Grade scoring' },
       { value: '680', label: 'URLs deduped' },
     ],
-    tldr: 'A multi-agent system built with Claude Code that automates the job search: scores offers multi-dimensional (A-F), generates ATS-optimized PDFs per offer, fills forms via Playwright, and batch-processes with parallel workers. HITL design: AI analyzes, I decide. Open source under MIT — 53.2K+ stars, 3,700+ on Discord.',
+    tldr: 'A multi-agent system built with Claude Code that automates the job search: scores offers multi-dimensional (A-F), generates ATS-optimized PDFs per offer, fills forms via Playwright, and batch-processes with parallel workers. HITL design: AI analyzes, I decide. Open source under MIT — 55.8K+ stars, 3,800+ on Discord.',
     starChart: {
-      alt: 'The career-ops warp chart — 0 to 53.2K+ GitHub stars, live',
+      alt: 'The career-ops warp chart — 0 to 55.8K+ GitHub stars, live',
       caption: 'The career-ops warp chart, warpcharted in real time by',
       linkLabel: 'Warpchart',
     },
@@ -372,7 +372,7 @@ export const careerOpsContent = {
     },
     sections: {
       intro: {
-        hook: 'I built an AI system to search for a job. It worked — I am now Head of Applied AI. Then I published it on GitHub and it exploded: 53.2K+ stars, viral, articles in France, China, and Korea. Week one of my AI job search was all manual. By week two I had stopped applying — I was building Career-Ops.',
+        hook: 'I built an AI system to search for a job. It worked — I am now Head of Applied AI. Then I published it on GitHub and it exploded: 55.8K+ stars, viral, articles in France, China, and Korea. Week one of my AI job search was all manual. By week two I had stopped applying — I was building Career-Ops.',
         body: '631 evaluations later, Career-Ops was filtering better than I was. An AI-powered job search tool built as a multi-agent system: reads job descriptions, scores them multi-dimensional, generates personalized resumes, and prepares applications. I reviewed and decided. The AI did the analytical work. The system demonstrated exactly the competencies the target roles required — and that did not go unnoticed.',
       },
       theProblem: {
@@ -510,7 +510,7 @@ export const careerOpsContent = {
         body: 'The most important result: I got the job. I am now Head of Applied AI. Career-Ops evaluated 631 offers, generated 354 personalized PDFs, and filtered the noise so I could focus on the opportunities that truly fit.',
         metrics: [
           { value: '631', label: 'Reports generated' },
-          { value: '53.2K+', label: 'GitHub stars' },
+          { value: '55.8K+', label: 'GitHub stars' },
           { value: '354', label: 'PDFs generated' },
           { value: '2,600+', label: 'Upvotes r/ClaudeAI' },
         ],
@@ -565,7 +565,7 @@ export const careerOpsContent = {
           },
           {
             title: 'Open-source it when you no longer need it',
-            detail: 'Career-Ops was private while I was using it. When I got the job, I published it. One week later it had 53.2K stars. The lesson: the best time to open-source a project is when it has already proven its value in real production.',
+            detail: 'Career-Ops was private while I was using it. When I got the job, I published it. One week later it had 55.8K stars. The lesson: the best time to open-source a project is when it has already proven its value in real production.',
           },
           {
             title: 'Why I keep it MIT',
@@ -582,7 +582,7 @@ export const careerOpsContent = {
         ctaSecondaryLabel: 'View source on GitHub',
         ctaSecondaryHref: 'https://github.com/santifer/career-ops',
         communityHeading: 'Got questions? Ask the community',
-        communityBody: '3,700+ builders already use Career-Ops and share tips, templates, and setups on Discord.',
+        communityBody: '3,800+ builders already use Career-Ops and share tips, templates, and setups on Discord.',
         communityLabel: 'Join Discord',
         communityHref: 'https://discord.gg/8pRpHETxa4',
       },
@@ -628,7 +628,7 @@ export const careerOpsContent = {
         },
         {
           q: 'Who created Career-Ops?',
-          a: 'I did — Santiago Fernández de Valderrama (santifer). I built it for my own AI job search after spending 16 years founding and selling a phone repair business. The system evaluated 631 offers and helped me land my current role as Head of Applied AI. When I no longer needed it, I published it as open source. In one week it reached 53.2K+ GitHub stars. The Discord community is now 3,700+ people: discord.gg/8pRpHETxa4',
+          a: 'I did — Santiago Fernández de Valderrama (santifer). I built it for my own AI job search after spending 16 years founding and selling a phone repair business. The system evaluated 631 offers and helped me land my current role as Head of Applied AI. When I no longer needed it, I published it as open source. In one week it reached 55.8K+ GitHub stars. The Discord community is now 3,800+ people: discord.gg/8pRpHETxa4',
         },
       ],
     },

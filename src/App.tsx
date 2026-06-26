@@ -1546,9 +1546,9 @@ function App() {
                   <Github className="w-3.5 h-3.5" />
                   <span>career-ops</span>
                   <Star className="w-3 h-3 text-yellow-500" />
-                  {/* hero-stats:career-ops:stars */}<span className="font-medium">53.2K</span>
+                  {/* hero-stats:career-ops:stars */}<span className="font-medium">55.8K</span>
                   <GitFork className="w-3 h-3" />
-                  {/* hero-stats:career-ops:forks */}<span>10.6K</span>
+                  {/* hero-stats:career-ops:forks */}<span>11.0K</span>
                 </Link>
               </div>
 
@@ -1610,7 +1610,15 @@ function App() {
               </div>
               <p className="text-primary font-medium mb-1">{t.experience.zinkee.role}</p>
               <p className="text-sm text-muted-foreground mb-2">{t.experience.zinkee.period}</p>
-              <p className="text-muted-foreground whitespace-pre-line">{t.experience.zinkee.desc}</p>
+              <p className="text-muted-foreground whitespace-pre-line mb-4">{t.experience.zinkee.desc}</p>
+              <ul className="text-sm text-muted-foreground space-y-1">
+                {t.experience.zinkee.highlights.map((h, hi) => (
+                  <li key={hi} className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </AnimatedSection>
 

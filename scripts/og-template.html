@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+  OG image template for santifer.io (1200x630).
+  Rendered to public/og-image.webp by scripts/generate-og-image.ts (Playwright + cwebp).
+  Replicates the home hero design tokens 1:1 (no AI-invented styling).
+  Placeholders resolved at render time: __FONT_SG__ __FONT_DM__ __AVATAR__ __STARS__
+  To change copy, edit the markup below — the script only injects the star count.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: 'Space Grotesk';
+    font-weight: 400 700;
+    font-display: block;
+    src: url('__FONT_SG__') format('woff2');
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    font-weight: 400 600;
+    font-display: block;
+    src: url('__FONT_DM__') format('woff2');
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    /* exact hero tokens: --background 240 6% 10%, dot grid radial(circle, hsl(0 0% 18%) 1px) 24px */
+    background-color: hsl(240 6% 10%);
+    background-image: radial-gradient(circle, hsl(0 0% 18%) 1px, transparent 1px);
+    background-size: 24px 24px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    color: hsl(0 0% 93%);
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    padding: 0 90px;
+    overflow: hidden;
+    position: relative;
+  }
+  /* soft purple glow top-right, like the hero ambient */
+  body::after {
+    content: '';
+    position: absolute;
+    top: -180px; right: -180px;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, hsl(270 91% 78% / 0.10), transparent 70%);
+    pointer-events: none;
+  }
+  .avatar-wrap { position: relative; flex-shrink: 0; }
+  .avatar {
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid hsl(187 86% 53% / 0.35);
+    box-shadow: 0 0 0 10px hsl(187 86% 53% / 0.06);
+  }
+  .badge {
+    position: absolute;
+    right: 14px; bottom: 14px;
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: hsl(187 86% 53%);
+    border: 5px solid hsl(240 6% 10%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .badge svg { width: 34px; height: 34px; }
+  .content { display: flex; flex-direction: column; }
+  .greeting {
+    font-size: 30px;
+    color: hsl(0 0% 62%);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .greeting .handle {
+    background-image: linear-gradient(to right, hsl(187 86% 53%), hsl(270 91% 78%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+  }
+  h1 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-size: 70px;
+    line-height: 1.04;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background-image: linear-gradient(to right, hsl(187 86% 53%), hsl(270 91% 78%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 18px;
+  }
+  .sub {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 32px;
+    line-height: 1.32;
+    font-weight: 500;
+    color: hsl(0 0% 82%);
+    letter-spacing: -0.005em;
+    margin-bottom: 32px;
+  }
+  .sub .stars { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+  .sub .star { width: 26px; height: 26px; color: hsl(45 93% 58%); vertical-align: middle; }
+  .sub .num { font-weight: 700; color: hsl(0 0% 95%); }
+  .pills { display: flex; gap: 12px; align-items: center; }
+  .pill {
+    font-size: 22px;
+    font-weight: 500;
+    padding: 9px 18px;
+    border-radius: 9999px;
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+  }
+  .pill.solid {
+    border: 1px solid hsl(187 86% 53%);
+    background: hsl(187 86% 53% / 0.15);
+    color: hsl(0 0% 96%);
+  }
+  .pill.ghost {
+    border: 1px solid hsl(187 86% 53% / 0.30);
+    background: hsl(240 6% 10% / 0.6);
+    color: hsl(0 0% 72%);
+  }
+  .domain {
+    position: absolute;
+    bottom: 54px; right: 90px;
+    font-size: 26px;
+    font-weight: 600;
+    color: hsl(0 0% 55%);
+    letter-spacing: 0.01em;
+  }
+</style>
+</head>
+<body>
+  <div class="avatar-wrap">
+    <img class="avatar" src="__AVATAR__" alt="" />
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12.5l4.5 4.5L19 7.5" stroke="hsl(240 6% 10%)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+  <div class="content">
+    <div class="greeting">Hi, I'm <span class="handle">@santifer</span></div>
+    <h1>Multi-Agent<br/>Systems Engineer</h1>
+    <div class="sub">I build production AI agents.<br/>Open-sourced career-ops, <span class="stars"><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg><span class="num" data-og-stars-k>__STARS__</span></span></div>
+    <div class="pills">
+      <span class="pill solid">Applied AI · FDE</span>
+      <span class="pill ghost">Founder · exited</span>
+    </div>
+  </div>
+  <div class="domain">santifer.io</div>
+</body>
+</html>

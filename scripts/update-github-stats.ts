@@ -267,7 +267,9 @@ async function main() {
     const forkLabel = formatCount(careerOpsStats.forks)
     const forkLabelPlus = forkLabel + '+'
 
-    // Files to sweep — all i18n content + about + career-ops-i18n + chatbot prompt
+    // Files to sweep — all i18n content + about + career-ops-i18n + chatbot prompt + index.html
+    // (index.html meta description / og:description / twitter:description use the "X.XK+ ⭐" format,
+    //  which section 4's "GitHub stars"/"estrellas" patterns don't catch — the ⭐ pattern below does.)
     const sweepFiles = [
       resolve(__dirname, '../src/i18n.ts'),
       resolve(__dirname, '../src/about-i18n.ts'),
@@ -275,6 +277,7 @@ async function main() {
       resolve(__dirname, '../public/llms.txt'),
       resolve(__dirname, '../public/humans.txt'),
       resolve(__dirname, '../chatbot-prompt.txt'),
+      resolve(__dirname, '../index.html'),
     ]
 
     // Patterns: careful NOT to match hero metrics entries (those already handled by section 2)

@@ -7,16 +7,16 @@ export const careerOpsContent = {
     readingTime: '18 min de lectura',
     seo: {
       title: 'Career-Ops: Agente IA que Automatiza Mi Búsqueda de Empleo',
-      description: 'Case study: agente IA multi-agente que evalúa ofertas con scoring multi-dimensional, crea CV con IA personalizados por oferta y automatiza aplicaciones. 631 evaluaciones.',
+      description: 'Case study: agente IA multi-agente que evalúa ofertas con scoring multi-dimensional, crea CV con IA personalizados y automatiza aplicaciones. 631 evaluaciones.',
     },
     nav: {
       breadcrumbHome: 'Inicio',
       breadcrumbCurrent: 'Career-Ops',
     },
     header: {
-      kicker: 'Case Study: De proyecto personal a 57.0K+ stars',
+      kicker: 'Case Study: De proyecto personal a 57.6K+ stars',
       h1: 'Career-Ops: Cómo un Agente IA Automatizó Mi Búsqueda de Empleo',
-      subtitle: 'Construí un sistema multi-agente para automatizar mi búsqueda de empleo. Funcionó: ahora soy Head of Applied AI. Luego lo abrí como open source y se hizo viral — 57.0K+ estrellas en GitHub.',
+      subtitle: 'Construí un sistema multi-agente para automatizar mi búsqueda de empleo. Funcionó: ahora soy Head of Applied AI. Luego lo abrí como open source y se hizo viral — 57.6K+ estrellas en GitHub.',
       badge: 'Misión cumplida',
       date: '17 mar 2026',
     },
@@ -27,9 +27,9 @@ export const careerOpsContent = {
       { value: 'A-F', label: 'Grade scoring' },
       { value: '680', label: 'URLs dedup' },
     ],
-    tldr: 'Un sistema multi-agente construido con Claude Code que automatiza la búsqueda de empleo: evalúa ofertas con scoring multi-dimensional (A-F), genera PDFs ATS-optimized personalizados, rellena formularios vía Playwright y procesa en batch con workers paralelos. HITL: la IA analiza, yo decido. Open source bajo MIT — 57.0K+ estrellas, 3.900+ en Discord.',
+    tldr: 'Un sistema multi-agente construido con Claude Code que automatiza la búsqueda de empleo: evalúa ofertas con scoring multi-dimensional (A-F), genera PDFs ATS-optimized personalizados, rellena formularios vía Playwright y procesa en batch con workers paralelos. HITL: la IA analiza, yo decido. Open source bajo MIT — 57.6K+ estrellas, 3.900+ en Discord.',
     starChart: {
-      alt: 'El warp chart de career-ops — de 0 a 57.0K+ estrellas en GitHub, en vivo',
+      alt: 'El warp chart de career-ops — de 0 a 57.6K+ estrellas en GitHub, en vivo',
       caption: 'El warp chart de career-ops, en tiempo real — por',
       linkLabel: 'Warpchart',
     },
@@ -56,7 +56,7 @@ export const careerOpsContent = {
     },
     sections: {
       intro: {
-        hook: 'Construí un sistema de IA para buscar trabajo. Funcionó — ahora soy Head of Applied AI. Luego lo publiqué en GitHub y explotó: 57.0K+ estrellas, viral, artículos en Francia, China y Corea. La primera semana buscando trabajo en IA lo hice todo manual. La segunda semana ya no aplicaba — estaba construyendo Career-Ops.',
+        hook: 'Construí un sistema de IA para buscar trabajo. Funcionó — ahora soy Head of Applied AI. Luego lo publiqué en GitHub y explotó: 57.6K+ estrellas, viral, artículos en Francia, China y Corea. La primera semana buscando trabajo en IA lo hice todo manual. La segunda semana ya no aplicaba — estaba construyendo Career-Ops.',
         body: '631 evaluaciones después, Career-Ops filtraba mejor que yo. Un AI job search tool construido como multi-agent system: lee ofertas, las puntúa multi-dimensional, genera CV personalizados y prepara aplicaciones. Yo revisaba y decidía. La IA hacía el trabajo analítico. El sistema demostró exactamente las competencias que los puestos pedían — y eso no pasó desapercibido.',
       },
       theProblem: {
@@ -194,20 +194,21 @@ export const careerOpsContent = {
         body: 'El resultado más importante: conseguí el trabajo. Ahora soy Head of Applied AI. Career-Ops evaluó 631 ofertas, generó 354 PDFs personalizados y filtró el ruido para que yo pudiera centrarme en las oportunidades que realmente encajaban.',
         metrics: [
           { value: '631', label: 'Reports generados' },
-          { value: '57.0K+', label: 'GitHub stars' },
+          { value: '57.6K+', label: 'GitHub stars' },
           { value: '354', label: 'PDFs generados' },
           { value: '2,600+', label: 'Upvotes r/ClaudeAI' },
         ],
         aftermath: {
           heading: '¿Qué Pasó Después?',
           // HISTORIC: numbers below are week-1 viral snapshot — do not auto-update with current totals.
-          body: 'Cuando dejé de necesitar Career-Ops, lo publiqué en GitHub. En una semana pasó de repositorio privado a viral — 35K estrellas, 5K forks, y artículos en blogs de Francia, China y Corea que no me conocían de nada. Hoy supera las 48K estrellas y más de 3.900 personas en Discord se ayudan entre ellas a configurar y adaptar el sistema. El proyecto acabó demostrando más competencias que cualquier proceso de selección.',
+          body: 'Cuando dejé de necesitar Career-Ops, lo publiqué en GitHub. En una semana pasó de repositorio privado a viral — 35K estrellas, 5K forks, y artículos en blogs de Francia, China y Corea que no me conocían de nada. El proyecto acabó demostrando más competencias que cualquier proceso de selección.',
           highlights: [
             { value: '35K+', label: 'GitHub stars en 1 semana' },
-            { value: '5K+', label: 'Forks' },
+            { value: '5K+', label: 'Forks en 1 semana' },
             { value: '4', label: 'Idiomas (EN, FR, ZH, KO)' },
             { value: '6', label: 'Países con cobertura' },
           ],
+          body2: 'Hoy el repositorio supera las 57.6K+ estrellas y 11.4K+ forks, y más de 3.900 personas en Discord se ayudan entre ellas a configurar y adaptar el sistema. Ya no es solo una herramienta: la v1.15 (jun 2026) añadió un sistema de plugins — opt-in, BYO-key, cada plugin revisado y pineado a un commit exacto; 5 de los 6 primeros los construyó la comunidad — y la v1.16 (jul 2026) sumó el pipeline completo de entrevistas: preparación, simulacro con feedback verificado contra tu CV real y debrief post-entrevista. En julio de 2026 entró en GitHub Trending, con picos de más de 400 estrellas en un solo día. Y lo más importante: los primeros miembros de la comunidad ya han documentado ofertas conseguidas con el sistema — un equipo de contratación describió una de esas candidaturas como "the best application they had ever received".',
         },
       },
       stack: {
@@ -249,7 +250,8 @@ export const careerOpsContent = {
           },
           {
             title: 'Abre el código cuando ya no lo necesites',
-            detail: 'Career-Ops fue privado mientras lo usaba. Cuando conseguí el trabajo, lo publiqué. En una semana tenía 57.0K estrellas. La lección: el mejor momento para abrir un proyecto es cuando ya demostró su valor en producción real.',
+            // HISTORIC: week-1 snapshot — do not auto-update.
+            detail: 'Career-Ops fue privado mientras lo usaba. Cuando conseguí el trabajo, lo publiqué. En una semana tenía 35K estrellas. La lección: el mejor momento para abrir un proyecto es cuando ya demostró su valor en producción real.',
           },
           {
             title: 'Por qué lo mantengo MIT',
@@ -296,11 +298,11 @@ export const careerOpsContent = {
         },
         {
           q: '¿Es replicable?',
-          a: 'Sí — es open source. La landing oficial es career-ops.org (docs, AI chat y guías) y el código vive en github.com/santifer/career-ops. Requiere Claude Code con acceso a Playwright. Los skill files definen la lógica de cada modo. 37K+ personas ya lo han visto, forkeado o adaptado.',
+          a: 'Sí — es open source. La landing oficial es career-ops.org (docs, AI chat y guías) y el código vive en github.com/santifer/career-ops. Requiere Claude Code con acceso a Playwright. Los skill files definen la lógica de cada modo. Con 57.6K+ estrellas y 11.4K+ forks en GitHub, miles de personas ya lo han forkeado o adaptado.',
         },
         {
           q: '¿Cómo se usa Career-Ops?',
-          a: 'Career-Ops es una herramienta local que se ejecuta desde tu terminal con Claude Code. Clonas el repositorio, configuras tu CV y preferencias, y lanzas modos según lo que necesites: auto-pipeline para evaluar una oferta de principio a fin, scan para descubrir ofertas en portales, batch para procesar muchas URLs en paralelo, o pdf para generar un CV personalizado. Todo se ejecuta en tu máquina — tu CV y datos personales nunca salen de tu ordenador. Si necesitas ayuda, la comunidad de 1.000+ personas está en Discord: discord.gg/8pRpHETxa4',
+          a: 'Career-Ops es una herramienta local que se ejecuta desde tu terminal con Claude Code. Clonas el repositorio, configuras tu CV y preferencias, y lanzas modos según lo que necesites: auto-pipeline para evaluar una oferta de principio a fin, scan para descubrir ofertas en portales, batch para procesar muchas URLs en paralelo, o pdf para generar un CV personalizado. Todo se ejecuta en tu máquina — tu CV y datos personales nunca salen de tu ordenador. Si necesitas ayuda, la comunidad está en Discord: discord.gg/8pRpHETxa4',
         },
         {
           q: '¿Qué necesito para ejecutar Career-Ops?',
@@ -311,8 +313,16 @@ export const careerOpsContent = {
           a: 'Career-Ops no es un chatbot ni un wrapper de API. Es un sistema multi-agente donde Claude Code actúa como cerebro: razona sobre cada oferta, evalúa el fit contra tu perfil multi-dimensional (rubric canonical en career-ops.org/methodology), y toma decisiones de filtrado. Cada uno de los 12 modos es un skill file con su propio contexto y reglas. Para navegación web usa Playwright. Para PDFs usa Puppeteer. El procesamiento batch lanza workers paralelos en tmux. No hay fine-tuning ni modelos custom — es Claude estándar con contexto muy preciso.',
         },
         {
+          q: '¿Career-Ops tiene plugins?',
+          a: 'Sí. Desde la v1.15 (junio 2026) Career-Ops tiene un sistema de plugins opt-in: tú traes tus propias API keys (BYO-key), nada se auto-envía nunca, y cada plugin se revisa y se pinea a un commit exacto antes de entrar en el registry. Los 6 primeros: tavily (research de empresas y liveness de ofertas), google-calendar y outlook-interviews (detectan entrevistas en tu calendario o correo), linkedin-alerts (parsea los emails de alertas de LinkedIn desde tu propio Gmail — sin scrapear LinkedIn), obsidian (espeja el tracker en tu vault como notas consultables) y startup-boards (scanner opt-in de boards de startups). 5 de los 6 los construyó la comunidad. Cualquiera puede publicar el suyo siguiendo el patrón career-ops-plugin-<nombre>.',
+        },
+        {
+          q: '¿Career-Ops ayuda con las entrevistas?',
+          a: 'Sí, desde la v1.16 (julio 2026). El pipeline de entrevistas tiene tres modos: plan (preparación time-blocked), practice (simulacro con feedback que verifica cada afirmación contra tu CV real — nunca te deja ensayar claims que no puedas defender) y debrief (post-entrevista: guarda lo que dijiste de verdad, no una versión idealizada, y detecta gaps). Todo corre en local y las transcripciones quedan fuera de git por diseño.',
+        },
+        {
           q: '¿Quién creó Career-Ops?',
-          a: 'Lo creé yo, Santiago Fernández de Valderrama (santifer). Lo construí para mi propia búsqueda de empleo en IA — después de 16 años fundando y vendiendo un negocio de reparación de móviles. El sistema evaluó 631 ofertas y me ayudó a conseguir mi rol actual como Head of Applied AI. Cuando dejé de necesitarlo, lo publiqué como open source. En una semana llegó a 57.0K+ estrellas en GitHub. La comunidad en Discord ya supera las 3.900 personas: discord.gg/8pRpHETxa4',
+          a: 'Lo creé yo, Santiago Fernández de Valderrama (santifer). Lo construí para mi propia búsqueda de empleo en IA — después de 16 años fundando y vendiendo un negocio de reparación de móviles. El sistema evaluó 631 ofertas y me ayudó a conseguir mi rol actual como Head of Applied AI. Cuando dejé de necesitarlo, lo publiqué como open source y se hizo viral — hoy supera las 57.6K+ estrellas en GitHub. La comunidad en Discord ya supera las 3.900 personas: discord.gg/8pRpHETxa4',
         },
       ],
     },
@@ -323,16 +333,16 @@ export const careerOpsContent = {
     readingTime: '18 min read',
     seo: {
       title: 'Career-Ops: How I Built My Own AI Job Search Tool',
-      description: 'Case study: AI job search tool built as a multi-agent system. AI resume builder, multi-dimensional scoring, automated job application with HITL. 631 evaluations.',
+      description: 'Case study: AI job search tool built as a multi-agent system. AI resume builder, multi-dimensional scoring, automated applications with HITL. 631 evaluations.',
     },
     nav: {
       breadcrumbHome: 'Home',
       breadcrumbCurrent: 'Career-Ops',
     },
     header: {
-      kicker: 'Case Study: From side project to 57.0K+ stars',
+      kicker: 'Case Study: From side project to 57.6K+ stars',
       h1: 'Career-Ops: How I Built an AI Job Search System That Got Me Hired',
-      subtitle: 'I built a multi-agent system to automate my job search. It worked — I am now Head of Applied AI. Then I open-sourced it and it went viral — 57.0K+ GitHub stars.',
+      subtitle: 'I built a multi-agent system to automate my job search. It worked — I am now Head of Applied AI. Then I open-sourced it and it went viral — 57.6K+ GitHub stars.',
       badge: 'Mission accomplished',
       date: 'Mar 17, 2026',
     },
@@ -343,9 +353,9 @@ export const careerOpsContent = {
       { value: 'A-F', label: 'Grade scoring' },
       { value: '680', label: 'URLs deduped' },
     ],
-    tldr: 'A multi-agent system built with Claude Code that automates the job search: scores offers multi-dimensional (A-F), generates ATS-optimized PDFs per offer, fills forms via Playwright, and batch-processes with parallel workers. HITL design: AI analyzes, I decide. Open source under MIT — 57.0K+ stars, 3,900+ on Discord.',
+    tldr: 'A multi-agent system built with Claude Code that automates the job search: scores offers multi-dimensional (A-F), generates ATS-optimized PDFs per offer, fills forms via Playwright, and batch-processes with parallel workers. HITL design: AI analyzes, I decide. Open source under MIT — 57.6K+ stars, 3,900+ on Discord.',
     starChart: {
-      alt: 'The career-ops warp chart — 0 to 57.0K+ GitHub stars, live',
+      alt: 'The career-ops warp chart — 0 to 57.6K+ GitHub stars, live',
       caption: 'The career-ops warp chart, warpcharted in real time by',
       linkLabel: 'Warpchart',
     },
@@ -372,7 +382,7 @@ export const careerOpsContent = {
     },
     sections: {
       intro: {
-        hook: 'I built an AI system to search for a job. It worked — I am now Head of Applied AI. Then I published it on GitHub and it exploded: 57.0K+ stars, viral, articles in France, China, and Korea. Week one of my AI job search was all manual. By week two I had stopped applying — I was building Career-Ops.',
+        hook: 'I built an AI system to search for a job. It worked — I am now Head of Applied AI. Then I published it on GitHub and it exploded: 57.6K+ stars, viral, articles in France, China, and Korea. Week one of my AI job search was all manual. By week two I had stopped applying — I was building Career-Ops.',
         body: '631 evaluations later, Career-Ops was filtering better than I was. An AI-powered job search tool built as a multi-agent system: reads job descriptions, scores them multi-dimensional, generates personalized resumes, and prepares applications. I reviewed and decided. The AI did the analytical work. The system demonstrated exactly the competencies the target roles required — and that did not go unnoticed.',
       },
       theProblem: {
@@ -510,20 +520,21 @@ export const careerOpsContent = {
         body: 'The most important result: I got the job. I am now Head of Applied AI. Career-Ops evaluated 631 offers, generated 354 personalized PDFs, and filtered the noise so I could focus on the opportunities that truly fit.',
         metrics: [
           { value: '631', label: 'Reports generated' },
-          { value: '57.0K+', label: 'GitHub stars' },
+          { value: '57.6K+', label: 'GitHub stars' },
           { value: '354', label: 'PDFs generated' },
           { value: '2,600+', label: 'Upvotes r/ClaudeAI' },
         ],
         aftermath: {
           heading: 'What Happened Next?',
           // HISTORIC: numbers below are week-1 viral snapshot — do not auto-update with current totals.
-          body: 'When I no longer needed Career-Ops, I published it on GitHub. In one week it went from private repo to viral — 35K stars, 5K forks, and articles in blogs from France, China, and Korea by people who had never heard of me. Today it has crossed 48K stars and a community of 3K+ people on Discord helps each other configure and adapt the system. The project ended up demonstrating more competencies than any hiring process could.',
+          body: 'When I no longer needed Career-Ops, I published it on GitHub. In one week it went from private repo to viral — 35K stars, 5K forks, and articles in blogs from France, China, and Korea by people who had never heard of me. The project ended up demonstrating more competencies than any hiring process could.',
           highlights: [
             { value: '35K+', label: 'GitHub stars in 1 week' },
-            { value: '5K+', label: 'Forks' },
+            { value: '5K+', label: 'Forks in 1 week' },
             { value: '4', label: 'Languages (EN, FR, ZH, KO)' },
             { value: '6', label: 'Countries with coverage' },
           ],
+          body2: 'Today the repository has passed 57.6K+ stars and 11.4K+ forks. A community of 3,900+ people formed on Discord, helping each other configure and adapt the system. And it is no longer just a tool: v1.15 (Jun 2026) added a plugin system — opt-in, BYO-key, every plugin reviewed and pinned to an exact commit; 5 of the first 6 were built by the community — and v1.16 (Jul 2026) shipped the full interview pipeline: time-blocked prep, mock interviews with feedback verified against your real CV, and post-interview debriefs. In July 2026 the repo entered GitHub Trending, peaking at 400+ stars in a single day. Most importantly: the first community members have documented landing their own offers with the system — one hiring team described one of those applications as "the best application they had ever received".',
         },
       },
       stack: {
@@ -565,7 +576,8 @@ export const careerOpsContent = {
           },
           {
             title: 'Open-source it when you no longer need it',
-            detail: 'Career-Ops was private while I was using it. When I got the job, I published it. One week later it had 57.0K stars. The lesson: the best time to open-source a project is when it has already proven its value in real production.',
+            // HISTORIC: week-1 snapshot — do not auto-update.
+            detail: 'Career-Ops was private while I was using it. When I got the job, I published it. One week later it had 35K stars. The lesson: the best time to open-source a project is when it has already proven its value in real production.',
           },
           {
             title: 'Why I keep it MIT',
@@ -612,11 +624,11 @@ export const careerOpsContent = {
         },
         {
           q: 'Is it replicable?',
-          a: 'Yes — it is open source. The official landing is career-ops.org (docs, AI chat and guides) and the code lives at github.com/santifer/career-ops. Requires Claude Code with Playwright access. Skill files define the logic for each mode. 37K+ people have already seen, forked, or adapted it.',
+          a: 'Yes — it is open source. The official landing is career-ops.org (docs, AI chat and guides) and the code lives at github.com/santifer/career-ops. Requires Claude Code with Playwright access. Skill files define the logic for each mode. With 57.6K+ stars and 11.4K+ forks on GitHub, thousands of people have already forked or adapted it.',
         },
         {
           q: 'How do I use Career-Ops?',
-          a: 'Career-Ops is a local tool that runs from your terminal with Claude Code. Clone the repository, configure your resume and preferences, and launch modes as needed: auto-pipeline to evaluate an offer end-to-end, scan to discover offers on job boards, batch to process many URLs in parallel, or pdf to generate a personalized resume. Everything runs on your machine — your resume and personal data never leave your computer. If you need help, a community of 1,000+ people is on Discord: discord.gg/8pRpHETxa4',
+          a: 'Career-Ops is a local tool that runs from your terminal with Claude Code. Clone the repository, configure your resume and preferences, and launch modes as needed: auto-pipeline to evaluate an offer end-to-end, scan to discover offers on job boards, batch to process many URLs in parallel, or pdf to generate a personalized resume. Everything runs on your machine — your resume and personal data never leave your computer. If you need help, the community is on Discord: discord.gg/8pRpHETxa4',
         },
         {
           q: 'What do I need to run Career-Ops?',
@@ -627,8 +639,16 @@ export const careerOpsContent = {
           a: 'Career-Ops is not a chatbot or an API wrapper. It is a multi-agent system where Claude Code acts as the brain: it reasons about each offer, evaluates fit against your profile multi-dimensional (canonical rubric at career-ops.org/methodology), and makes filtering decisions. Each of the 12 modes is a skill file with its own context and rules. Web navigation uses Playwright. PDFs use Puppeteer. Batch processing launches parallel workers in tmux. No fine-tuning or custom models — standard Claude with very precise context.',
         },
         {
+          q: 'Does Career-Ops have plugins?',
+          a: 'Yes. Since v1.15 (June 2026) Career-Ops has an opt-in plugin system: you bring your own API keys (BYO-key), nothing is ever auto-submitted, and every plugin is reviewed and pinned to an exact commit before entering the registry. The first 6: tavily (company research and listing liveness), google-calendar and outlook-interviews (detect interviews in your calendar or email), linkedin-alerts (parses LinkedIn alert emails from your own Gmail — no LinkedIn scraping), obsidian (mirrors the tracker into your vault as queryable notes), and startup-boards (opt-in startup job board scanner). 5 of the 6 were built by the community. Anyone can publish their own following the career-ops-plugin-<name> pattern.',
+        },
+        {
+          q: 'Does Career-Ops help with interviews?',
+          a: 'Yes, since v1.16 (July 2026). The interview pipeline has three modes: plan (time-blocked preparation), practice (mock interviews with feedback that verifies every claim against your real CV — it never lets you rehearse claims you cannot defend), and debrief (post-interview: it stores what you actually said, not an idealized version, and flags gaps). Everything runs locally and transcripts stay out of git by design.',
+        },
+        {
           q: 'Who created Career-Ops?',
-          a: 'I did — Santiago Fernández de Valderrama (santifer). I built it for my own AI job search after spending 16 years founding and selling a phone repair business. The system evaluated 631 offers and helped me land my current role as Head of Applied AI. When I no longer needed it, I published it as open source. In one week it reached 57.0K+ GitHub stars. The Discord community is now 3,900+ people: discord.gg/8pRpHETxa4',
+          a: 'I did — Santiago Fernández de Valderrama (santifer). I built it for my own AI job search after spending 16 years founding and selling a phone repair business. The system evaluated 631 offers and helped me land my current role as Head of Applied AI. When I no longer needed it, I published it as open source and it went viral — today it has passed 57.6K+ GitHub stars. The Discord community is now 3,900+ people: discord.gg/8pRpHETxa4',
         },
       ],
     },

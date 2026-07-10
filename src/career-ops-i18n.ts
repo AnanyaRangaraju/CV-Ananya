@@ -38,7 +38,7 @@ export const careerOpsContent = {
     closingCallback: 'El sistema demostró lo que cualquier entrevista no podía: en la era IA, lo que construyes con IA es el CV que te contrata.',
     internalLinks: {
       fleet: {
-        text: 'Cómo se Mantiene: La Flota de Agentes IA | Artículo',
+        text: 'Agentic Maintenance: La Flota de Agentes IA | Artículo',
         href: '/flota-agentes-ia',
       },
       chatbot: {
@@ -368,7 +368,7 @@ export const careerOpsContent = {
     closingCallback: 'The system proved what no interview could: in the AI era, what you build with AI is the resume that gets you hired.',
     internalLinks: {
       fleet: {
-        text: 'How It Is Maintained: The AI Agent Fleet | Article',
+        text: 'Agentic Maintenance: The AI Agent Fleet | Article',
         href: '/ai-agent-fleet',
       },
       chatbot: {

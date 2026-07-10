@@ -57,6 +57,42 @@ function formatCount(n: number): string {
 
 const statsCache = new Map<string, { stars: number; forks: number }>()
 
+const ghHeaders = {
+  'User-Agent': 'santifer-build/1.0',
+  ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}),
+}
+
+/** Contributor count via the Link-header pagination trick (per_page=1 → last page = count). */
+async function fetchContributorCount(owner: string, repo: string): Promise<number | null> {
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${owner}/${repo}/contributors?per_page=1&anon=false`,
+      { headers: ghHeaders },
+    )
+    if (!res.ok) return null
+    const link = res.headers.get('link') ?? ''
+    const m = link.match(/[?&]page=(\d+)>; rel="last"/)
+    if (m) return parseInt(m[1], 10)
+    const arr = await res.json()
+    return Array.isArray(arr) ? arr.length : null
+  } catch {
+    return null
+  }
+}
+
+/** Merged PR count via the search API total_count. */
+async function fetchMergedPrCount(owner: string, repo: string): Promise<number | null> {
+  try {
+    const q = encodeURIComponent(`repo:${owner}/${repo} is:pr is:merged`)
+    const res = await fetch(`https://api.github.com/search/issues?q=${q}&per_page=1`, { headers: ghHeaders })
+    if (!res.ok) return null
+    const data = await res.json()
+    return typeof data.total_count === 'number' ? data.total_count : null
+  } catch {
+    return null
+  }
+}
+
 async function fetchGitHubStats(owner: string, repo: string): Promise<{ stars: number; forks: number } | null> {
   const key = `${owner}/${repo}`
   if (statsCache.has(key)) return statsCache.get(key)!
@@ -330,6 +366,74 @@ async function main() {
         anyChanged = true
         const relPath = filePath.replace(resolve(__dirname, '..') + '/', '')
         console.log(`  ✓ sweep ${relPath}: ${starLabelPlus} stars`)
+      }
+    }
+  }
+
+  // 6. ai-agent-fleet article: exact-integer live figures (scoped to this file ONLY).
+  // Patterns are numerically guarded so week-1 HISTORIC figures ("12,000+ stars",
+  // "12.000 estrellas", "16 PRs fusionadas") never match.
+  const FLEET_I18N = resolve(__dirname, '../src/ai-agent-fleet-i18n.ts')
+  if (careerOpsStats) {
+    let fleet = ''
+    try {
+      fleet = readFileSync(FLEET_I18N, 'utf-8')
+    } catch {
+      // article not created yet — skip
+    }
+    if (fleet) {
+      const original = fleet
+      const { stars, forks } = careerOpsStats
+      const enInt = (n: number) => n.toLocaleString('en-US')
+      const esInt = (n: number) => n.toLocaleString('de-DE') // '.' thousands separator
+      const kStars = Math.floor(stars / 1000) * 1000
+
+      // H1/title rounded figure: EN "59,000-star" / ES "59.000 estrellas" (guarded ≥20K)
+      fleet = fleet.replace(/\b(?:[2-9]\d|[1-9]\d{2}),000-([Ss]tar)\b/g, `${enInt(kStars)}-$1`)
+      fleet = fleet.replace(/\b(?:[2-9]\d|[1-9]\d{2})\.000 ([Ee]strellas)\b/g, `${esInt(kStars)} $1`)
+
+      // Prose exact integers (≥3 digits so historic small counts never match)
+      fleet = fleet.replace(/\b[\d,]{3,} GitHub stars\b/g, `${enInt(stars)} GitHub stars`)
+      fleet = fleet.replace(/\b[\d.]{3,} estrellas en GitHub\b/g, `${esInt(stars)} estrellas en GitHub`)
+
+      // Numbers-box table rows
+      fleet = fleet.replace(/(\['GitHub stars', ')[\d,]+(')/g, `$1${enInt(stars)}$2`)
+      fleet = fleet.replace(/(\['Estrellas en GitHub', ')[\d.]+(')/g, `$1${esInt(stars)}$2`)
+      // 'Forks' label is shared by both language tables — preserve each row's separator style
+      fleet = fleet.replace(/(\['Forks', ')([\d.,]+)(')/g, (_m, a: string, num: string, c: string) =>
+        `${a}${num.includes('.') ? esInt(forks) : enInt(forks)}${c}`)
+
+      const contributors = await fetchContributorCount('santifer', 'career-ops')
+      if (contributors) {
+        fleet = fleet.replace(/\b\d{3,} contributors\b/g, `${contributors} contributors`)
+        fleet = fleet.replace(/\b\d{3,} contribuidores\b/g, `${contributors} contribuidores`)
+        fleet = fleet.replace(/(\['Contributors', ')\d+(')/g, `$1${contributors}$2`)
+        fleet = fleet.replace(/(\['Contribuidores', ')\d+(')/g, `$1${contributors}$2`)
+      }
+
+      const mergedPrs = await fetchMergedPrCount('santifer', 'career-ops')
+      if (mergedPrs) {
+        fleet = fleet.replace(/\b[\d,]{3,} merged PRs\b/g, `${enInt(mergedPrs)} merged PRs`)
+        fleet = fleet.replace(/\b[\d.]{3,} PRs fusionadas\b/g, `${esInt(mergedPrs)} PRs fusionadas`)
+        fleet = fleet.replace(/(\['Merged PRs', ')[\d,]+(')/g, `$1${enInt(mergedPrs)}$2`)
+        fleet = fleet.replace(/(\['PRs fusionadas', ')[\d.,]+(')/g, `$1${esInt(mergedPrs)}$2`)
+      }
+
+      // "As of <date>:" line above the numbers box — live rows refresh every build,
+      // static rows carry their own inline (Jul 2026) dates.
+      const now = new Date()
+      const todayEn = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+      const esMonths = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+      const todayEs = `${now.getDate()} de ${esMonths[now.getMonth()]} de ${now.getFullYear()}`
+      fleet = fleet.replace(/(asOf: 'As of )[A-Z][a-z]+ \d{1,2}, \d{4}(:')/g, `$1${todayEn}$2`)
+      fleet = fleet.replace(/(asOf: 'A )\d{1,2} de [a-zá-ú]+ de \d{4}(:')/g, `$1${todayEs}$2`)
+
+      if (fleet !== original) {
+        writeFileSync(FLEET_I18N, fleet, 'utf-8')
+        anyChanged = true
+        console.log(`  ✓ ai-agent-fleet: stars ${enInt(stars)}, forks ${enInt(forks)}${contributors ? `, ${contributors} contributors` : ''}${mergedPrs ? `, ${enInt(mergedPrs)} merged PRs` : ''}`)
+      } else {
+        console.log('  ⏭ ai-agent-fleet: no changes')
       }
     }
   }

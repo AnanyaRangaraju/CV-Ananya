@@ -37,6 +37,10 @@ export const careerOpsContent = {
     metaCallout: 'La ironía: construí un sistema multi-agente para buscar trabajo en multi-agente. El sistema demostró las competencias que los puestos pedían — mejor que cualquier entrevista. Y no, no es hacer trampa: Career-Ops automatiza el análisis, no la decisión.',
     closingCallback: 'El sistema demostró lo que cualquier entrevista no podía: en la era IA, lo que construyes con IA es el CV que te contrata.',
     internalLinks: {
+      fleet: {
+        text: 'Cómo se Mantiene: La Flota de Agentes IA | Artículo',
+        href: '/flota-agentes-ia',
+      },
       chatbot: {
         text: 'El Chatbot Que Se Cura Solo | Case Study',
         href: '/chatbot-que-se-cura-solo',
@@ -363,6 +367,10 @@ export const careerOpsContent = {
     metaCallout: 'The irony: I built a multi-agent system to search for multi-agent roles. The system demonstrated the competencies better than any interview could. And no, it is not gaming the system: Career-Ops automates analysis, not decisions.',
     closingCallback: 'The system proved what no interview could: in the AI era, what you build with AI is the resume that gets you hired.',
     internalLinks: {
+      fleet: {
+        text: 'How It Is Maintained: The AI Agent Fleet | Article',
+        href: '/ai-agent-fleet',
+      },
       chatbot: {
         text: 'The Self-Healing Chatbot | Case Study',
         href: '/self-healing-chatbot',

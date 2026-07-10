@@ -34,6 +34,7 @@ interface Target {
 }
 
 const CAREER_OPS_I18N = resolve(__dirname, '../src/career-ops-i18n.ts')
+const FLEET_I18N = resolve(__dirname, '../src/ai-agent-fleet-i18n.ts')
 const I18N = resolve(__dirname, '../src/i18n.ts')
 const LLMS_TXT = resolve(__dirname, '../public/llms.txt')
 const CHATBOT_PROMPT = resolve(__dirname, '../chatbot-prompt.txt')
@@ -58,6 +59,16 @@ const TARGETS: Target[] = [
     pattern: /communityBody:\s*'(\d[\d.,]*)\+\s*builders already use Career-Ops/ },
   { file: CAREER_OPS_I18N, locale: 'en', format: 'full', description: 'FAQ EN (is now)',
     pattern: /Discord community is now (\d[\d.,]*)\+\s+people/ },
+
+  // ai-agent-fleet-i18n.ts — numbers-box table rows + community section prose
+  { file: FLEET_I18N, locale: 'en', format: 'full', description: 'fleet numbers EN',
+    pattern: /\['Discord members', '(\d[\d,]*)'/ },
+  { file: FLEET_I18N, locale: 'es', format: 'full', description: 'fleet numbers ES',
+    pattern: /\['Miembros de Discord', '([\d.,]+)'/ },
+  { file: FLEET_I18N, locale: 'en', format: 'full', description: 'fleet community EN',
+    pattern: /The ([\d,]+)-member Discord/ },
+  { file: FLEET_I18N, locale: 'es', format: 'full', description: 'fleet community ES',
+    pattern: /El Discord de ([\d.,]+) miembros/ },
 
   // i18n.ts — compact service cards
   { file: I18N, locale: 'es', format: 'short', description: 'service card ES',

@@ -31,6 +31,12 @@ function rfc822(isoDate: string): string {
   return new Date(`${isoDate}T08:00:00Z`).toUTCString()
 }
 
+/** Feed titles render literally in consumers (e.g. GitHub profile README):
+ *  strip the site-name suffix and normalize em-dashes. */
+function feedTitle(t: string): string {
+  return t.replace(/\s*\|\s*santifer\.io\s*$/, '').replace(/\s+—\s+/g, ' - ')
+}
+
 const articles = [...articleRegistry]
   .filter((a) => a.seoMeta?.datePublished)
   .sort((a, b) => (a.seoMeta!.datePublished < b.seoMeta!.datePublished ? 1 : -1))
@@ -38,7 +44,7 @@ const articles = [...articleRegistry]
 const items = articles.map((a) => {
   const link = `${base}/${a.slugs.en}`
   return `    <item>
-      <title>${escapeXml(a.seo.en.title)}</title>
+      <title>${escapeXml(feedTitle(a.seo.en.title))}</title>
       <link>${link}</link>
       <guid isPermaLink="true">${link}</guid>
       <description>${escapeXml(a.seo.en.description)}</description>

@@ -33,6 +33,7 @@ const SOURCE_MAP: Record<string, string> = {
   'santifer-irepair': 'src/SantiferIRepair.tsx',
   'self-healing-chatbot': 'src/SelfHealingChatbot.tsx',
   'career-ops': 'src/CareerOps.tsx',
+  'ai-agent-fleet': 'src/AiAgentFleet.tsx',
 }
 
 /** Map article id → i18n source file (relative to root). Content edits go here. */
@@ -44,6 +45,7 @@ const I18N_MAP: Record<string, string> = {
   'santifer-irepair': 'src/santifer-irepair-i18n.ts',
   'self-healing-chatbot': 'src/chatbot-i18n.ts',
   'career-ops': 'src/career-ops-i18n.ts',
+  'ai-agent-fleet': 'src/ai-agent-fleet-i18n.ts',
 }
 
 const REGISTRY_PATH = 'src/articles/registry.ts'

@@ -604,7 +604,7 @@ export const articleRegistry: ArticleConfig[] = [
         'playbook': 'Playbook',
         'limits': 'Dónde Se Rompe',
         'org-bridge': 'De Repo a Organización',
-        'core-concepts': 'Core Concepts',
+        'core-concepts': 'Conceptos Clave',
         'lessons': 'Lecciones',
         'faq': 'FAQ',
       },
@@ -641,6 +641,7 @@ export const articleRegistry: ArticleConfig[] = [
       articleTags: 'ai agents,multi-agent,open source,maintainer,Claude Code,sdlc,context engineering',
       images: ['https://santifer.io/ai-agent-fleet/og-ai-agent-fleet.webp'],
       about: [
+        { '@type': 'DefinedTerm', name: 'agentic maintenance', description: 'Gated, evidence-based upkeep of a living codebase, sustained by a fleet of AI agents under human direction.', url: 'https://santifer.io/ai-agent-fleet#core-concepts' },
         { '@type': 'Thing', name: 'AI-assisted software maintenance' },
         { '@type': 'Thing', name: 'Multi-agent systems' },
       ],

@@ -68,6 +68,7 @@ const PERSON = {
   '@type': 'Person',
   '@id': 'https://santifer.io/#person',
   name: 'Santiago Fernández de Valderrama Aparicio',
+  alternateName: ['Santiago Fernández de Valderrama', 'santifer', 'Santi'],
   url: 'https://santifer.io',
   jobTitle: 'Head of Applied AI',
   sameAs: [

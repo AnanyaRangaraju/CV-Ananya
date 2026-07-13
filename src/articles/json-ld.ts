@@ -49,7 +49,7 @@ interface JsonLdOptions {
   /** Extra fields like proficiencyLevel, dependencies */
   extra?: Record<string, string>
   /** Citation URLs (LinkedIn posts, external sources) */
-  citation?: Array<{ '@type': string; name: string; url: string }>
+  citation?: Array<{ '@type': string; name: string; url: string; sameAs?: string }>
   /** isBasedOn — source material (course, workshop, research) */
   isBasedOn?: Record<string, unknown>
   /** mentions — tools and platforms referenced */

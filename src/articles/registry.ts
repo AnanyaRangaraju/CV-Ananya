@@ -14,7 +14,7 @@ export interface ArticleSeoMeta {
   images: string[]
   about: Array<Record<string, string>>
   extra?: Record<string, string>
-  citation?: Array<{ '@type': string; name: string; url: string }>
+  citation?: Array<{ '@type': string; name: string; url: string; sameAs?: string }>
   isBasedOn?: Record<string, unknown>
   mentions?: Array<Record<string, string | string[] | Record<string, string>>>
   discussionUrl?: string
@@ -99,7 +99,7 @@ export const articleRegistry: ArticleConfig[] = [
       articleTags: 'n8n,product manager,automation,AI,workflow,no-code',
       images: ['https://santifer.io/workflows/n8n-sprint-report-automation-workflow.webp', 'https://santifer.io/workflows/n8n-ai-feedback-classification-workflow.webp'],
       about: [
-        { '@type': 'SoftwareApplication', name: 'n8n', url: 'https://n8n.io', applicationCategory: 'Workflow Automation' },
+        { '@type': 'SoftwareApplication', name: 'n8n', sameAs: 'https://www.wikidata.org/wiki/Q130305687', url: 'https://n8n.io', applicationCategory: 'Workflow Automation' },
         { '@type': 'Thing', name: 'Product Management Automation' },
       ],
       extra: { proficiencyLevel: 'Beginner', dependencies: 'n8n Cloud (free tier), Airtable, Slack' },
@@ -115,8 +115,8 @@ export const articleRegistry: ArticleConfig[] = [
         { '@type': 'WebPage', name: 'n8n Documentation', url: 'https://docs.n8n.io' },
       ],
       mentions: [
-        { '@type': 'SoftwareApplication', name: 'n8n', url: 'https://n8n.io' },
-        { '@type': 'SoftwareApplication', name: 'Airtable', url: 'https://airtable.com' },
+        { '@type': 'SoftwareApplication', name: 'n8n', sameAs: 'https://www.wikidata.org/wiki/Q130305687', url: 'https://n8n.io' },
+        { '@type': 'SoftwareApplication', name: 'Airtable', sameAs: 'https://www.wikidata.org/wiki/Q23016614', url: 'https://airtable.com' },
       ],
       video: {
         '@type': 'VideoObject',
@@ -205,8 +205,8 @@ export const articleRegistry: ArticleConfig[] = [
       articleTags: 'AI agent,multi-agent,n8n,ElevenLabs,HITL,tool calling,WhatsApp,voice AI',
       images: ['https://santifer.io/jacobo/og-jacobo-agent.webp'],
       about: [
-        { '@type': 'SoftwareApplication', name: 'n8n', url: 'https://n8n.io', applicationCategory: 'Workflow Automation' },
-        { '@type': 'SoftwareApplication', name: 'ElevenLabs', url: 'https://elevenlabs.io', applicationCategory: 'Voice AI' },
+        { '@type': 'SoftwareApplication', name: 'n8n', sameAs: 'https://www.wikidata.org/wiki/Q130305687', url: 'https://n8n.io', applicationCategory: 'Workflow Automation' },
+        { '@type': 'SoftwareApplication', name: 'ElevenLabs', sameAs: 'https://www.wikidata.org/wiki/Q116798355', url: 'https://elevenlabs.io', applicationCategory: 'Voice AI' },
         { '@type': 'Thing', name: 'Multi-Agent Orchestration' },
         { '@type': 'Thing', name: 'AI Customer Service' },
       ],
@@ -217,11 +217,11 @@ export const articleRegistry: ArticleConfig[] = [
         { '@type': 'WebPage', name: 'OpenRouter API Documentation', url: 'https://openrouter.ai/docs' },
       ],
       mentions: [
-        { '@type': 'SoftwareApplication', name: 'n8n', url: 'https://n8n.io' },
-        { '@type': 'SoftwareApplication', name: 'ElevenLabs', url: 'https://elevenlabs.io' },
+        { '@type': 'SoftwareApplication', name: 'n8n', sameAs: 'https://www.wikidata.org/wiki/Q130305687', url: 'https://n8n.io' },
+        { '@type': 'SoftwareApplication', name: 'ElevenLabs', sameAs: 'https://www.wikidata.org/wiki/Q116798355', url: 'https://elevenlabs.io' },
         { '@type': 'SoftwareApplication', name: 'OpenRouter', url: 'https://openrouter.ai' },
         { '@type': 'SoftwareApplication', name: 'WATI', url: 'https://www.wati.io' },
-        { '@type': 'SoftwareApplication', name: 'Airtable', url: 'https://airtable.com' },
+        { '@type': 'SoftwareApplication', name: 'Airtable', sameAs: 'https://www.wikidata.org/wiki/Q23016614', url: 'https://airtable.com' },
       ],
       discussionUrl: 'https://www.reddit.com/r/n8n/comments/1sc3i30/i_built_a_whatsapp_voice_ai_agent_in_n8n_that/',
     },
@@ -286,8 +286,8 @@ export const articleRegistry: ArticleConfig[] = [
       articleTags: 'Business OS,Airtable,n8n,ERP,CRM,automation,phone repair',
       images: ['https://santifer.io/business-os/og-business-os.webp'],
       about: [
-        { '@type': 'SoftwareApplication', name: 'Airtable', url: 'https://airtable.com', applicationCategory: 'Database Platform' },
-        { '@type': 'SoftwareApplication', name: 'n8n', url: 'https://n8n.io', applicationCategory: 'Workflow Automation' },
+        { '@type': 'SoftwareApplication', name: 'Airtable', sameAs: 'https://www.wikidata.org/wiki/Q23016614', url: 'https://airtable.com', applicationCategory: 'Database Platform' },
+        { '@type': 'SoftwareApplication', name: 'n8n', sameAs: 'https://www.wikidata.org/wiki/Q130305687', url: 'https://n8n.io', applicationCategory: 'Workflow Automation' },
         { '@type': 'Thing', name: 'Enterprise Resource Planning' },
         { '@type': 'Thing', name: 'Business Process Automation' },
       ],
@@ -300,8 +300,8 @@ export const articleRegistry: ArticleConfig[] = [
         { '@type': 'WebPage', name: 'Make.com Automation Platform', url: 'https://www.make.com' },
       ],
       mentions: [
-        { '@type': 'SoftwareApplication', name: 'Airtable', url: 'https://airtable.com' },
-        { '@type': 'SoftwareApplication', name: 'n8n', url: 'https://n8n.io' },
+        { '@type': 'SoftwareApplication', name: 'Airtable', sameAs: 'https://www.wikidata.org/wiki/Q23016614', url: 'https://airtable.com' },
+        { '@type': 'SoftwareApplication', name: 'n8n', sameAs: 'https://www.wikidata.org/wiki/Q130305687', url: 'https://n8n.io' },
       ],
     },
   },
@@ -381,7 +381,7 @@ export const articleRegistry: ArticleConfig[] = [
       articleTags: 'programmatic SEO,Airtable,Astro,DataForSEO,crawl budget,phone repair,ERP,local SEO',
       images: ['https://santifer.io/pseo/og-programmatic-seo.png'],
       about: [
-        { '@type': 'SoftwareApplication', name: 'Airtable', url: 'https://airtable.com', applicationCategory: 'Database Platform' },
+        { '@type': 'SoftwareApplication', name: 'Airtable', sameAs: 'https://www.wikidata.org/wiki/Q23016614', url: 'https://airtable.com', applicationCategory: 'Database Platform' },
         { '@type': 'SoftwareApplication', name: 'Astro', url: 'https://astro.build', applicationCategory: 'Static Site Generator' },
         { '@type': 'SoftwareApplication', name: 'DataForSEO', url: 'https://dataforseo.com', applicationCategory: 'SEO Data API' },
       ],
@@ -394,7 +394,7 @@ export const articleRegistry: ArticleConfig[] = [
         { '@type': 'TechArticle', name: 'Airtable Web API Reference', url: 'https://airtable.com/developers/web/api/introduction' },
       ],
       mentions: [
-        { '@type': 'SoftwareApplication', name: 'Airtable', url: 'https://airtable.com' },
+        { '@type': 'SoftwareApplication', name: 'Airtable', sameAs: 'https://www.wikidata.org/wiki/Q23016614', url: 'https://airtable.com' },
         { '@type': 'SoftwareApplication', name: 'Astro', url: 'https://astro.build' },
         { '@type': 'SoftwareApplication', name: 'DataForSEO', url: 'https://dataforseo.com' },
       ],
@@ -532,7 +532,7 @@ export const articleRegistry: ArticleConfig[] = [
     component: () => import('../CareerOps.tsx'),
     seoMeta: {
       datePublished: '2026-03-17',
-      dateModified: '2026-07-10',
+      dateModified: '2026-07-11',
       keywords: ['ai job search', 'ai job search tool', 'ai powered job search', 'ai resume builder', 'ai resume', 'multi agent system', 'multi agent orchestration', 'automated job application', 'ATS-optimized resume', 'Claude Code', 'batch processing', 'HITL', 'job search automation', 'career-ops', 'ai auto apply', 'agente ia', 'crear cv con ia', 'automatizacion con ia', 'sistema multiagente', 'busqueda de empleo ia'],
       articleType: 'TechArticle',
       articleTags: 'multi-agent,job search,Claude Code,ATS,batch processing,HITL,automation,Playwright',
@@ -568,7 +568,7 @@ export const articleRegistry: ArticleConfig[] = [
         { '@type': 'SoftwareApplication', name: 'Claude Code', url: 'https://claude.ai' },
         { '@type': 'SoftwareApplication', name: 'Playwright', url: 'https://playwright.dev' },
         { '@type': 'SoftwareApplication', name: 'Puppeteer', url: 'https://pptr.dev' },
-        { '@type': 'SoftwareApplication', name: 'Node.js', url: 'https://nodejs.org' },
+        { '@type': 'SoftwareApplication', name: 'Node.js', sameAs: 'https://www.wikidata.org/wiki/Q756100', url: 'https://nodejs.org' },
       ],
       discussionUrl: 'https://www.reddit.com/r/SideProject/comments/1rw1lg4/i_automated_my_job_search_with_ai_agents_516/',
       relatedLink: 'https://dev.to/santifer/i-built-a-multi-agent-job-search-system-with-claude-code-631-evaluations-12-modes-2cd0',
@@ -635,19 +635,19 @@ export const articleRegistry: ArticleConfig[] = [
     component: () => import('../AiAgentFleet.tsx'),
     seoMeta: {
       datePublished: '2026-07-10',
-      dateModified: '2026-07-10',
+      dateModified: '2026-07-11',
       keywords: ['agentic maintenance', 'ai agent fleet', 'maintain open source with ai agents', 'multi-agent code review', 'ai-native sdlc', 'context engineering', 'claude code agents', 'open source maintainer', 'ai agents software maintenance', 'multi-agent orchestration', 'orchestrator agent pattern', 'ephemeral verifier', 'flota de agentes ia', 'mantener open source con agentes ia', 'agentes claude code'],
       articleType: 'TechArticle',
       articleTags: 'ai agents,multi-agent,open source,maintainer,Claude Code,sdlc,context engineering',
       images: ['https://santifer.io/ai-agent-fleet/og-ai-agent-fleet.webp'],
       about: [
         { '@type': 'DefinedTerm', name: 'agentic maintenance', description: 'Gated, evidence-based upkeep of a living codebase, sustained by a fleet of AI agents under human direction.', url: 'https://santifer.io/ai-agent-fleet#core-concepts' },
-        { '@type': 'SoftwareApplication', name: 'career-ops', url: 'https://github.com/santifer/career-ops' },
+        { '@type': 'SoftwareApplication', name: 'career-ops', sameAs: 'https://www.wikidata.org/wiki/Q139007988', url: 'https://github.com/santifer/career-ops' },
         { '@type': 'Thing', name: 'AI-assisted software maintenance' },
-        { '@type': 'Thing', name: 'Multi-agent systems' },
+        { '@type': 'Thing', name: 'Multi-agent systems', sameAs: 'https://www.wikidata.org/wiki/Q529909' },
       ],
       citation: [
-        { '@type': 'SoftwareSourceCode', name: 'career-ops', url: 'https://github.com/santifer/career-ops' },
+        { '@type': 'SoftwareSourceCode', name: 'career-ops', sameAs: 'https://www.wikidata.org/wiki/Q139007988', url: 'https://github.com/santifer/career-ops' },
         { '@type': 'SocialMediaPosting', name: 'Built this to find my own job. Open sourced it. 12K+ stars in two days. — @santifer on X', url: 'https://x.com/santifer/status/2041403685696053741' },
         { '@type': 'WebPage', name: 'DORA 2025 State of AI-assisted Software Development', url: 'https://dora.dev/dora-report-2025/' },
         { '@type': 'WebPage', name: 'AGENTS.md — an open standard for agent rules files', url: 'https://agents.md/' },
@@ -656,8 +656,8 @@ export const articleRegistry: ArticleConfig[] = [
       ],
       mentions: [
         { '@type': 'SoftwareApplication', name: 'Claude Code', url: 'https://claude.com/claude-code' },
-        { '@type': 'SoftwareApplication', name: 'tmux', url: 'https://github.com/tmux/tmux' },
-        { '@type': 'SoftwareApplication', name: 'Git', url: 'https://git-scm.com' },
+        { '@type': 'SoftwareApplication', name: 'tmux', sameAs: 'https://www.wikidata.org/wiki/Q1935361', url: 'https://github.com/tmux/tmux' },
+        { '@type': 'SoftwareApplication', name: 'Git', sameAs: 'https://www.wikidata.org/wiki/Q186055', url: 'https://git-scm.com' },
         { '@type': 'SoftwareApplication', name: 'GitHub Actions', url: 'https://github.com/features/actions' },
       ],
       discussionUrl: 'https://discord.gg/8pRpHETxa4',

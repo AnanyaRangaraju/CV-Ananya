@@ -532,7 +532,7 @@ export const articleRegistry: ArticleConfig[] = [
     component: () => import('../CareerOps.tsx'),
     seoMeta: {
       datePublished: '2026-03-17',
-      dateModified: '2026-07-11',
+      dateModified: '2026-07-13',
       keywords: ['ai job search', 'ai job search tool', 'ai powered job search', 'ai resume builder', 'ai resume', 'multi agent system', 'multi agent orchestration', 'automated job application', 'ATS-optimized resume', 'Claude Code', 'batch processing', 'HITL', 'job search automation', 'career-ops', 'ai auto apply', 'agente ia', 'crear cv con ia', 'automatizacion con ia', 'sistema multiagente', 'busqueda de empleo ia'],
       articleType: 'TechArticle',
       articleTags: 'multi-agent,job search,Claude Code,ATS,batch processing,HITL,automation,Playwright',
@@ -605,6 +605,7 @@ export const articleRegistry: ArticleConfig[] = [
         'limits': 'Dónde Se Rompe',
         'org-bridge': 'De Repo a Organización',
         'core-concepts': 'Conceptos Clave',
+        'related': 'Trabajo Relacionado',
         'lessons': 'Lecciones',
         'faq': 'FAQ',
       },
@@ -623,6 +624,7 @@ export const articleRegistry: ArticleConfig[] = [
         'limits': 'Where It Breaks',
         'org-bridge': 'Repo to Org',
         'core-concepts': 'Core Concepts',
+        'related': 'Related Work',
         'lessons': 'Lessons',
         'faq': 'FAQ',
       },
@@ -635,7 +637,7 @@ export const articleRegistry: ArticleConfig[] = [
     component: () => import('../AiAgentFleet.tsx'),
     seoMeta: {
       datePublished: '2026-07-10',
-      dateModified: '2026-07-11',
+      dateModified: '2026-07-13',
       keywords: ['agentic maintenance', 'ai agent fleet', 'maintain open source with ai agents', 'multi-agent code review', 'ai-native sdlc', 'context engineering', 'claude code agents', 'open source maintainer', 'ai agents software maintenance', 'multi-agent orchestration', 'orchestrator agent pattern', 'ephemeral verifier', 'flota de agentes ia', 'mantener open source con agentes ia', 'agentes claude code'],
       articleType: 'TechArticle',
       articleTags: 'ai agents,multi-agent,open source,maintainer,Claude Code,sdlc,context engineering',

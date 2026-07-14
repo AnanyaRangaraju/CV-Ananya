@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { type AiAgentFleetLang as Lang, aiAgentFleetContent } from './ai-agent-fleet-i18n'
 import { buildJsonLdFromRegistry } from './articles/json-ld'
 import { useArticleSeo } from './articles/use-article-seo'
@@ -35,7 +36,7 @@ export default function AiAgentFleet({ lang = 'en' }: { lang?: Lang }) {
     description: t.seo.description,
     image: 'https://santifer.io/ai-agent-fleet/og-ai-agent-fleet.webp',
     publishedTime: '2026-07-10',
-    modifiedTime: '2026-07-11',
+    modifiedTime: '2026-07-13',
     articleTags: 'ai agents,multi-agent,open source,maintainer,Claude Code,sdlc,context engineering',
     jsonLd: buildJsonLd(lang),
     xDefaultSlug: 'flota-agentes-ia',
@@ -128,6 +129,11 @@ export default function AiAgentFleet({ lang = 'en' }: { lang?: Lang }) {
         <DataTable headers={s.fleet.table.headers} rows={s.fleet.table.rows} />
         <Prose>{s.fleet.loops}</Prose>
         <Prose>{s.fleet.split}</Prose>
+        <Prose>
+          {s.fleet.priorArt.pre}
+          <Link to={s.fleet.priorArt.href} className="text-primary hover:underline">{s.fleet.priorArt.linkLabel}</Link>
+          {s.fleet.priorArt.post}
+        </Prose>
 
         {/* ================================================================ */}
         {/*  THE GATES                                                       */}
@@ -327,6 +333,18 @@ export default function AiAgentFleet({ lang = 'en' }: { lang?: Lang }) {
         {/*  FAQ                                                             */}
         {/* ================================================================ */}
         <FaqSection heading={t.faq.heading} items={t.faq.items} />
+
+        {/* ================================================================ */}
+        {/*  RELATED WORK                                                    */}
+        {/* ================================================================ */}
+        <H2 id="related">{s.relatedWork.heading}</H2>
+        <div className="grid sm:grid-cols-2 gap-3 mb-8">
+          {s.relatedWork.items.map(link => (
+            <Link key={link.href} to={link.href} className="block p-4 rounded-lg bg-card border border-border hover:border-primary/40 transition-colors">
+              <p className="text-sm font-medium text-primary">{link.text}</p>
+            </Link>
+          ))}
+        </div>
 
         {/* ================================================================ */}
         {/*  CTA                                                             */}

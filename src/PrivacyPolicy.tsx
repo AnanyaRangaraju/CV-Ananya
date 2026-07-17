@@ -44,7 +44,7 @@ const content = {
       {
         heading: 'Contacto',
         body: 'Para cualquier consulta sobre privacidad, puedes escribir a:',
-        email: 'hola@santifer.io',
+        email: 'hi@santifer.io',
       },
     ],
     backHome: 'Volver al inicio',
@@ -90,7 +90,7 @@ const content = {
       {
         heading: 'Contact',
         body: 'For any privacy-related inquiries, you can write to:',
-        email: 'hola@santifer.io',
+        email: 'hi@santifer.io',
       },
     ],
     backHome: 'Back to home',

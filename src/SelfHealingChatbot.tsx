@@ -516,7 +516,7 @@ export default function SelfHealingChatbot({ lang = 'en' }: { lang?: Lang }) {
           ctaHref="https://linkedin.com/in/santifer"
           external
           secondaryLabel={t.cta.labelSecondary}
-          secondaryHref="mailto:hola@santifer.io"
+          secondaryHref="mailto:hi@santifer.io"
         />
       </article>
 

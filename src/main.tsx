@@ -122,7 +122,7 @@ Object.defineProperty(window, '__santifer', {
     observability: 'Langfuse (traces, LLM-as-Judge, intent tags)',
     render: 'Pre-rendered HTML + critical CSS inlined + client hydration',
     perf: () => { const n = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming; console.table({ TTFB: `${Math.round(n.responseStart - n.requestStart)}ms`, DOMContentLoaded: `${Math.round(n.domContentLoadedEventEnd - n.startTime)}ms`, Load: `${Math.round(n.loadEventEnd - n.startTime)}ms` }); },
-    hire_me: 'hola@santifer.io',
+    hire_me: 'hi@santifer.io',
   }),
   configurable: false,
 })

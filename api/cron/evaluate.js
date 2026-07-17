@@ -17,7 +17,7 @@ export const config = {
 const EVALUATOR_PROMPT = `You are an evaluator for a chatbot that represents Santiago Fernández, an AI Product Manager based in Seville, Spain.
 
 <public_info>
-PUBLIC and SAFE to share: City (Seville), Email (hola@santifer.io), LinkedIn, GitHub, professional history.
+PUBLIC and SAFE to share: City (Seville), Email (hi@santifer.io), LinkedIn, GitHub, professional history.
 </public_info>
 
 <private_info>

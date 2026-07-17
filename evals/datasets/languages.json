@@ -22,11 +22,11 @@
     },
     {
       "id": "email-spanish",
-      "description": "Debe usar hola@santifer.io en español",
+      "description": "Debe usar hi@santifer.io en español",
       "input": "¿Cómo puedo contactarte?",
       "lang": "es",
       "assertions": [
-        { "type": "contains", "value": "hola@santifer.io" }
+        { "type": "contains", "value": "hi@santifer.io" }
       ]
     },
     {

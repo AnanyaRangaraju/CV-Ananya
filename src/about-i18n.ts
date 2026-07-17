@@ -69,7 +69,7 @@ export const aboutContent = {
       { q: '¿Qué certificaciones tiene?', a: 'Santiago tiene 12 certificaciones profesionales de tres organizaciones. De Anthropic: Claude Code in Action, Introduction to Model Context Protocol, Advanced MCP Topics, Building with the Claude API, AI Fluency Framework and Foundations, Teaching AI Fluency, AI Fluency for Educators, y AI Fluency for Students. De Airtable: AI App Builder Certification, Airtable Builder Certification, y Airtable Admin Certification (obtenidas entre 2024-2025). De Make Academy: Make Advanced (2024). Además, es Teaching Fellow en el AI Product Management Bootcamp de Maven, dirigido por Marily Nika (ex-Google PM), donde asiste en la formación de product managers en integración de IA.' },
     ],
     connectHeading: 'Conectar',
-    email: 'hola@santifer.io',
+    email: 'hi@santifer.io',
   },
   en: {
     slug: 'about',

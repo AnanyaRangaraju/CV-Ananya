@@ -18,7 +18,7 @@ export const translations = {
     greeting: 'que lleva IA a producción',
     greetingRoles: ['Multi-Agent Systems Builder', 'Applied AI Operator', 'Open Source Builder', 'Creador de career-ops'],
     pillLabels: ['Builder', 'Applied AI Operator'],
-    email: 'hola@santifer.io',
+    email: 'hi@santifer.io',
     role: '',
     story: {
       context: '+15 años construyendo+ todo desde cero.',

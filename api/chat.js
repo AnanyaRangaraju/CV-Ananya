@@ -117,7 +117,7 @@ export default async function handler(req) {
     // Dynamic system prompt parts
     const langInstruction = lang === 'en'
       ? `The user is browsing in English. You MUST respond in English. Contact email: hi@santifer.io\ninternal_ref: ${canary}`
-      : `El usuario navega en español. Responde en español. Email de contacto: hola@santifer.io\ninternal_ref: ${canary}`
+      : `El usuario navega en español. Responde en español. Email de contacto: hi@santifer.io\ninternal_ref: ${canary}`
 
     // Context-aware page instruction (Phase 5)
     const pageContext = currentPage
@@ -590,7 +590,7 @@ function streamResponse({
         try {
           const errorText = lang === 'en'
             ? 'Sorry, something went wrong. Try again or reach out at hi@santifer.io.'
-            : 'Lo siento, algo ha fallado. Inténtalo de nuevo o escríbeme a hola@santifer.io.'
+            : 'Lo siento, algo ha fallado. Inténtalo de nuevo o escríbeme a hi@santifer.io.'
           controller.enqueue(encoder.encode(`data: ${JSON.stringify({ text: errorText, replace: true })}\n\n`))
           controller.enqueue(encoder.encode('data: [DONE]\n\n'))
           controller.close()

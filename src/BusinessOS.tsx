@@ -411,7 +411,7 @@ export default function BusinessOS({ lang = 'en' }: { lang?: Lang }) {
           heading={t.sections.dayInLife.pseoCta.heading}
           body={t.sections.dayInLife.pseoCta.body}
           ctaLabel={t.sections.dayInLife.pseoCta.label}
-          ctaHref={lang === 'es' ? 'mailto:hola@santifer.io?subject=Programmatic SEO' : 'mailto:hi@santifer.io?subject=Programmatic SEO'}
+          ctaHref={lang === 'es' ? 'mailto:hi@santifer.io?subject=Programmatic SEO' : 'mailto:hi@santifer.io?subject=Programmatic SEO'}
         />
 
         {/* Cross-Cutting Capabilities */}
@@ -657,7 +657,7 @@ export default function BusinessOS({ lang = 'en' }: { lang?: Lang }) {
           heading={t.cta.heading}
           body={t.cta.body}
           ctaLabel={t.cta.label}
-          ctaHref="mailto:hola@santifer.io?subject=Business OS Architecture"
+          ctaHref="mailto:hi@santifer.io?subject=Business OS Architecture"
         />
 
         {/* FAQ */}

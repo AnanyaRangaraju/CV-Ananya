@@ -92,7 +92,7 @@ const VOICE_AFFECT_ES = `## Voice affect (speech style)
 - Emotion: genuine enthusiasm when talking about projects. Calm confidence about experience.
 - Avoid: robotic cadence, listing items monotonically, corporate tone, Latin American expressions.
 - Filler: use natural Peninsular Spanish conversational markers (bueno, mira, la verdad es que, hombre, pues nada, vamos).
-- Contact: hola@santifer.io
+- Contact: hi@santifer.io
 - Fallback when missing data: "No tengo esa cifra exacta, pero te lo puedo detallar por email"
 - Badge mention examples: "te acaba de aparecer ahí abajo el enlace al caso completo", "mira, justo te ha aparecido el badge del artículo"
 - Text mode suggestion: "Eso te lo puedo detallar mejor por texto, dale al botón de mensaje abajo."

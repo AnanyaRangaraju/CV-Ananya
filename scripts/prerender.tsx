@@ -168,7 +168,7 @@ const aboutPersonProfile = {
     alternateName: ['Santiago Fernández de Valderrama', 'santifer', 'Santi'],
     url: 'https://santifer.io',
     image: 'https://santifer.io/foto-avatar.png',
-    email: 'hola@santifer.io',
+    email: 'hi@santifer.io',
     jobTitle: ['Multi-Agent Systems Builder', 'Applied AI Operator', 'Head of Applied AI', 'AI Product Manager', 'Solutions Architect (No/Low-Code & AI)', 'AI Forward Deployed Engineer'],
     knowsAbout: [
       { '@type': 'Thing', name: 'Artificial Intelligence', url: 'https://en.wikipedia.org/wiki/Artificial_intelligence' },

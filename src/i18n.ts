@@ -3,13 +3,13 @@ export const seo = {
     title:
       'santifer | Applied AI Operator · Builder of Career-Ops',
     description:
-      'Multi-agent systems builder. Applied AI Operator con 2 case studies en producción. Creador de Career-Ops (60.1K+ ⭐). 16 años llevando IA a producción.',
+      'Multi-agent systems builder. Applied AI Operator con 2 case studies en producción. Creador de Career-Ops (60.3K+ ⭐). 16 años llevando IA a producción.',
   },
   en: {
     title:
       'santifer | Applied AI Operator · Builder of Career-Ops',
     description:
-      'Multi-agent systems builder. Applied AI Operator with 2 production case studies live. Creator of Career-Ops (60.1K+ ⭐). 16 years shipping AI at scale.',
+      'Multi-agent systems builder. Applied AI Operator with 2 production case studies live. Creator of Career-Ops (60.3K+ ⭐). 16 years shipping AI at scale.',
   },
 };
 
@@ -190,7 +190,7 @@ export const translations = {
           tech: ['Claude Code', 'Batch Architecture', 'WebSearch', 'HITL Design'],
           link: 'career-ops.org',
           linkUrl: 'https://career-ops.org?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '60.1K',
+          stars: '60.3K',
           forks: '11.9K',
           caseStudyUrl: '/career-ops',
           caseStudyLabel: 'Leer: AI Job Search multi-agente',
@@ -203,7 +203,7 @@ export const translations = {
           tech: ['Next.js 16', 'React 19', 'Tailwind v4', 'GitHub GraphQL', 'GitHub Actions', 'Web Audio', 'Polar', 'Vercel'],
           link: 'warpchart.dev',
           linkUrl: 'https://warpchart.dev?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '9',
+          stars: '10',
         },
         {
           title: 'santifer.io',
@@ -212,8 +212,8 @@ export const translations = {
           desc: 'CV interactivo con SDLC aumentado con IA. Construido con **Claudeable**, monitorizado con **Claude Pulse**, animaciones debuggeadas con **Claude Eye**. Prerender SSR, i18n bilingüe y SEO automatizado.',
           tech: ['React 19', 'TypeScript', 'Tailwind', 'Vite', 'Motion', 'Vercel'],
           link: 'github.com/santifer/cv-santiago',
-          stars: '746',
-          forks: '260',
+          stars: '752',
+          forks: '261',
         },
         {
           title: 'Self-Healing Chatbot',
@@ -254,7 +254,7 @@ export const translations = {
           desc: 'Metaproyecto de Claude Code para desarrollo web profesional. Skills personalizados, templates y MCPs preconfigurados para crear webs al nivel de Lovable.',
           tech: ['Claude Code', 'React', 'Tailwind', 'shadcn/ui', 'MCP'],
           link: 'github.com/santifer/claudeable',
-          stars: '23',
+          stars: '24',
           isDependency: true,
           dependencyRole: 'framework',
         },
@@ -429,7 +429,7 @@ export const translations = {
           badge: '~90% autoservicio',
           github: 'santifer/jacobo-workflows',
           stars: '156',
-          forks: '50',
+          forks: '49',
           desc: 'Voz (ElevenLabs) + WhatsApp (n8n / WATI) + Aircall cloud PBX. Orquestación de sub-agentes especializados vía tool calling.',
           items: [
             {
@@ -593,7 +593,7 @@ export const translations = {
       replies: '107',
       retweets: '499',
       likes: '3.9K',
-      views: '553.5K',
+      views: '553.7K',
       cta: 'Ver en X',
       url: 'https://x.com/santifer/status/2041403685696053741',
     },
@@ -1064,7 +1064,7 @@ export const translations = {
           tech: ['Claude Code', 'Batch Architecture', 'WebSearch', 'HITL Design'],
           link: 'career-ops.org',
           linkUrl: 'https://career-ops.org?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '60.1K',
+          stars: '60.3K',
           forks: '11.9K',
           caseStudyUrl: '/career-ops-system',
           caseStudyLabel: 'Case Study: AI Job Search',
@@ -1077,7 +1077,7 @@ export const translations = {
           tech: ['Next.js 16', 'React 19', 'Tailwind v4', 'GitHub GraphQL', 'GitHub Actions', 'Web Audio', 'Polar', 'Vercel'],
           link: 'warpchart.dev',
           linkUrl: 'https://warpchart.dev?utm_source=santifer.io&utm_medium=projects-grid&utm_campaign=home',
-          stars: '9',
+          stars: '10',
         },
         {
           title: 'santifer.io',
@@ -1086,8 +1086,8 @@ export const translations = {
           desc: 'Interactive CV with AI-augmented SDLC. Built with **Claudeable**, monitored with **Claude Pulse**, animations debugged with **Claude Eye**. SSR prerender, bilingual i18n, and automated SEO.',
           tech: ['React 19', 'TypeScript', 'Tailwind', 'Vite', 'Motion', 'Vercel'],
           link: 'github.com/santifer/cv-santiago',
-          stars: '746',
-          forks: '260',
+          stars: '752',
+          forks: '261',
         },
         {
           title: 'Self-Healing Chatbot',
@@ -1128,7 +1128,7 @@ export const translations = {
           desc: 'Claude Code meta-project for professional web development. Custom skills, templates and pre-configured MCPs to build Lovable-quality websites.',
           tech: ['Claude Code', 'React', 'Tailwind', 'shadcn/ui', 'MCP'],
           link: 'github.com/santifer/claudeable',
-          stars: '23',
+          stars: '24',
           isDependency: true,
           dependencyRole: 'framework',
         },
@@ -1299,7 +1299,7 @@ export const translations = {
           badge: '~90% self-service',
           github: 'santifer/jacobo-workflows',
           stars: '156',
-          forks: '50',
+          forks: '49',
           desc: 'Voice (ElevenLabs) + WhatsApp (n8n / WATI) + Aircall cloud PBX. Sub-agent orchestration via tool calling.',
           items: [
             {
@@ -1463,7 +1463,7 @@ export const translations = {
       replies: '107',
       retweets: '499',
       likes: '3.9K',
-      views: '553.5K',
+      views: '553.7K',
       cta: 'View on X',
       url: 'https://x.com/santifer/status/2041403685696053741',
     },

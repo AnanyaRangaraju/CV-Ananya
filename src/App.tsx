@@ -1546,7 +1546,7 @@ function App() {
                   <Github className="w-3.5 h-3.5" />
                   <span>career-ops</span>
                   <Star className="w-3 h-3 text-yellow-500" />
-                  {/* hero-stats:career-ops:stars */}<span className="font-medium">60.1K</span>
+                  {/* hero-stats:career-ops:stars */}<span className="font-medium">60.3K</span>
                   <GitFork className="w-3 h-3" />
                   {/* hero-stats:career-ops:forks */}<span>11.9K</span>
                 </Link>
@@ -3060,7 +3060,7 @@ function App() {
               <a
                 href="https://linkedin.com/in/santifer/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 transition-colors duration-200 hover:bg-primary/5"
               >
                 <LinkedInLogo className="w-4 h-4 text-[hsl(var(--linkedin))]" />

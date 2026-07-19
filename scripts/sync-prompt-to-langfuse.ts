@@ -85,9 +85,10 @@ async function main() {
 
   if (!response.ok) {
     const error = await response.text()
-    console.error(`❌ Langfuse API error: ${response.status}`)
+    console.error(`❌ Langfuse API error (non-blocking): ${response.status}`)
     console.error(error)
-    process.exit(1)
+    console.error('   Build will continue; prompt sync can be retried later.')
+    return
   }
 
   const result = await response.json()

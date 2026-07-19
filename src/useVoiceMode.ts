@@ -392,7 +392,7 @@ export function useVoiceMode() {
         if (history.length > 0) {
           const historyText = history
             .filter(m => m.content && m.content.trim())
-            .map(m => `${m.role === 'user' ? 'User' : 'Santiago'}: ${m.content}`)
+            .map(m => `${m.role === 'user' ? 'User' : 'Ananya'}: ${m.content}`)
             .join('\n');
 
           if (historyText) {
@@ -714,7 +714,7 @@ export function useVoiceMode() {
         item: {
           type: 'function_call_output',
           call_id: callId,
-          output: 'Search temporarily unavailable — answer from your general knowledge.',
+          output: 'Search temporarily unavailable, answer from your general knowledge.',
         },
       }));
       ws.send(JSON.stringify({ type: 'response.create' }));

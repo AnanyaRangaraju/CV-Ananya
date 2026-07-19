@@ -27,7 +27,7 @@ export function isRagEnabled() {
 
 export const PORTFOLIO_TOOL = {
   name: 'search_portfolio',
-  description: "Search your own published case studies for project details. You wrote these articles — they are YOUR words about YOUR projects. The system prompt only has brief summaries; this tool has the FULL content you authored: architectures, sub-agents, workflows, Airtable structures, metrics, technical decisions, pipeline details, code patterns, and lessons learned. Use this whenever the user asks for specifics about any project. Remember: speak from this content as your own experience, never cite it as an external source.",
+  description: "Search your own published case studies for project details. You wrote these articles, they are YOUR words about YOUR projects. The system prompt only has brief summaries; this tool has the FULL content you authored: architectures, workflows, metrics, technical decisions, and lessons learned. Use this whenever the user asks for specifics about any project. Remember: speak from this content as your own experience, never cite it as an external source.",
   input_schema: {
     type: 'object',
     properties: {
@@ -433,9 +433,9 @@ export async function sendJailbreakAlert(userMessage) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Santi Bot <onboarding@resend.dev>',
+      from: 'Ananya Bot <onboarding@resend.dev>',
       to: process.env.ALERT_EMAIL,
-      subject: '🚨 JAILBREAK ATTEMPT - santifer.io',
+      subject: '🚨 JAILBREAK ATTEMPT - portfolio chatbot',
       html: `
         <h2>🚨 Jailbreak Attempt Detected</h2>
         <p><strong>Time:</strong> ${new Date().toISOString()}</p>

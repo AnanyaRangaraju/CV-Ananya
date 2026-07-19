@@ -52,12 +52,12 @@ const content = {
   en: {
     title: 'Privacy Policy',
     lastUpdated: 'Last updated: March 15, 2026',
-    intro: 'This policy describes how data is collected and used when you visit santifer.io.',
+    intro: 'This policy describes how data is collected and used when you visit this site.',
     sections: [
       {
         heading: 'What data is collected',
         items: [
-          'Chatbot messages: when you interact with the "Santi" chatbot, messages are processed to generate responses. No personally identifiable information is requested or stored.',
+          "Chatbot messages: when you interact with Ananya's AI chatbot, messages are processed to generate responses. No personally identifiable information is requested or stored.",
           'Voice mode audio: if you activate voice mode, audio is processed in real time for conversation and is not permanently stored.',
           'Usage analytics: anonymous browsing data (pages visited, duration, device) is collected to improve the site.',
         ],
@@ -65,7 +65,7 @@ const content = {
       {
         heading: 'How data is used',
         items: [
-          "Chatbot messages are used exclusively to generate contextual responses about Santiago's professional experience.",
+          "Chatbot messages are used exclusively to generate contextual responses about Ananya's professional experience.",
           'Conversation traces are stored in anonymized form to improve response quality and detect misuse attempts.',
           'Analytics data is used to understand usage patterns and improve site performance.',
         ],
@@ -90,7 +90,7 @@ const content = {
       {
         heading: 'Contact',
         body: 'For any privacy-related inquiries, you can write to:',
-        email: 'hi@santifer.io',
+        email: 'ananya.rangaraju@gmail.com',
       },
     ],
     backHome: 'Back to home',
@@ -108,7 +108,7 @@ export default function PrivacyPolicy({ lang = 'es' }: { lang?: 'es' | 'en' }) {
   const t = content[lang]
 
   useEffect(() => {
-    document.title = `${t.title} | santifer.io`
+    document.title = `${t.title} | Ananya Rangaraju`
 
     // noindex
     let robots = document.querySelector('meta[name="robots"]') as HTMLMetaElement
@@ -121,13 +121,11 @@ export default function PrivacyPolicy({ lang = 'es' }: { lang?: 'es' | 'en' }) {
 
     // Fix canonical (SPA fallback serves homepage canonical — override it)
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement
-    if (canonical) canonical.href = `https://santifer.io/${lang === 'es' ? 'privacidad' : 'privacy'}`
+    if (canonical) canonical.href = `https://cv-ananya.vercel.app/privacy`
 
     // Fix meta description
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement
-    if (desc) desc.content = lang === 'es'
-      ? 'Politica de privacidad de santifer.io. Como se recopilan y utilizan los datos del chatbot y la web.'
-      : 'Privacy policy for santifer.io. How chatbot and website data is collected and used.'
+    if (desc) desc.content = 'Privacy policy for this site. How chatbot and website data is collected and used.'
 
     return () => {
       robots.content = 'index, follow'

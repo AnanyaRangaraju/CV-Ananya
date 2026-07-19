@@ -31,6 +31,26 @@ function getLangfuse() {
 }
 
 // ---------------------------------------------------------------------------
+// Graceful fallback for errors that happen before streaming starts
+// ---------------------------------------------------------------------------
+
+function isCreditError(error) {
+  return error?.status === 400 && /credit balance/i.test(error?.message || '')
+}
+
+function sseTextResponse(text) {
+  const encoder = new TextEncoder()
+  const body = encoder.encode(`data: ${JSON.stringify({ text, replace: true })}\n\ndata: [DONE]\n\n`)
+  return new Response(body, {
+    headers: {
+      'Content-Type': 'text/event-stream',
+      'Cache-Control': 'no-cache',
+      'Connection': 'keep-alive',
+    },
+  })
+}
+
+// ---------------------------------------------------------------------------
 // Handler
 // ---------------------------------------------------------------------------
 
@@ -284,10 +304,12 @@ export default async function handler(req) {
     console.error('Chat API error:', error)
     trace?.update({ metadata: { error: error.message } })
     if (langfuse) waitUntil(langfuse.flushAsync())
-    return new Response(JSON.stringify({ error: 'Error processing request' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    })
+
+    if (isCreditError(error)) {
+      return sseTextResponse("I'm out of API credits right now, sorry about that. Reach out directly at [ananya.rangaraju@gmail.com](mailto:ananya.rangaraju@gmail.com) and I'll get back to you.")
+    }
+
+    return sseTextResponse('Sorry, something went wrong. Try again or reach out at [ananya.rangaraju@gmail.com](mailto:ananya.rangaraju@gmail.com).')
   }
 }
 

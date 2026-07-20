@@ -895,20 +895,20 @@ export const translations = {
     email: 'ananya.rangaraju@gmail.com',
     role: '',
     story: {
-      context: "+2 years+ shipping AI in production, now building what's next at Dartmouth.",
-      reflections: ['It shipped. It held at scale.', "...so what's next?"],
+      context: "+Two years+ shipping AI in production, now building what's next at Dartmouth.",
+      reflections: ['I like building things that work.', 'So I build the part that proves it.'],
       hookParagraphs: [
-        ['One day, I watched an AI agent make decisions a million times a month.'],
+        ['I like building AI products, but the part of the work I care about most is evaluation.'],
         [
-          "What stuck with me wasn't the launch.",
-          'It was *whether it could be trusted.*',
+          "Not whether something works in a demo.",
+          'Whether it *can be trusted* once real people depend on it.',
         ],
       ],
       why: 'At Oracle Health I owned observability for clinical AI agents used across 100+ client deployments: instrumenting failure patterns across 100M+ rows, building validation frameworks that cut downstream errors by 25%, and translating agent behavior into decisions non-technical stakeholders could act on.',
       seeking: [
-        'This still feels like day one.',
-        'Bigger systems. Harder reliability problems.',
-        "Ready for what's next.",
+        'What motivates me is building things that scale globally and actually solve problems.',
+        'Not just launch well, but hold up once real people are using them.',
+        "That's still the work I want to be doing.",
       ],
       nav: [
         { icon: 'briefcase', label: 'My path', href: '#experience' },
@@ -1144,7 +1144,7 @@ export const translations = {
     },
     cta: {
       title: "Let's talk",
-      desc: "I build reliable, production-grade AI systems. If you have an interesting problem where AI is the right tool, let's talk.",
+      desc: "I build AI products, and the part I care about most is making sure they can be trusted at scale, not just demoed well. If you're working on a problem AI could genuinely help solve, let's talk.",
       contact: 'Contact',
     },
     ui: {

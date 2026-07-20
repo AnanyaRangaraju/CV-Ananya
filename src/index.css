@@ -126,6 +126,11 @@ button, a, [role="button"], summary { cursor: pointer; }
     --hero-orb-primary: 187 74% 28% / 0.15;
     --hero-orb-accent: 270 70% 38% / 0.12;
     --dot-grid: 240 5% 35% / 0.25;
+    /* Soft pastel accents — hero stat strip, project card bars */
+    --pastel-blue: 219 52% 66%;
+    --pastel-green: 146 27% 60%;
+    --pastel-coral: 16 58% 71%;
+    --pastel-gold: 43 50% 56%;
   }
 
   /* Dark mode via system preference — CSS-first, no JS needed = 0ms flash */
@@ -159,6 +164,10 @@ button, a, [role="button"], summary { cursor: pointer; }
       --hero-orb-primary: 187 86% 53% / 0.08;
       --hero-orb-accent: 270 91% 70% / 0.10;
       --dot-grid: 240 5% 65% / 0.15;
+      --pastel-blue: 218 61% 79%;
+      --pastel-green: 142 34% 75%;
+      --pastel-coral: 18 67% 79%;
+      --pastel-gold: 42 59% 70%;
     }
   }
 
@@ -185,6 +194,10 @@ button, a, [role="button"], summary { cursor: pointer; }
     --hero-orb-primary: 187 86% 53% / 0.08;
     --hero-orb-accent: 270 91% 70% / 0.10;
     --dot-grid: 240 5% 65% / 0.15;
+    --pastel-blue: 218 61% 79%;
+    --pastel-green: 142 34% 75%;
+    --pastel-coral: 18 67% 79%;
+    --pastel-gold: 42 59% 70%;
     --codeblock: 215 19% 5%;       /* #0D1117 - GitHub Dark */
     --codeblock-text: 213 14% 90%; /* #E6EDF3 */
     --code-keyword: 210 100% 75%;  /* #79C0FF */
@@ -217,6 +230,10 @@ button, a, [role="button"], summary { cursor: pointer; }
     --hero-orb-primary: 187 74% 28% / 0.15;
     --hero-orb-accent: 270 70% 38% / 0.12;
     --dot-grid: 240 5% 35% / 0.25;
+    --pastel-blue: 219 52% 66%;
+    --pastel-green: 146 27% 60%;
+    --pastel-coral: 16 58% 71%;
+    --pastel-gold: 43 50% 56%;
   }
 
   /* ========== PROFILE: WARM - Orange/Teal ========== */
@@ -434,6 +451,16 @@ button, a, [role="button"], summary { cursor: pointer; }
   .from-gold\/15 { --tw-gradient-from: hsl(var(--gold) / 0.15); }
   .via-gold\/5 { --tw-gradient-via: hsl(var(--gold) / 0.05); }
   .to-gold\/5 { --tw-gradient-to: hsl(var(--gold) / 0.05); }
+
+  /* Pastel accent utilities — hero stat strip, project card bars */
+  .text-pastel-blue { color: hsl(var(--pastel-blue)); }
+  .text-pastel-green { color: hsl(var(--pastel-green)); }
+  .text-pastel-coral { color: hsl(var(--pastel-coral)); }
+  .text-pastel-gold { color: hsl(var(--pastel-gold)); }
+  .bg-pastel-blue { background-color: hsl(var(--pastel-blue)); }
+  .bg-pastel-green { background-color: hsl(var(--pastel-green)); }
+  .bg-pastel-coral { background-color: hsl(var(--pastel-coral)); }
+  .bg-pastel-gold { background-color: hsl(var(--pastel-gold)); }
 
   /* Success semantic color utilities */
   .text-success { color: hsl(var(--success)); }

@@ -22,6 +22,7 @@ for (const article of articleRegistry) {
 class ChatErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
   state = { hasError: false }
   static getDerivedStateFromError() { return { hasError: true } }
+  componentDidCatch(error: unknown) { console.error('FloatingChat crashed:', error) }
   render() { return this.state.hasError ? null : this.props.children }
 }
 

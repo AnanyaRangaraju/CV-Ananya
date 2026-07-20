@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo, useReducer, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
-import { Mail, ExternalLink, Briefcase, GraduationCap, Award, Code, Bot, Zap, BadgeCheck, FolderGit2, SkipForward, List, Github, Linkedin } from 'lucide-react'
+import { Mail, ExternalLink, Briefcase, GraduationCap, Award, Code, Bot, Zap, FolderGit2, SkipForward, List, Github, Linkedin } from 'lucide-react'
 import { translations, seo, type Lang } from './i18n'
 import { useHomeSeo } from './articles/use-article-seo'
 import { getTechIcon } from './tech-icons'
@@ -41,235 +41,6 @@ function useInView(threshold = 0.1) {
   }, [ref, threshold])
 
   return { ref: setRef, isInView }
-}
-
-const HEAL_PARTICLES = [
-  { char: '+', left: '10%', delay: '0s', dur: '2.8s', size: '24px' },
-  { char: '·', left: '30%', delay: '0.6s', dur: '2.2s', size: '20px' },
-  { char: '✦', left: '55%', delay: '1.2s', dur: '3s', size: '18px' },
-  { char: '0', left: '75%', delay: '0.3s', dur: '2.5s', size: '22px' },
-  { char: '+', left: '90%', delay: '1.8s', dur: '2.6s', size: '20px' },
-  { char: '1', left: '20%', delay: '2.1s', dur: '2.4s', size: '22px' },
-  { char: '·', left: '65%', delay: '0.9s', dur: '3.2s', size: '18px' },
-  { char: '✦', left: '45%', delay: '1.5s', dur: '2.7s', size: '20px' },
-]
-
-function BeamPill({ children }: { children: React.ReactNode }) {
-  const hydrated = useHydrated()
-  return (
-    <span className={`relative inline-block pl-0 pr-0 ${hydrated ? 'beam-pill' : ''}`}>
-      <span className="relative z-10">{children}</span>
-      {hydrated && HEAL_PARTICLES.map((p, i) => (
-        <span
-          key={i}
-          className="absolute pointer-events-none select-none"
-          style={{
-            left: p.left,
-            bottom: '50%',
-            fontSize: p.size,
-            color: '#4ade80',
-            opacity: 0,
-            animation: `heal-float ${p.dur} ease-out ${p.delay} infinite`,
-          }}
-          aria-hidden="true"
-        >
-          {p.char}
-        </span>
-      ))}
-    </span>
-  )
-}
-
-// Inject animation styles once (avoids hydration mismatch from inline <style> in h1)
-const HERO_STYLES_ID = 'hero-beam-styles'
-function useHeroStyles() {
-  useEffect(() => {
-    if (document.getElementById(HERO_STYLES_ID)) return
-    const style = document.createElement('style')
-    style.id = HERO_STYLES_ID
-    style.textContent = `
-      @keyframes blink { 0%, 100% { opacity: 1 } 50% { opacity: 0 } }
-      @keyframes heal-float {
-        0% { opacity: 0; transform: translateY(0) scale(0.6); }
-        12% { opacity: 0.25; }
-        40% { opacity: 0.15; }
-        100% { opacity: 0; transform: translateY(-65px) scale(0.2); }
-      }
-      @property --beam-angle {
-        syntax: '<angle>';
-        inherits: false;
-        initial-value: 0deg;
-      }
-      @keyframes beam-spin {
-        0% { --beam-angle: 0deg; }
-        100% { --beam-angle: 360deg; }
-      }
-      .beam-pill::before {
-        content: '';
-        position: absolute;
-        inset: -1px -10px -1px -10px;
-        border-radius: 9999px;
-        padding: 2px;
-        background: conic-gradient(
-          from var(--beam-angle),
-          transparent 0%,
-          transparent 82%,
-          rgba(74, 222, 128, 0.05) 86%,
-          rgba(74, 222, 128, 0.15) 89%,
-          rgba(74, 222, 128, 0.35) 92%,
-          rgba(74, 222, 128, 0.6) 95%,
-          rgba(74, 222, 128, 0.9) 98%,
-          #4ade80 100%,
-          transparent 100%
-        );
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        animation: beam-spin 2s linear infinite;
-      }
-    `
-    document.head.appendChild(style)
-  }, [])
-}
-
-// ---------------------------------------------------------------------------
-// GridSnakes — subtle animated trails on the dot grid (hero only)
-// ---------------------------------------------------------------------------
-const GRID = 24                // matches CSS dot grid size
-const SNAKE_COUNT = 3
-const SNAKE_LENGTH = 8         // dots per trail
-const TICK_MS = 180            // movement speed (lower = faster)
-const DIRS: [number, number][] = [[1,0],[-1,0],[0,1],[0,-1]]
-
-function GridSnakes() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const parent = canvas.parentElement
-    if (!parent) return
-
-    const resize = () => {
-      canvas.width = parent.clientWidth
-      canvas.height = parent.clientHeight
-    }
-    resize()
-    window.addEventListener('resize', resize)
-
-    // Initialize snakes at random grid positions
-    const cols = () => Math.floor(canvas.width / GRID)
-    const rows = () => Math.floor(canvas.height / GRID)
-
-    type Snake = { trail: [number, number][]; dir: [number, number] }
-    const snakes: Snake[] = Array.from({ length: SNAKE_COUNT }, () => {
-      const x = Math.floor(Math.random() * cols())
-      const y = Math.floor(Math.random() * rows())
-      return { trail: [[x, y]], dir: DIRS[Math.floor(Math.random() * 4)] }
-    })
-
-    const tick = () => {
-      const c = cols()
-      const r = rows()
-
-      for (const snake of snakes) {
-        // 30% chance to turn
-        if (Math.random() < 0.3) {
-          snake.dir = DIRS[Math.floor(Math.random() * 4)]
-        }
-        const [hx, hy] = snake.trail[snake.trail.length - 1]
-        let nx = hx + snake.dir[0]
-        let ny = hy + snake.dir[1]
-
-        // Wrap around edges
-        if (nx < 0) nx = c - 1
-        if (nx >= c) nx = 0
-        if (ny < 0) ny = r - 1
-        if (ny >= r) ny = 0
-
-        snake.trail.push([nx, ny])
-        if (snake.trail.length > SNAKE_LENGTH) snake.trail.shift()
-      }
-
-      // Draw
-      const ctx = canvas.getContext('2d')
-      if (!ctx) return
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      for (const snake of snakes) {
-        for (let i = 0; i < snake.trail.length; i++) {
-          const [gx, gy] = snake.trail[i]
-          const alpha = ((i + 1) / snake.trail.length) * 0.5
-          ctx.beginPath()
-          ctx.arc(gx * GRID + GRID / 2, gy * GRID + GRID / 2, 1.5, 0, Math.PI * 2)
-          ctx.fillStyle = `rgba(0, 217, 255, ${alpha})`
-          ctx.fill()
-        }
-      }
-    }
-
-    let interval: ReturnType<typeof setInterval> | null = null
-    const start = () => { if (!interval) interval = setInterval(tick, TICK_MS) }
-    const stop = () => { if (interval) { clearInterval(interval); interval = null } }
-
-    // Only animate when canvas is in viewport AND tab is visible
-    const io = new IntersectionObserver(
-      entries => { entries[0].isIntersecting && document.visibilityState === 'visible' ? start() : stop() },
-      { threshold: 0 },
-    )
-    io.observe(canvas)
-
-    const onVisibility = () => { document.visibilityState === 'visible' && canvas.getBoundingClientRect().top < window.innerHeight ? start() : stop() }
-    document.addEventListener('visibilitychange', onVisibility)
-
-    return () => {
-      stop()
-      io.disconnect()
-      document.removeEventListener('visibilitychange', onVisibility)
-      window.removeEventListener('resize', resize)
-    }
-  }, [])
-
-  return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-[1]" />
-}
-
-
-function useTypewriterRotation(roles: readonly string[], { typeSpeed = 80, deleteSpeed = 60, pauseAfterType = 2000, pauseAfterDelete = 300 } = {}) {
-  const [roleIndex, setRoleIndex] = useState(0)
-  const [displayText, setDisplayText] = useState(roles[0])
-  const [isDeleting, setIsDeleting] = useState(false)
-  const currentRole = roles[roleIndex]
-
-  useEffect(() => {
-    let timeout: ReturnType<typeof setTimeout>
-
-    if (!isDeleting && displayText === currentRole) {
-      // Finished typing — pause then start deleting
-      timeout = setTimeout(() => setIsDeleting(true), pauseAfterType)
-    } else if (isDeleting && displayText === '') {
-      // Finished deleting — move to next role and start typing
-      timeout = setTimeout(() => {
-        setRoleIndex(i => (i + 1) % roles.length)
-        setIsDeleting(false)
-      }, pauseAfterDelete)
-    } else if (isDeleting) {
-      // Deleting word by word (ctrl+backspace style)
-      timeout = setTimeout(() => {
-        const words = displayText.trimEnd().split(' ')
-        words.pop()
-        setDisplayText(words.length > 0 ? words.join(' ') + ' ' : '')
-      }, deleteSpeed)
-    } else {
-      // Typing character by character
-      timeout = setTimeout(() => {
-        setDisplayText(currentRole.slice(0, displayText.length + 1))
-      }, typeSpeed)
-    }
-
-    return () => clearTimeout(timeout)
-  }, [displayText, isDeleting, currentRole, roles, typeSpeed, deleteSpeed, pauseAfterType, pauseAfterDelete])
-
-  return { displayText, roleIndex, isDeleting }
 }
 
 const HOME_TOC_SECTIONS = [
@@ -1432,9 +1203,6 @@ function App() {
   const lang: Lang = 'en'
   const t = translations[lang]
   const hydrated = useHydrated()
-  useHeroStyles()
-  const { displayText: roleText, roleIndex } = useTypewriterRotation(t.greetingRoles)
-
 
   // SEO: Dynamic meta tags based on language
   const seoData = seo[lang]
@@ -1453,81 +1221,84 @@ function App() {
       <HomeToc lang={lang} />
 
       {/* Hero Section */}
-      <header id="main-content" className="relative overflow-hidden">
-        <GridSnakes />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
-        <div className="absolute top-0 right-[max(0px,calc(50%-40rem))] w-[600px] h-[600px] rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 hidden sm:block animate-[hero-glow_8s_ease-in-out_infinite]" style={{ backgroundColor: 'hsl(var(--hero-orb-primary))' }} />
-        <div className="absolute bottom-0 left-[max(0px,calc(50%-40rem))] w-[550px] h-[550px] rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 hidden sm:block animate-[hero-glow_11s_ease-in-out_infinite_reverse]" style={{ backgroundColor: 'hsl(var(--hero-orb-accent))' }} />
-
-        <div className="relative max-w-5xl mx-auto px-6 pt-20 pb-12 md:pt-32 md:pb-16">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            {/* Photo */}
+      <header id="main-content" className="relative overflow-hidden bg-background">
+        <div className="relative max-w-5xl mx-auto px-6 pt-20 pb-14 md:pt-28 md:pb-16">
+          <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-12 items-center">
             <motion.div
-              initial={hydrated ? { opacity: 0, scale: 0.8 } : false}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={hydrated ? { opacity: 0, y: 16 } : false}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="relative"
-            >
-              <div className="relative w-40 h-40 md:w-48 md:h-48">
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-theme-30 blur-xl" />
-                {/* Glassmorphism frame */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 to-white/5 md:backdrop-blur-sm border border-white/20 shadow-2xl" />
-                {/* Inner border */}
-                <div className="absolute inset-2 rounded-full bg-gradient-theme-50 p-[2px]">
-                  <div className="w-full h-full rounded-full overflow-hidden">
-                    <img src="/foto-avatar-sm.webp" srcSet="/foto-avatar-sm.webp 192w, /foto-avatar.webp 384w" sizes="(max-width: 768px) 160px, 192px" alt="Ananya Rangaraju" className="w-full h-full object-cover" width={192} height={192} fetchPriority="high" />
-                  </div>
-                </div>
-              </div>
-              <motion.div
-                initial={hydrated ? { scale: 0 } : false}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
-                className="absolute -bottom-1 -right-1 w-10 h-10 rounded-full bg-gradient-theme flex items-center justify-center shadow-lg border-2 border-background"
-              >
-                <BadgeCheck className="w-6 h-6 text-white" />
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={hydrated ? { opacity: 0, x: -20 } : false}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center md:text-left"
             >
-              <p className="text-lg text-muted-foreground mb-2">
-                Hi, I'm <Link to="/about" className="text-gradient-theme font-semibold hover:opacity-80 transition-opacity">Ananya Rangaraju</Link>,
+              <p className="font-mono text-xs tracking-[0.16em] uppercase text-muted-foreground mb-5">
+                AI Systems &amp; Product Engineer
               </p>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
-                <span className="text-gradient-theme">{hydrated ? roleText : t.greetingRoles[0]}</span>
-                {hydrated && <span className="inline-block w-[3px] h-[0.85em] bg-primary ml-1 rounded-sm translate-y-[2px]" style={{ animation: 'blink 1s step-end infinite' }} />}
-                <br />
-                {t.greeting}
-                <br />
-                with <BeamPill>Evals <span className="opacity-60">+</span> LLMOps <span className="opacity-60">+</span> HITL</BeamPill>
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.98] mb-5">
+                I build AI that<br />
+                survives <span className="text-pastel-blue">contact<br />with reality.</span>
               </h1>
-
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-[46ch] mx-auto md:mx-0 mb-8">
+                Two years at Oracle Health taught me that most AI demos don't survive contact with{' '}
+                <span className="text-foreground font-semibold">ICU nurses</span>. I've been closing that gap ever since, with evals, LLMOps, and the trust layer between capability and production.
+              </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                {t.pillLabels.map((label, i) => (
-                  <span
-                    key={label}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm ${
-                      hydrated && i === roleIndex
-                        ? 'border border-[#20d6ee] bg-[#20d6ee]/15 text-foreground scale-105'
-                        : 'border border-[#20d6ee]/30 bg-background/80 text-muted-foreground'
-                    }`}
-                  >
-                    {label}
-                  </span>
-                ))}
+                <a
+                  href="#projects"
+                  className="inline-flex items-center px-6 py-3 rounded-md border-2 border-foreground bg-foreground text-[hsl(var(--background))] font-mono text-sm shadow-[4px_4px_0_hsl(var(--pastel-blue))] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_hsl(var(--pastel-blue))] transition-all duration-200"
+                >
+                  View the work
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center px-6 py-3 rounded-md border-2 border-border font-mono text-sm hover:border-foreground hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_hsl(var(--pastel-green))] transition-all duration-200"
+                >
+                  Say hello
+                </a>
               </div>
+            </motion.div>
 
+            <motion.div
+              initial={hydrated ? { opacity: 0, scale: 0.92, rotate: -4 } : false}
+              animate={{ opacity: 1, scale: 1, rotate: -2 }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="mx-auto md:mx-0 w-full max-w-[320px]"
+            >
+              <div className="relative rounded-xl overflow-hidden border-2 border-foreground shadow-[10px_10px_0_hsl(var(--pastel-coral))] bg-card">
+                <img
+                  src="/portrait-illustration.jpg"
+                  srcSet="/portrait-illustration-sm.jpg 480w, /portrait-illustration.jpg 900w"
+                  sizes="(max-width: 768px) 280px, 320px"
+                  alt="Illustrated portrait of Ananya Rangaraju"
+                  className="w-full h-auto object-cover object-top"
+                  width={894}
+                  height={900}
+                  fetchPriority="high"
+                />
+              </div>
             </motion.div>
           </div>
-
         </div>
       </header>
+
+      {/* Quick stats */}
+      <AnimatedSection className="border-y border-border">
+        <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4">
+          {[
+            { value: '2+', label: 'Years shipping production AI in clinical environments', color: 'text-pastel-blue' },
+            { value: '3.9', label: 'B.Tech GPA, Manipal University', color: 'text-pastel-green' },
+            { value: '61pt', label: 'Benchmark-to-production gap found via Clearance', color: 'text-pastel-coral' },
+            { value: '3', label: 'Shipped projects, all in production', color: 'text-pastel-gold' },
+          ].map((stat, i) => (
+            <div
+              key={stat.value}
+              className={`py-7 px-5 ${i % 2 === 1 ? 'border-l border-border' : ''} ${i % 2 === 0 && i > 0 ? 'md:border-l md:border-border' : ''} ${i >= 2 ? 'border-t border-border md:border-t-0' : ''}`}
+            >
+              <div className={`font-display text-3xl md:text-4xl font-bold tabular-nums ${stat.color}`}>{stat.value}</div>
+              <div className="mt-1.5 text-sm text-muted-foreground leading-snug">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </AnimatedSection>
 
       {/* Summary - Con storytelling integrado */}
       <StorySection t={t} />

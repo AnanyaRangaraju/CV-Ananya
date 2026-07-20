@@ -140,7 +140,14 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
   useEffect(() => {
     const onImmersive = (e: Event) => setImmersive((e as CustomEvent).detail?.active ?? false)
     window.addEventListener('immersive', onImmersive)
-    return () => window.removeEventListener('immersive', onImmersive)
+    // Safety net: if the diagram's own cleanup never fires (e.g. back/forward
+    // navigation interrupts it), don't leave the chat permanently unmounted.
+    const onPopState = () => setImmersive(false)
+    window.addEventListener('popstate', onPopState)
+    return () => {
+      window.removeEventListener('immersive', onImmersive)
+      window.removeEventListener('popstate', onPopState)
+    }
   }, [])
 
   const [session] = useState(() => loadSession(t.greeting));

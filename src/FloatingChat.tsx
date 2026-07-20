@@ -325,6 +325,7 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
   const handleStopVoice = () => {
     // Merge transcript into messages
     const transcript = voiceMode.state.transcript;
+    console.log('[Voice] handleStopVoice transcript length:', transcript.length, transcript);
     if (transcript.length > 0) {
       setMessages(prev => [
         ...prev,

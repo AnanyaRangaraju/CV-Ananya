@@ -82,7 +82,7 @@ function useLang() {
 }
 
 function useTheme() {
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(false)
 
   useEffect(() => {
     setIsDark(document.documentElement.classList.contains('dark'))
@@ -100,6 +100,11 @@ function useTheme() {
     document.documentElement.classList.toggle('dark', next)
     document.documentElement.classList.toggle('light', !next)
     localStorage.setItem('theme', next ? 'dark' : 'light')
+
+    const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]')
+    if (colorSchemeMeta) colorSchemeMeta.setAttribute('content', next ? 'dark' : 'light')
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]')
+    if (themeColorMeta) themeColorMeta.setAttribute('content', next ? '#0a0a0a' : '#f4f5f5')
 
     // Re-enable transitions after repaint
     requestAnimationFrame(() => {

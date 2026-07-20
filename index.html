@@ -1,13 +1,13 @@
 <!doctype html>
 <!-- Built with Claude Code -->
 <!-- If you're reading this, we should talk, ananya.rangaraju@gmail.com -->
-<html lang="en" class="dark">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- LCP Image Preload (avatar = Largest Contentful Paint element) -->
-    <link rel="preload" href="/foto-avatar-sm.webp" as="image" type="image/webp" imagesrcset="/foto-avatar-sm.webp 192w, /foto-avatar.webp 384w" imagesizes="(max-width: 768px) 160px, 192px" fetchpriority="high" />
+    <!-- LCP Image Preload (hero portrait = Largest Contentful Paint element) -->
+    <link rel="preload" href="/portrait-illustration.jpg" as="image" type="image/jpeg" imagesrcset="/portrait-illustration-sm.jpg 480w, /portrait-illustration.jpg 900w" imagesizes="(max-width: 768px) 190px, 320px" fetchpriority="high" />
 
     <!-- Font Preloads (self-hosted, eliminates Google Fonts CDN) -->
     <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -46,9 +46,9 @@
     <meta name="twitter:image:alt" content="Ananya Rangaraju - AI Systems & Product Engineer" />
 
     <!-- Theme & App -->
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta name="color-scheme" content="dark" />
-    <meta name="msapplication-TileColor" content="#0a0a0a" />
+    <meta name="theme-color" content="#f4f5f5" />
+    <meta name="color-scheme" content="light" />
+    <meta name="msapplication-TileColor" content="#f4f5f5" />
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -127,9 +127,9 @@
       ]
     }
     </script>
-    <!-- Theme detection before first paint (eliminates dark→light FOUC) -->
+    <!-- Theme detection before first paint (defaults to light, honors a saved choice) -->
     <script>
-      (function(){var s=localStorage.getItem('theme');var d=s?s==='dark':true;var h=document.documentElement;h.classList.toggle('dark',d);h.classList.toggle('light',!d);var m=document.querySelector('meta[name="color-scheme"]');if(m)m.content=d?'dark':'light';var t=document.querySelector('meta[name="theme-color"]');if(t)t.content=d?'#0a0a0a':'#ffffff'})()
+      (function(){var s=localStorage.getItem('theme');var d=s?s==='dark':false;var h=document.documentElement;h.classList.toggle('dark',d);h.classList.toggle('light',!d);var m=document.querySelector('meta[name="color-scheme"]');if(m)m.content=d?'dark':'light';var t=document.querySelector('meta[name="theme-color"]');if(t)t.content=d?'#0a0a0a':'#f4f5f5'})()
     </script>
   </head>
   <body>

@@ -1282,16 +1282,15 @@ function App() {
 
       {/* Quick stats */}
       <AnimatedSection className="border-y border-border">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4">
+        <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3">
           {[
             { value: '2+', label: 'Years shipping production AI in clinical environments', color: 'text-pastel-blue' },
-            { value: '3.9', label: 'B.Tech GPA, Manipal University', color: 'text-pastel-green' },
             { value: '61pt', label: 'Benchmark-to-production gap found via Clearance', color: 'text-pastel-coral' },
             { value: '3', label: 'Shipped projects, all in production', color: 'text-pastel-gold' },
           ].map((stat, i) => (
             <div
               key={stat.value}
-              className={`py-7 px-5 ${i % 2 === 1 ? 'border-l border-border' : ''} ${i % 2 === 0 && i > 0 ? 'md:border-l md:border-border' : ''} ${i >= 2 ? 'border-t border-border md:border-t-0' : ''}`}
+              className={`py-7 px-5 ${i > 0 ? 'border-t border-border md:border-t-0 md:border-l' : ''}`}
             >
               <div className={`font-display text-3xl md:text-4xl font-bold tabular-nums ${stat.color}`}>{stat.value}</div>
               <div className="mt-1.5 text-sm text-muted-foreground leading-snug">{stat.label}</div>

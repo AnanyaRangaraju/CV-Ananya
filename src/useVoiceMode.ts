@@ -38,7 +38,12 @@ export const SESSION_TIMEOUT_S = 120;
 // true to restore the live WebSocket flow below once voice budget is back.
 const VOICE_MODE_LIVE = false;
 
-const CREDIT_LIMIT_MESSAGE = "Hey, thanks for trying voice mode! I'm running low on credits right now, so voice is limited to this one message. If you're interested in what I've built, reach out at ananya.rangaraju@gmail.com, I'd love to hear from you.";
+const CREDIT_LIMIT_MESSAGE = "Hi, I'm Ananya! Thanks for trying voice mode. I'm running low on credits right now, so voice is limited to this one message. If you're interested in what I've built, reach out at ananya.rangaraju@gmail.com, I'd love to hear from you.";
+
+// Text-to-speech engines pronounce purely from spelling, with no way to hint
+// phonemes directly through this API. This is a best-guess phonetic spelling
+// for "Ananya Rangaraju" -- correct it here if it comes out wrong.
+const CREDIT_LIMIT_MESSAGE_SPOKEN = "Hi, I'm uh-NAHN-yuh! Thanks for trying voice mode. I'm running low on credits right now, so voice is limited to this one message. If you're interested in what I've built, reach out at uh-nahn-yuh dot rung-guh-RAH-joo at gmail dot com, I'd love to hear from you.";
 
 // Common cross-platform female voice names (macOS/iOS, Chrome, Windows) --
 // speechSynthesis has no reliable gender field, so match on known names.
@@ -341,7 +346,7 @@ export function useVoiceMode() {
         const speak = typeof window !== 'undefined' ? window.speechSynthesis : null;
         if (speak) {
           try {
-            const utterance = new SpeechSynthesisUtterance(CREDIT_LIMIT_MESSAGE);
+            const utterance = new SpeechSynthesisUtterance(CREDIT_LIMIT_MESSAGE_SPOKEN);
             const voices = await getVoicesAsync(speak);
             const femaleVoice = pickFemaleVoice(voices);
             if (femaleVoice) utterance.voice = femaleVoice;

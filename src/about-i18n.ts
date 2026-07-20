@@ -79,7 +79,7 @@ export const aboutContent = {
       description: 'AI Systems & Product Engineer. Two years shipping clinical AI agent observability at Oracle Health (formerly Cerner). Builder of Clearance, an AI agent reliability benchmark. Dartmouth MEM candidate.',
     },
     heading: 'Ananya Rangaraju',
-    manifesto: "I like building AI products that can be trusted, not just demoed. That's what pulls me toward evaluation.",
+    manifesto: "I like building AI products. Turning ideas into things that actually work is what drives me.",
     subtitle: 'AI Systems & Product Engineer · Ex-Oracle Health · Dartmouth MEM',
     location: 'Hanover, NH · Open to relocate',
     lastUpdated: 'July 2026',

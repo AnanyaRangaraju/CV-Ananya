@@ -895,13 +895,13 @@ export const translations = {
     email: 'ananya.rangaraju@gmail.com',
     role: '',
     story: {
-      context: "+Two years+ shipping AI in production, now building what's next at Dartmouth.",
-      reflections: ['I like building things that work.', 'So I build the part that proves it.'],
+      context: "+Two years+ shipping AI in production, now part of Dartmouth's MEM program, building for the future.",
+      reflections: ['I like building things that work.', "So that's what I build."],
       hookParagraphs: [
-        ['I like building AI products, but the part of the work I care about most is evaluation.'],
+        ["I like building AI products. That's the work I care about most."],
         [
-          "Not whether something works in a demo.",
-          'Whether it *can be trusted* once real people depend on it.',
+          "Not just shipping something that works in a demo.",
+          'Building things that *actually hold up* once real people depend on them.',
         ],
       ],
       why: 'At Oracle Health I owned observability for clinical AI agents used across 100+ client deployments: instrumenting failure patterns across 100M+ rows, building validation frameworks that cut downstream errors by 25%, and translating agent behavior into decisions non-technical stakeholders could act on.',
@@ -1144,7 +1144,7 @@ export const translations = {
     },
     cta: {
       title: "Let's talk",
-      desc: "I build AI products, and the part I care about most is making sure they can be trusted at scale, not just demoed well. If you're working on a problem AI could genuinely help solve, let's talk.",
+      desc: "I like building AI products, things that scale and actually solve real problems. If you're working on a problem AI could genuinely help solve, let's talk.",
       contact: 'Contact',
     },
     ui: {

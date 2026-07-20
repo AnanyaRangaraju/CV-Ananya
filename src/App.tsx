@@ -1683,8 +1683,8 @@ function App() {
               </AnimatedSection>
             ))}
 
-            {/* Placeholder cards for future projects */}
-            {[0, 1].map((i) => (
+            {/* Placeholder card for future projects */}
+            {[0].map((i) => (
               <AnimatedSection key={`placeholder-${i}`} delay={0.2 + i * 0.1}>
                 <div className="h-full min-h-[220px] p-6 rounded-2xl border border-dashed border-border/60 flex flex-col items-center justify-center text-center text-muted-foreground">
                   <FolderGit2 className="w-6 h-6 mb-3 opacity-40" />

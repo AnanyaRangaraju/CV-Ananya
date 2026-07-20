@@ -1032,7 +1032,7 @@ export const translations = {
             'Automatic Cleared / Supervised / Not-Ready classification with configurable thresholds, tracking unsafe or irreversible actions as a distinct failure category.',
             'Full reporting layer with dashboards, leaderboards, and expected-vs-actual failure breakdowns to make results auditable.',
           ],
-          link: 'https://flight-check-5.emergent.host',
+          link: 'https://ananyarangaraju.com/clearance',
           linkLabel: 'View live app',
         },
         {

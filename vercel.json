@@ -65,6 +65,7 @@
     }
   ],
   "redirects": [
+    { "source": "/clearance", "destination": "https://flight-check-5.emergent.host", "permanent": false },
     { "source": "/en/", "destination": "/en", "permanent": true },
     { "source": "/:path+/", "destination": "/:path+", "permanent": true }
   ],

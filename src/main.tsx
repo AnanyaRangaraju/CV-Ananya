@@ -161,7 +161,6 @@ const app = (
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<App />} />
-            <Route path="/en" element={<App />} />
             <Route path="/ops" element={<OpsDashboard />} />
             <Route path="/about" element={<AboutPage lang="en" />} />
             <Route path="/privacy" element={<PrivacyPolicy lang="en" />} />

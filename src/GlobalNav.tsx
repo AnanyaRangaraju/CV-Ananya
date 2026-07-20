@@ -76,10 +76,9 @@ function useActiveSection(pathname: string, enabled: boolean) {
 
 function useLang() {
   const { pathname } = useLocation()
-  const isHome = pathname === '/' || pathname === '/en'
-  const lang: 'en' = 'en'
+  const isHome = pathname === '/'
   const pageTitle = PAGE_TITLE[pathname] ?? null
-  return { pathname, isHome, lang, pageTitle }
+  return { pathname, isHome, pageTitle }
 }
 
 function useTheme() {
@@ -134,7 +133,7 @@ function NavControls({ isDark, toggleTheme }: {
 }
 
 export default function GlobalNav() {
-  const { pathname, isHome, lang, pageTitle } = useLang()
+  const { pathname, isHome, pageTitle } = useLang()
   const { isDark, toggleTheme } = useTheme()
   const activeSection = useActiveSection(pathname, !isHome)
 
@@ -179,7 +178,7 @@ export default function GlobalNav() {
                 style={animateBackLink ? fade('0.4s') : undefined}
               >
                 <Link
-                  to={lang === 'en' ? '/en' : '/'}
+                  to="/"
                   className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors shrink-0"
                 >
                   <House className="w-4 h-4" />
@@ -221,6 +220,12 @@ export default function GlobalNav() {
 
   return (
     <div className="fixed top-4 right-6 z-50 flex items-center gap-3">
+      <Link
+        to="/about"
+        className="hidden sm:inline-flex items-center h-10 px-4 rounded-full bg-card border border-border text-sm font-medium text-muted-foreground shadow-lg hover:border-primary/50 hover:text-foreground transition-colors"
+      >
+        About
+      </Link>
       {controls}
     </div>
   )

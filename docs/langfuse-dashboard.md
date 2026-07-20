@@ -7,7 +7,6 @@ Configuration guide for the LLMOps observability dashboard.
 ### 1. Volume Over Time
 - **Type:** Time series
 - **Metric:** Trace count
-- **Group by:** Tag `lang` (es/en)
 - **Period:** Last 30 days
 
 ### 2. Quality Trend

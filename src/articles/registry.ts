@@ -51,7 +51,6 @@ export const articleRegistry: ArticleConfig[] = [
 export function getPageTitles(): Record<string, string> {
   const map: Record<string, string> = {
     '/': "Ananya's Portfolio",
-    '/en': "Ananya's Portfolio",
     '/about': 'About',
   }
   for (const article of articleRegistry) {

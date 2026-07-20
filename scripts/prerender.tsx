@@ -44,14 +44,13 @@ function stripReactSSRTags(html: string): string {
 // ---------------------------------------------------------------------------
 // SSR render (home page)
 // ---------------------------------------------------------------------------
-function renderApp(path: '/' | '/en'): string {
+function renderApp(): string {
   return stripReactSSRTags(renderToString(
-    <StaticRouter location={path}>
+    <StaticRouter location="/">
       <div>
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<App />} />
-            <Route path="/en" element={<App />} />
           </Routes>
         </Suspense>
       </div>
@@ -92,10 +91,10 @@ try {
   process.exit(1);
 }
 
-// --- Home page (rendered once, written to both / and /en) ---
+// --- Home page ---
 let homeHtml: string;
 try {
-  homeHtml = renderApp('/');
+  homeHtml = renderApp();
 } catch (err) {
   console.error('[prerender] SSR failed for home, falling back to empty root:', err);
   homeHtml = '';
@@ -112,21 +111,6 @@ const rootPage = indexHtml
   .replace(/<meta property="og:description" content="[^"]*" \/>/, `<meta property="og:description" content="${esc(homeSeo.description)}" />`)
   .replace(/<meta name="twitter:title" content="[^"]*" \/>/, `<meta name="twitter:title" content="${esc(homeSeo.title)}" />`)
   .replace(/<meta name="twitter:description" content="[^"]*" \/>/, `<meta name="twitter:description" content="${esc(homeSeo.description)}" />`);
-
-let enHtml: string;
-try {
-  enHtml = renderApp('/en');
-} catch (err) {
-  console.error('[prerender] SSR failed for /en, falling back to empty root:', err);
-  enHtml = '';
-}
-
-// /en is a duplicate of the home page — canonicalize back to / to avoid split signals.
-const enPage = rootPage
-  .replace('<div id="root">' + homeHtml + '</div>', `<div id="root">${enHtml}</div>`)
-  .replace(/<link rel="canonical" href="[^"]*" \/>/, '<link rel="canonical" href="https://ananyarangaraju.com/" />')
-  .replace(/<meta property="og:url" content="[^"]*" \/>/, '<meta property="og:url" content="https://ananyarangaraju.com/" />')
-  .replace(/<meta name="twitter:url" content="[^"]*" \/>/, '<meta name="twitter:url" content="https://ananyarangaraju.com/" />');
 
 // ---------------------------------------------------------------------------
 // About page — /about
@@ -395,9 +379,9 @@ function swapLcpPreload(html: string, isArticle: boolean): string {
 async function writePage(html: string, outputPath: string, label: string) {
   const dir = dirname(outputPath);
   mkdirSync(dir, { recursive: true });
-  // Article pages live in dist/<slug>/index.html, NOT dist/index.html or dist/en/index.html
+  // Article pages live in dist/<slug>/index.html, NOT dist/index.html or dist/privacy/index.html
   const isArticle = /\/dist\/[^/]+\/index\.html$/.test(outputPath)
-    && !/\/dist\/(en|privacy)\/index\.html$/.test(outputPath);
+    && !/\/dist\/privacy\/index\.html$/.test(outputPath);
   const pre = swapLcpPreload(html, isArticle);
   try {
     const processed = dedupePreloads(await critters.process(pre));
@@ -455,9 +439,8 @@ let privacyPage = indexHtml
 privacyPage = privacyPage.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, '');
 
 async function inlineCriticalCSS() {
-  // Home pages
+  // Home page
   await writePage(rootPage, indexPath, 'Home: dist/index.html updated');
-  await writePage(enPage, resolve(distDir, 'en', 'index.html'), 'EN: dist/en/index.html created');
 
   // About page
   await writePage(aboutPage, resolve(distDir, aboutSlug, 'index.html'), `${aboutSlug}: dist/${aboutSlug}/index.html created`);
@@ -511,9 +494,8 @@ function validateHydrationStructure(html: string, label: string) {
   }
 }
 
-// Validate home pages
+// Validate home page
 validateHydrationStructure(rootPage, 'home');
-validateHydrationStructure(enPage, 'home-en');
 
 // Validate about page
 validateHydrationStructure(aboutPage, aboutSlug);

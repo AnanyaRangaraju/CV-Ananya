@@ -32,7 +32,6 @@ CLAUDE.md
 chatbot/audit/
 
 # Private negotiation/audit files
-*santiferirepair*
 plan-*.md
 audit-*.md
 
@@ -47,7 +46,7 @@ linkedin-post.md
 
 # Test artifacts
 test-results/
-chatbot/.playwright-mcp/
+.playwright-mcp/
 
 # Stray screenshots in root
 /*.png

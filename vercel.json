@@ -55,7 +55,7 @@
         },
         {
           "key": "X-Evals",
-          "value": "71"
+          "value": "67"
         },
         {
           "key": "X-Resume",
@@ -66,11 +66,11 @@
   ],
   "redirects": [
     { "source": "/clearance", "destination": "https://flight-check-5.emergent.host", "permanent": false },
-    { "source": "/en/", "destination": "/en", "permanent": true },
+    { "source": "/en", "destination": "/", "permanent": true },
+    { "source": "/en/", "destination": "/", "permanent": true },
     { "source": "/:path+/", "destination": "/:path+", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/en", "destination": "/en/index.html" },
     { "source": "/about", "destination": "/about/index.html" },
     { "source": "/privacy", "destination": "/privacy/index.html" }
   ],

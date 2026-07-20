@@ -89,18 +89,6 @@ function useTheme() {
     setIsDark(document.documentElement.classList.contains('dark'))
   }, [])
 
-  useEffect(() => {
-    if (localStorage.getItem('theme')) return
-    const mq = window.matchMedia('(prefers-color-scheme: dark)')
-    const handler = (e: MediaQueryListEvent) => {
-      setIsDark(e.matches)
-      document.documentElement.classList.toggle('dark', e.matches)
-      document.documentElement.classList.toggle('light', !e.matches)
-    }
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
-
   const toggleTheme = useCallback(() => {
     // Kill all transitions for instant theme switch
     document.documentElement.style.setProperty('--theme-transition', 'none')

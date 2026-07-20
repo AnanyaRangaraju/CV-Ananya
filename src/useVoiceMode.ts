@@ -34,6 +34,12 @@ export interface RagSource {
 
 export const SESSION_TIMEOUT_S = 120;
 
+// Real-time voice (OpenAI Realtime API) is disabled to control cost. Flip to
+// true to restore the live WebSocket flow below once voice budget is back.
+const VOICE_MODE_LIVE = false;
+
+const CREDIT_LIMIT_MESSAGE = "Hey, thanks for trying voice mode! I'm running low on credits right now, so voice is limited to this one message. If you're interested in what I've built, reach out at ananya.rangaraju@gmail.com, I'd love to hear from you.";
+
 export function useVoiceMode() {
   const [status, setStatus] = useState<VoiceStatus>('idle');
   const [transcript, _setTranscript] = useState<TranscriptEntry[]>([]);
@@ -183,6 +189,9 @@ export function useVoiceMode() {
     stopThinkingSound();
     stopSubtitleLoop();
 
+    // Cancel any in-progress simulated-voice speech synthesis
+    if (typeof window !== 'undefined') window.speechSynthesis?.cancel();
+
     // Cancel pending listen transition
     if (pendingListenTimerRef.current) {
       clearTimeout(pendingListenTimerRef.current);
@@ -286,6 +295,33 @@ export function useVoiceMode() {
     langRef.current = lang;
     sessionIdRef.current = sessionId;
     setVoiceSources([]);
+    setError(null);
+    setTranscript([]);
+    transcriptRef.current = [];
+    setRemainingSeconds(SESSION_TIMEOUT_S);
+    sessionStartRef.current = Date.now();
+    currentTranscriptRef.current = '';
+
+    if (!VOICE_MODE_LIVE) {
+      setStatus('connecting');
+      setTimeout(() => {
+        setStatus('speaking');
+        setTranscript([{ role: 'assistant', text: CREDIT_LIMIT_MESSAGE }]);
+        const speak = typeof window !== 'undefined' ? window.speechSynthesis : null;
+        if (speak) {
+          try {
+            const utterance = new SpeechSynthesisUtterance(CREDIT_LIMIT_MESSAGE);
+            utterance.onend = () => setStatus('idle');
+            utterance.onerror = () => setStatus('idle');
+            speak.speak(utterance);
+            return;
+          } catch { /* fall through to timed fallback */ }
+        }
+        setTimeout(() => setStatus('idle'), 4000);
+      }, 600);
+      return;
+    }
+
     if (!isSupported) {
       setError('unsupported');
       setStatus('error');
@@ -293,12 +329,6 @@ export function useVoiceMode() {
     }
 
     setStatus('connecting');
-    setError(null);
-    setTranscript([]);
-    transcriptRef.current = [];
-    setRemainingSeconds(SESSION_TIMEOUT_S);
-    sessionStartRef.current = Date.now();
-    currentTranscriptRef.current = '';
 
     try {
       // 1. Get ephemeral token

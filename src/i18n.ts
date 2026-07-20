@@ -15,20 +15,20 @@ export const translations = {
     email: 'ananya.rangaraju@gmail.com',
     role: '',
     story: {
-      context: "+Two years+ shipping AI in production, then a Dartmouth MEM to sharpen the strategy behind it.",
+      context: "+Two years+ in production, then Dartmouth to sharpen the thinking behind it.",
       reflections: ['I like building things that work.', "So that's what I build."],
       hookParagraphs: [
-        ["I build AI products. I've shipped systems into production and built my own AI evaluation platform from scratch."],
+        ["I build AI products, and I genuinely love doing it."],
         [
-          "I'm also someone who genuinely listens.",
-          'If you need someone to sit with a *hard problem* and actually care about getting it right, that\'s me.',
+          "Whatever I'm working on, I care about whether it actually holds up for the people using it.",
+          "If you need someone who will sit with a *hard problem* and genuinely care about getting it right, that's me.",
         ],
       ],
-      why: 'Before Dartmouth, I spent two years at Oracle Health shipping production AI for clinical systems.',
+      why: "I've shipped clinical systems at Oracle Health, built an AI evaluation platform from scratch, designed data governance architecture for regulated industries, and worked on maternal health prediction models at Mativa Diagnostics. At Dartmouth, coursework in machine learning, business analytics, operations, and finance helped me think more clearly about the decisions behind the engineering.",
       seeking: [
-        'What motivates me is building things that scale globally and solve real problems.',
-        'I want what I build to hold up once real people are using it.',
-        "That's still the work I want to be doing.",
+        "I'm most excited about AI for work.",
+        'The products and infrastructure that make AI something people can actually rely on.',
+        "That's the work I want to be doing.",
       ],
       nav: [
         { icon: 'briefcase', label: 'My path', href: '#experience' },
@@ -53,9 +53,9 @@ export const translations = {
       p1Highlight: 'applied AI and LLM systems',
       p1End:
         "in production. After two years shipping clinical AI agents at Oracle Health (formerly Cerner), I completed Dartmouth's Engineering Management program, deepening the product and strategy side of that work.",
-      p2: 'End-to-end ownership across',
-      p2Highlight: 'observability → evaluation → delivery → adoption',
-      p2End: ', collaborating closely with engineering, product, and non-technical stakeholders.',
+      p2: "I've worked across the full",
+      p2Highlight: 'AI delivery lifecycle',
+      p2End: ', from building pipelines to sitting across the table from stakeholders who need to understand what we shipped and why. I like that combination, and I want to keep doing it.',
       cards: [
         {
           title: 'Builder Mindset',
@@ -131,6 +131,7 @@ export const translations = {
     },
     projects: {
       title: 'Projects',
+      intro: 'These are things I actually built, because I wanted to solve a real problem.',
       githubLink: 'github.com/AnanyaRangaraju',
       viewCode: 'View code',
       viewPrototype: 'View prototype',
@@ -138,7 +139,7 @@ export const translations = {
         {
           title: 'Clearance',
           badge: 'Autonomy Readiness Console',
-          desc: 'AI agent evaluation platform that certifies whether LLM agents are reliable enough for unsupervised operation, benchmarking GPT-4o, GPT-4o mini, Claude Sonnet 4.5, and Gemini 2.5 Flash across simulated business workflows.',
+          desc: "I built Clearance because I kept noticing the same gap: benchmark scores and real-world reliability are not the same thing, and teams were finding that out the hard way. It's an evaluation platform that tests whether LLM agents are ready for unsupervised operation, running real API calls with edge-case injection across GPT-4o, GPT-4o mini, Claude Sonnet 4.5, and Gemini 2.5 Flash. The largest gap I found between benchmark and production was 61 points. That number is what the platform is for.",
           tech: ['Next.js', 'FastAPI', 'TypeScript', 'Python'],
           highlights: [
             'Live evaluation pipeline making real per-trial LLM API calls with randomized edge-case injection, tracking per-trial latency and cost for cost-vs-reliability tradeoff analysis.',
@@ -152,7 +153,7 @@ export const translations = {
         {
           title: 'Everpure Trust Passport',
           badge: 'Technical Architecture Proposal',
-          desc: "Self-directed architecture proposal extending Everpure's Data Intelligence platform with a portable data-governance layer, gating AI and RAG access by sensitivity, legal basis, and consent. Modeled across two real regulatory regimes using Everpure's own public customer case studies.",
+          desc: "While looking at Everpure's published case studies in healthcare and banking, I noticed there was no clean way to separate regulated data from data safe for AI use. So I designed the Trust Passport, a portable metadata record that existing systems can act on automatically, covering sensitivity, legal basis, retention, AI eligibility, and protection tier. I checked that it holds under both HIPAA and GDPR/DORA. This is the kind of problem I find genuinely interesting.",
           tech: ['HIPAA', 'GDPR', 'DORA', 'Data Governance'],
           highlights: [
             "Identified a real gap in Everpure's published healthcare and banking case studies: no automated way to separate regulated data from data safe for AI use.",
@@ -166,7 +167,7 @@ export const translations = {
         {
           title: 'Personal AI Router',
           badge: 'AI Usage Explainability Layer',
-          desc: 'Self-hosted LiteLLM proxy that routes personal AI API usage to the cheapest model tier that fits the task, explains every routing decision in plain English, and separates real metered savings from estimated flat-subscription opportunity on a personal dashboard.',
+          desc: "I built this to answer one question: does explaining AI usage in plain English, the way a budgeting app explains spending, change how people use these tools? The routing is deterministic, the caching is verified against real requests, and the dashboard is careful to separate actual savings from estimated ones. Getting that last part honest felt important.",
           tech: ['Python', 'TypeScript', 'LiteLLM', 'Redis'],
           highlights: [
             'Deterministic keyword/regex classifier decides routing with no LLM call spent on the decision itself, then routes to the cheapest model tier that fits the task.',
@@ -194,7 +195,7 @@ export const translations = {
         location: 'Bangalore, India',
         role: 'Software Developer',
         period: '2022 - 2024',
-        desc: "Two years here taught me how to keep AI systems honest in production: observability, debugging distributed agents, and building the reliability layer clinical teams could actually trust.",
+        desc: "This is where I learned what production AI really means. I shipped HL7/FHIR integrations, built ANSI X12 pipelines for federal clients including the VA and DoD, and developed a real instinct for observability and debugging. Working in clinical environments teaches you quickly that reliability isn't optional. I'm grateful for that.",
         highlights: [] as readonly string[],
       },
       keanyProduce: {
@@ -202,7 +203,7 @@ export const translations = {
         location: 'Landover, MD',
         role: 'Operations Intern',
         period: '2025',
-        desc: "Here I got hands-on with predictive modeling and operations dashboarding, turning warehouse data into decisions the people on the floor could actually use.",
+        desc: "Here I worked on predictive modeling and operations dashboarding, turning warehouse data into something the team on the floor could actually use. It reminded me that the last mile matters just as much as the model.",
         highlights: [] as readonly string[],
       },
       note: "Want the full story, or my latest resume? Happy to share, just send me an email. I'm always up for working through a hard problem, whatever it is.",
@@ -251,9 +252,9 @@ export const translations = {
     },
     cta: {
       title: "Let's talk",
-      desc: "I like building AI products, things that scale and solve real problems. If you're working on something hard and want someone who'll actually listen and dig in, let's talk.",
+      desc: "I'm excited about AI for work, and about finding a team that's building it seriously. If that's you, I'd love to talk.",
       contact: 'Contact',
-      footnote: "Want my latest resume, or something built? It's all just one email away.",
+      footnote: 'Everything is just one email away.',
     },
     ui: {
       typingIndicator: 'Ananya is typing...',

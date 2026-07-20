@@ -1235,11 +1235,11 @@ function App() {
               </p>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.98] mb-5">
                 I build AI that<br />
-                survives <span className="text-pastel-blue">contact<br />with reality.</span>
+                holds up <span className="text-pastel-blue">in the<br />real world.</span>
               </h1>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-[46ch] mx-auto md:mx-0 mb-8">
-                Two years at Oracle Health taught me that most AI demos don't survive contact with{' '}
-                <span className="text-foreground font-semibold">ICU nurses</span>. I've been closing that gap ever since, with evals, LLMOps, and the trust layer between capability and production.
+                Two years shipping AI in production taught me that most demos don't hold up once{' '}
+                <span className="text-foreground font-semibold">real users</span> get their hands on them. I've been closing that gap ever since, with evals, LLMOps, and the trust layer between capability and production.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
                 <a
@@ -1401,7 +1401,7 @@ function App() {
       <section id="projects" className="py-16 md:py-24" style={{ contentVisibility: 'auto', containIntrinsicSize: 'auto 1000px' }}>
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection>
-            <div className="flex items-center justify-between mb-12">
+            <div className="flex items-center justify-between mb-3">
               <h2 className="font-display text-2xl font-semibold flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <FolderGit2 className="w-5 h-5 text-primary" />
@@ -1420,6 +1420,7 @@ function App() {
                 {t.projects.githubLink.split('/').pop()}
               </a>
             </div>
+            <p className="text-muted-foreground mb-12">{t.projects.intro}</p>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-6">

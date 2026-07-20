@@ -350,8 +350,8 @@ export default function MusicToggle() {
     <motion.button
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.1, rotate: 8 }}
+      whileTap={{ scale: 0.9, rotate: -4 }}
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
       onClick={toggle}
       onMouseEnter={() => { if (window.matchMedia('(hover: hover)').matches) { setHovered(true); interactedRef.current = true; } }}

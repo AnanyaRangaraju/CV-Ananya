@@ -246,7 +246,7 @@ export default function AboutPage({ lang = 'en' }: { lang?: AboutLang }) {
 
           <a
             href={`mailto:${t.email}`}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors mb-4"
+            className="btn-pop inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 mb-4"
           >
             <Mail className="w-4 h-4" />
             {t.email}
@@ -259,7 +259,7 @@ export default function AboutPage({ lang = 'en' }: { lang?: AboutLang }) {
                 href={link.url}
                 target="_blank"
                 rel={link.rel ?? 'noopener noreferrer'}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
+                className="btn-pop flex items-center gap-2 px-3 py-2 rounded-lg bg-card border border-border text-sm text-muted-foreground hover:text-foreground hover:border-primary/30"
               >
                 <ExternalLink className="w-3 h-3 text-primary shrink-0" />
                 {link.name}

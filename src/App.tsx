@@ -1146,8 +1146,8 @@ function StorySection({ t }: { t: (typeof translations)[Lang] }) {
                 href={item.href}
                 onClick={handleClick}
                 className={isHighlight
-                  ? "flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-theme text-white border border-transparent hover:brightness-110 hover:shadow-xl hover:shadow-primary/30 active:brightness-95 transition-all duration-200 text-sm font-medium shadow-lg shadow-primary/25"
-                  : "flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-200 text-sm font-medium"
+                  ? "btn-pop flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-theme text-white border border-transparent hover:brightness-110 hover:shadow-xl hover:shadow-primary/30 active:brightness-95 text-sm font-medium shadow-lg shadow-primary/25"
+                  : "btn-pop flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 text-sm font-medium"
                 }
               >
                 {icons[item.icon]}
@@ -1244,13 +1244,13 @@ function App() {
               <div className="flex flex-wrap justify-center md:justify-start gap-3">
                 <a
                   href="#projects"
-                  className="inline-flex items-center px-6 py-3 rounded-md border-2 border-foreground bg-foreground text-[hsl(var(--background))] font-mono text-sm shadow-[4px_4px_0_hsl(var(--pastel-blue))] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_hsl(var(--pastel-blue))] transition-all duration-200"
+                  className="inline-flex items-center px-6 py-3 rounded-md border-2 border-foreground bg-foreground text-[hsl(var(--background))] font-mono text-sm shadow-[4px_4px_0_hsl(var(--pastel-blue))] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_hsl(var(--pastel-blue))] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all duration-200"
                 >
                   View the work
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center px-6 py-3 rounded-md border-2 border-border font-mono text-sm hover:border-foreground hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_hsl(var(--pastel-green))] transition-all duration-200"
+                  className="inline-flex items-center px-6 py-3 rounded-md border-2 border-border font-mono text-sm hover:border-foreground hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_hsl(var(--pastel-green))] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all duration-200"
                 >
                   Say hello
                 </a>
@@ -1449,10 +1449,10 @@ function App() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-primary hover:underline"
+                      className="group/link inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-primary hover:underline"
                     >
                       {project.linkLabel || 'View'}
-                      <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                      <ExternalLink className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" aria-hidden="true" />
                     </a>
                   )}
                 </div>
@@ -1658,7 +1658,7 @@ function App() {
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`mailto:${t.email}`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:brightness-110 hover:shadow-lg hover:shadow-primary/25 active:brightness-95 transition-all duration-200"
+                className="btn-pop inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:brightness-110 hover:shadow-lg hover:shadow-primary/25 active:brightness-95"
               >
                 <Mail className="w-4 h-4" />
                 {t.cta.contact}
@@ -1667,7 +1667,7 @@ function App() {
                 href="https://github.com/AnanyaRangaraju"
                 target="_blank"
                 rel="me noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 transition-colors duration-200 hover:bg-primary/5"
+                className="btn-pop inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5"
               >
                 <Github className="w-4 h-4" />
                 GitHub
@@ -1677,7 +1677,7 @@ function App() {
                 href="https://www.linkedin.com/in/ananya-rangaraju/"
                 target="_blank"
                 rel="me noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 transition-colors duration-200 hover:bg-primary/5"
+                className="btn-pop inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5"
               >
                 <Linkedin className="w-4 h-4" />
                 LinkedIn

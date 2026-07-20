@@ -3,7 +3,7 @@
   OG image template for ananyarangaraju.com (1200x630).
   Rendered to public/og-image.webp by scripts/generate-og-image.ts (Playwright + cwebp).
   Replicates the home hero design tokens 1:1 (no AI-invented styling).
-  Placeholders resolved at render time: __FONT_SG__ __FONT_DM__ __AVATAR__ __STARS__
+  Placeholders resolved at render time: __FONT_DISPLAY__ __FONT_BODY__ __AVATAR__ __STARS__
   To change copy, edit the markup below — the script only injects the star count.
 -->
 <html lang="en">
@@ -11,16 +11,16 @@
 <meta charset="utf-8" />
 <style>
   @font-face {
-    font-family: 'Space Grotesk';
+    font-family: 'Fraunces';
     font-weight: 400 700;
     font-display: block;
-    src: url('__FONT_SG__') format('woff2');
+    src: url('__FONT_DISPLAY__') format('woff2');
   }
   @font-face {
-    font-family: 'DM Sans';
+    font-family: 'Inter';
     font-weight: 400 600;
     font-display: block;
-    src: url('__FONT_DM__') format('woff2');
+    src: url('__FONT_BODY__') format('woff2');
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1200px; height: 630px; }
@@ -29,7 +29,7 @@
     background-color: hsl(240 6% 10%);
     background-image: radial-gradient(circle, hsl(0 0% 18%) 1px, transparent 1px);
     background-size: 24px 24px;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     color: hsl(0 0% 93%);
     display: flex;
     align-items: center;
@@ -80,7 +80,7 @@
     font-weight: 700;
   }
   h1 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Fraunces', system-ui, serif;
     font-size: 70px;
     line-height: 1.04;
     font-weight: 700;
@@ -92,7 +92,7 @@
     margin-bottom: 18px;
   }
   .sub {
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 32px;
     line-height: 1.32;
     font-weight: 500;

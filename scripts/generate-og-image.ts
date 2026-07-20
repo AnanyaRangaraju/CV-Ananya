@@ -30,12 +30,12 @@ async function main() {
   }
 
   // Resolve template with runtime file:// asset paths.
-  const fontSG = 'file://' + join(ROOT, 'public', 'fonts', 'space-grotesk-latin.woff2')
-  const fontDM = 'file://' + join(ROOT, 'public', 'fonts', 'dm-sans-latin.woff2')
+  const fontDisplay = 'file://' + join(ROOT, 'public', 'fonts', 'fraunces-latin.woff2')
+  const fontBody = 'file://' + join(ROOT, 'public', 'fonts', 'inter-latin.woff2')
   const avatar = 'file://' + join(ROOT, 'public', 'foto-avatar.png')
   const html = readFileSync(TEMPLATE, 'utf-8')
-    .replaceAll('__FONT_SG__', fontSG)
-    .replaceAll('__FONT_DM__', fontDM)
+    .replaceAll('__FONT_DISPLAY__', fontDisplay)
+    .replaceAll('__FONT_BODY__', fontBody)
     .replaceAll('__AVATAR__', avatar)
 
   const tmpHtml = join(tmpdir(), `og-render-${Date.now()}.html`)

@@ -557,8 +557,8 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{ scale: 1.08, rotate: -4 }}
+        whileTap={{ scale: 0.92, rotate: 2 }}
         transition={{ type: 'spring', stiffness: 260, damping: 20 }}
         onClick={() => {
           if (isOpen) abortRef.current?.abort();
@@ -690,7 +690,7 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
                       abortRef.current?.abort();
                       setIsOpen(false);
                     }}
-                    className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                    className="btn-pop-rotate w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted"
                     aria-label="Close chat"
                   >
                     <ChevronDown className="w-5 h-5" aria-hidden="true" />
@@ -810,7 +810,7 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
                                         navigate(targetPath + (source.section_anchor || ''));
                                       }
                                     }}
-                                    className={`flex items-start gap-1.5 rounded-full font-medium text-left bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 active:bg-primary/30 transition-colors duration-200 ${
+                                    className={`btn-pop flex items-start gap-1.5 rounded-full font-medium text-left bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 active:bg-primary/30 ${
                                       isMobile
                                         ? 'px-3 py-1.5 text-xs'
                                         : 'px-2.5 py-1 text-[10px]'
@@ -840,7 +840,7 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
                         <button
                           key={i}
                           onClick={() => handlePromptClick(prompt.query)}
-                          className={`flex items-center gap-1.5 rounded-full font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 active:bg-primary/30 transition-colors duration-200 ${
+                          className={`btn-pop flex items-center gap-1.5 rounded-full font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 active:bg-primary/30 ${
                             isMobile
                               ? 'px-4 py-2.5 text-sm min-h-[44px]'
                               : 'px-3 py-1.5 text-xs'
@@ -867,7 +867,7 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
                         </p>
                         <a
                           href={`mailto:${translations[lang].email}`}
-                          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-theme-r text-white text-sm font-medium hover:brightness-110 hover:shadow-lg hover:shadow-primary/25 active:brightness-95 transition-all duration-200"
+                          className="btn-pop inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-theme-r text-white text-sm font-medium hover:brightness-110 hover:shadow-lg hover:shadow-primary/25 active:brightness-95"
                         >
                           <Mail className="w-4 h-4" aria-hidden="true" />
                           {translations[lang].email}
@@ -943,7 +943,7 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
                           navigate(targetPath + (source.section_anchor || ''));
                         }
                       }}
-                      className={`flex items-center gap-1.5 rounded-full font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 active:bg-primary/30 transition-colors duration-200 ${
+                      className={`btn-pop flex items-center gap-1.5 rounded-full font-medium bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 hover:border-primary/40 active:bg-primary/30 ${
                         isMobile ? 'px-3 py-1.5 text-xs' : 'px-2.5 py-1 text-[10px]'
                       }`}
                     >

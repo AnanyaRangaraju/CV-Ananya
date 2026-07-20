@@ -128,7 +128,7 @@ function NavControls({ isDark, toggleTheme }: {
     <div className="flex items-center gap-2">
       <button
         onClick={toggleTheme}
-        className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center shadow-lg hover:border-primary/50 hover:shadow-primary/20 hover:shadow-xl transition-colors"
+        className="btn-pop-rotate w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center shadow-lg hover:border-primary/50 hover:shadow-primary/20 hover:shadow-xl"
         aria-label="Toggle theme"
       >
         {isDark ? <Moon className="w-5 h-5 text-primary" /> : <Sun className="w-5 h-5 text-primary" />}
@@ -227,7 +227,7 @@ export default function GlobalNav() {
     <div className="fixed top-4 right-6 z-50 flex items-center gap-3">
       <Link
         to="/about"
-        className="hidden sm:inline-flex items-center h-10 px-4 rounded-full bg-card border border-border text-sm font-medium text-muted-foreground shadow-lg hover:border-primary/50 hover:text-foreground transition-colors"
+        className="btn-pop hidden sm:inline-flex items-center h-10 px-4 rounded-full bg-card border border-border text-sm font-medium text-muted-foreground shadow-lg hover:border-primary/50 hover:text-foreground"
       >
         About
       </Link>

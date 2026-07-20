@@ -1222,7 +1222,7 @@ function App() {
 
       {/* Hero Section */}
       <header id="main-content" className="relative overflow-hidden bg-background">
-        <div className="relative max-w-5xl mx-auto px-6 pt-20 pb-14 md:pt-28 md:pb-16">
+        <div className="relative max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-16">
           <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-12 items-center">
             <motion.div
               initial={hydrated ? { opacity: 0, y: 16 } : false}
@@ -1261,7 +1261,7 @@ function App() {
               initial={hydrated ? { opacity: 0, scale: 0.92, rotate: -4 } : false}
               animate={{ opacity: 1, scale: 1, rotate: -2 }}
               transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mx-auto md:mx-0 w-full max-w-[320px]"
+              className="mx-auto md:mx-0 w-full max-w-[190px] md:max-w-[320px] mb-6 md:mb-0"
             >
               <div className="relative rounded-xl overflow-hidden border-2 border-foreground shadow-[10px_10px_0_hsl(var(--pastel-coral))] bg-card">
                 <img

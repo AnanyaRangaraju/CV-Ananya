@@ -898,16 +898,16 @@ export const translations = {
       context: "+Two years+ shipping AI in production, now part of Dartmouth's MEM program, building for the future.",
       reflections: ['I like building things that work.', "So that's what I build."],
       hookParagraphs: [
-        ["I like building AI products. That's the work I care about most."],
+        ["I build AI products. I've shipped systems into production and built my own AI evaluation platform from scratch."],
         [
-          "Not just shipping something that works in a demo.",
-          'Building things that *actually hold up* once real people depend on them.',
+          "I'm also someone who genuinely listens.",
+          'If you need someone to sit with a *hard problem* and actually care about getting it right, that\'s me.',
         ],
       ],
-      why: 'At Oracle Health I owned observability for clinical AI agents used across 100+ client deployments: instrumenting failure patterns across 100M+ rows, building validation frameworks that cut downstream errors by 25%, and translating agent behavior into decisions non-technical stakeholders could act on.',
+      why: 'Before Dartmouth, I spent two years at Oracle Health shipping production AI for clinical systems.',
       seeking: [
-        'What motivates me is building things that scale globally and actually solve problems.',
-        'Not just launch well, but hold up once real people are using them.',
+        'What motivates me is building things that scale globally and solve real problems.',
+        'I want what I build to hold up once real people are using it.',
         "That's still the work I want to be doing.",
       ],
       nav: [
@@ -1080,24 +1080,16 @@ export const translations = {
         location: 'Bangalore, India',
         role: 'Software Developer',
         period: '2022 - 2024',
-        desc: 'Owned observability and reliability for clinical AI agents deployed across enterprise client sites.',
-        highlights: [
-          'Instrumented and monitored production AI agent behavior at scale, surfacing patterns that informed model improvements.',
-          'Built data validation frameworks that caught quality issues before they reached the model layer.',
-          'Designed reporting that brought AI performance, coverage, and compliance into one view for stakeholders.',
-          'Acted as the technical bridge between AI product teams and the people using the tools day to day.',
-        ],
+        desc: 'Worked on observability and reliability for clinical AI agents deployed across enterprise client sites.',
+        highlights: [] as readonly string[],
       },
       keanyProduce: {
         company: 'Keany Produce and Gourmet',
         location: 'Landover, MD',
         role: 'Operations Intern',
         period: '2025',
-        desc: 'Applied predictive modeling and dashboarding to improve fulfillment and warehouse operations.',
-        highlights: [
-          'Built predictive models to inform inventory and fulfillment decisions.',
-          'Replaced manual weekly reporting with a live operational dashboard.',
-        ],
+        desc: 'Worked on predictive modeling and dashboarding for fulfillment and warehouse operations.',
+        highlights: [] as readonly string[],
       },
     },
     education: {
@@ -1144,7 +1136,7 @@ export const translations = {
     },
     cta: {
       title: "Let's talk",
-      desc: "I like building AI products, things that scale and actually solve real problems. If you're working on a problem AI could genuinely help solve, let's talk.",
+      desc: "I like building AI products, things that scale and solve real problems. If you're working on something hard and want someone who'll actually listen and dig in, let's talk.",
       contact: 'Contact',
     },
     ui: {

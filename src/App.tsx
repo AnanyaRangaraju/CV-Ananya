@@ -1352,14 +1352,13 @@ function App() {
               <p className="text-primary font-medium mb-1">{t.experience.oracleHealth.role}</p>
               <p className="text-sm text-muted-foreground mb-2">{t.experience.oracleHealth.period}</p>
               <p className="text-muted-foreground mb-4">{t.experience.oracleHealth.desc}</p>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                {t.experience.oracleHealth.highlights.map((h, hi) => (
-                  <li key={hi} className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>{h}</span>
-                  </li>
+              <div className="flex flex-wrap gap-2">
+                {t.experience.oracleHealth.skills.map((skill, si) => (
+                  <span key={si} className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                    {skill}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
           </AnimatedSection>
 
@@ -1378,14 +1377,13 @@ function App() {
               <p className="text-accent font-medium mb-1">{t.experience.keanyProduce.role}</p>
               <p className="text-sm text-muted-foreground mb-2">{t.experience.keanyProduce.period}</p>
               <p className="text-muted-foreground mb-4">{t.experience.keanyProduce.desc}</p>
-              <ul className="text-sm text-muted-foreground space-y-1">
-                {t.experience.keanyProduce.highlights.map((h, hi) => (
-                  <li key={hi} className="flex items-start gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span>{h}</span>
-                  </li>
+              <div className="flex flex-wrap gap-2">
+                {t.experience.keanyProduce.skills.map((skill, si) => (
+                  <span key={si} className="px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent border border-accent/20">
+                    {skill}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
           </AnimatedSection>
 

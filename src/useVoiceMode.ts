@@ -303,24 +303,19 @@ export function useVoiceMode() {
     currentTranscriptRef.current = '';
 
     if (!VOICE_MODE_LIVE) {
-      addDebug('SIM: start() simulated branch entered');
       setStatus('connecting');
       setTimeout(() => {
-        addDebug('SIM: setting transcript + speaking');
         setStatus('speaking');
         setTranscript([{ role: 'assistant', text: CREDIT_LIMIT_MESSAGE }]);
-        addDebug(`SIM: transcriptRef now len=${transcriptRef.current.length}`);
         const speak = typeof window !== 'undefined' ? window.speechSynthesis : null;
         if (speak) {
           try {
             const utterance = new SpeechSynthesisUtterance(CREDIT_LIMIT_MESSAGE);
-            utterance.onend = () => { addDebug('SIM: utterance onend'); setStatus('idle'); };
-            utterance.onerror = (e) => { addDebug(`SIM: utterance onerror ${(e as SpeechSynthesisErrorEvent).error}`); setStatus('idle'); };
+            utterance.onend = () => setStatus('idle');
+            utterance.onerror = () => setStatus('idle');
             speak.speak(utterance);
             return;
-          } catch (e) { addDebug(`SIM: speak() threw ${e}`); /* fall through to timed fallback */ }
-        } else {
-          addDebug('SIM: no speechSynthesis available');
+          } catch { /* fall through to timed fallback */ }
         }
         setTimeout(() => setStatus('idle'), 4000);
       }, 600);

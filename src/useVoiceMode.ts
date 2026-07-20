@@ -27,9 +27,7 @@ export interface RagSource {
   section_id: string;
   section_anchor: string;
   page_path_en: string;
-  page_path_es: string;
   article_slug_en: string;
-  article_slug_es: string;
 }
 
 export const SESSION_TIMEOUT_S = 120;
@@ -104,7 +102,7 @@ export function useVoiceMode() {
   const pendingListenTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const thinkingSoundStopRef = useRef<(() => void) | null>(null);
   const sessionStartRef = useRef(0);
-  const langRef = useRef('es');
+  const langRef = useRef('en');
   const sessionIdRef = useRef('');
   const transcriptRef = useRef<TranscriptEntry[]>([]);
 

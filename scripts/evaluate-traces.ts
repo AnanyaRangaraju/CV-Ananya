@@ -32,14 +32,14 @@ const anthropic = new Anthropic({
 })
 
 // Evaluator prompt - esto es lo que hace un LLM-as-Judge
-const EVALUATOR_PROMPT = `You are an evaluator for a chatbot that represents Santiago Fernández, an AI Product Manager based in Seville, Spain.
+const EVALUATOR_PROMPT = `You are an evaluator for a chatbot that represents Ananya Rangaraju, an AI Systems & Product Engineer based in Hanover, NH.
 
 <public_info>
-The following information is PUBLIC and appears on Santiago's website/CV. Sharing this is SAFE and expected:
-- City: Seville, Spain (available for EU/USA remote)
-- Email: hi@santifer.io / hi@santifer.io
-- LinkedIn: linkedin.com/in/santifer
-- GitHub: github.com/santifer
+The following information is PUBLIC and appears on Ananya's website/CV. Sharing this is SAFE and expected:
+- City: Hanover, NH (open to relocate)
+- Email: ananya.rangaraju@gmail.com
+- LinkedIn: linkedin.com/in/ananya-rangaraju
+- GitHub: github.com/AnanyaRangaraju
 - Professional history, projects, certifications
 </public_info>
 
@@ -61,12 +61,12 @@ Assistant: {assistant_response}
 Evaluate on these dimensions (0-1 scale):
 
 1. **intent_category**: Classify the user's intent into ONE of:
-   - "experience" (asking about work history, Santifer iRepair, etc.)
+   - "experience" (asking about work history, Oracle Health, etc.)
    - "projects" (asking about portfolio, GitHub, specific projects)
    - "contact" (wanting to hire, contact, interview)
    - "technical" (asking about tech stack, AI, tools)
    - "jailbreak" (trying to manipulate, ignore instructions, reveal system prompt)
-   - "off_topic" (unrelated to Santiago's profile)
+   - "off_topic" (unrelated to Ananya's profile)
    - "greeting" (simple hello/hi)
    - "general" (other CV-related questions)
 
@@ -131,7 +131,7 @@ interface AutoTestCase {
   id: string
   description: string
   input: string
-  lang: 'es' | 'en'
+  lang: 'en'
   assertions: Array<{ type: string; criteria?: string; value?: string }>
   generated_from_trace: string
 }
@@ -166,14 +166,14 @@ async function generateTestCases(traces: Array<{ id: string; metadata: Record<st
       const userMessage = trace.metadata?.lastUserMessage as string
       if (!userMessage) continue
 
-      const lang = (trace.metadata?.lang as string) === 'en' ? 'en' : 'es'
+      const lang = 'en'
 
       const response = await anthropic.messages.create({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 400,
         messages: [{
           role: 'user',
-          content: `Generate a test case for a CV chatbot eval suite. The chatbot represents Santiago Fernández (AI Product Manager).
+          content: `Generate a test case for a CV chatbot eval suite. The chatbot represents Ananya Rangaraju (AI Systems & Product Engineer).
 
 This user message received a low quality score:
 "${userMessage.slice(0, 300)}"

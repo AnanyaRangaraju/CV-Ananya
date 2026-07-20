@@ -1,6 +1,6 @@
 import { articleRegistry } from './registry'
 
-type Lang = 'es' | 'en'
+type Lang = 'en'
 
 /**
  * Shared FAQPage builder. Used by buildArticleJsonLd (case studies) and
@@ -28,7 +28,6 @@ export function buildFaqPage(
 interface JsonLdOptions {
   lang: Lang
   url: string
-  altUrl: string
   headline: string
   alternativeHeadline: string
   description: string
@@ -69,10 +68,11 @@ const PERSON = {
   '@id': 'https://ananyarangaraju.com/#person',
   name: 'Ananya Rangaraju',
   url: 'https://ananyarangaraju.com',
-  description: 'Ananya Rangaraju is a software developer and AI systems engineer currently pursuing a Master of Engineering Management at Dartmouth College. She spent two years as a Software Developer at Oracle Health (formerly Cerner), where she owned observability for clinical AI agents deployed across 100+ client sites and 1M+ monthly interactions.',
+  description: 'Ananya Rangaraju is a software developer and AI systems engineer who completed a Master of Engineering Management at Dartmouth College. She spent two years as a Software Developer at Oracle Health (formerly Cerner), where she owned observability for clinical AI agents deployed across 100+ client sites and 1M+ monthly interactions.',
   jobTitle: ['AI Systems & Product Engineer', 'Software Developer'],
   sameAs: [
     'https://github.com/AnanyaRangaraju',
+    'https://www.linkedin.com/in/ananya-rangaraju/',
   ],
 }
 
@@ -84,7 +84,7 @@ const WEBSITE = {
 }
 
 export function buildArticleJsonLd(opts: JsonLdOptions) {
-  const inLanguage = opts.lang === 'es' ? 'es' : 'en'
+  const inLanguage = 'en'
 
   const graph: Record<string, unknown>[] = [
     {
@@ -116,7 +116,6 @@ export function buildArticleJsonLd(opts: JsonLdOptions) {
       ...(opts.relatedLink ? { relatedLink: opts.relatedLink } : {}),
       ...(opts.video ? { video: opts.video } : {}),
       ...(opts.subjectOf ? { subjectOf: opts.subjectOf } : {}),
-      workTranslation: { '@id': `${opts.altUrl}/#article` },
     },
     PERSON,
     WEBSITE,
@@ -154,7 +153,6 @@ export function buildJsonLdFromRegistry(
     header: { h1: string }
     seo: { title: string; description: string }
     slug: string
-    altSlug: string
     nav: { breadcrumbHome: string; breadcrumbCurrent: string }
     faq: { items: readonly { q: string; a: string }[] }
   },
@@ -167,7 +165,6 @@ export function buildJsonLdFromRegistry(
   return buildArticleJsonLd({
     lang,
     url: `https://ananyarangaraju.com/${i18n.slug}`,
-    altUrl: `https://ananyarangaraju.com/${i18n.altSlug}`,
     headline: i18n.header.h1,
     alternativeHeadline: i18n.seo.title,
     description: i18n.seo.description,

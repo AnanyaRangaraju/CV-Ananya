@@ -77,7 +77,7 @@ function useActiveSection(pathname: string, enabled: boolean) {
 function useLang() {
   const { pathname } = useLocation()
   const isHome = pathname === '/' || pathname === '/en'
-  const lang: 'es' | 'en' = 'en'
+  const lang: 'en' = 'en'
   const pageTitle = PAGE_TITLE[pathname] ?? null
   return { pathname, isHome, lang, pageTitle }
 }

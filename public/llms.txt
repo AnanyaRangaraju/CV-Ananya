@@ -1,14 +1,14 @@
 # Ananya Rangaraju
 
-> Software Developer & AI Systems Engineer · Ex-Oracle Health (Cerner) · Dartmouth MEM Candidate
+> Software Developer & AI Systems Engineer · Ex-Oracle Health (Cerner) · Dartmouth MEM Graduate
 
 ## Profile
 
-Software developer and AI systems engineer focused on applied AI, LLM observability, and agentic systems. Two years shipping production AI at Oracle Health (formerly Cerner), owning observability for clinical AI agents used across 100+ client deployments. Currently pursuing a Master of Engineering Management at Dartmouth College (2024-2026). Based in Hanover, NH, open to relocate.
+Software developer and AI systems engineer focused on applied AI, LLM observability, and agentic systems. Two years shipping production AI at Oracle Health (formerly Cerner), owning observability for clinical AI agents used across 100+ client deployments. Completed a Master of Engineering Management at Dartmouth College (2024-2026), where she learned the business and strategy side of building AI products. Based in Hanover, NH, open to relocate.
 
 ## Story
 
-2+ years shipping AI in production, now building what's next at Dartmouth. One day, she watched an AI agent make decisions a million times a month. What stuck with her wasn't the launch, it was whether it could be trusted. At Oracle Health she owned observability for clinical AI agents used across 100+ client deployments: instrumenting failure patterns across 100M+ rows, building validation frameworks that cut downstream errors by 25%, and translating agent behavior into decisions non-technical stakeholders could act on.
+She builds AI products. She's shipped systems into production and built her own AI evaluation platform, Clearance, from scratch. Before Dartmouth, she spent two years at Oracle Health shipping production AI for clinical systems. What motivates her is building things that scale globally and solve real problems, things that hold up once real people are using them.
 
 ## Contact
 
@@ -17,6 +17,7 @@ Software developer and AI systems engineer focused on applied AI, LLM observabil
 - **Website:** https://ananyarangaraju.com
 - **About:** https://ananyarangaraju.com/about
 - **GitHub:** https://github.com/AnanyaRangaraju
+- **LinkedIn:** https://www.linkedin.com/in/ananya-rangaraju/
 
 ## Core Competencies
 

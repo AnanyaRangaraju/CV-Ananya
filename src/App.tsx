@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo, useReducer, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
-import { Mail, ExternalLink, Briefcase, GraduationCap, Award, Code, Bot, Zap, BadgeCheck, FolderGit2, SkipForward, List, Github } from 'lucide-react'
+import { Mail, ExternalLink, Briefcase, GraduationCap, Award, Code, Bot, Zap, BadgeCheck, FolderGit2, SkipForward, List, Github, Linkedin } from 'lucide-react'
 import { translations, seo, type Lang } from './i18n'
 import { useHomeSeo } from './articles/use-article-seo'
 import { getTechIcon } from './tech-icons'
@@ -1447,7 +1447,7 @@ function App() {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-primary focus:text-primary-foreground focus:font-medium focus:shadow-lg"
       >
-        {lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}
+        Skip to content
       </a>
 
       <HomeToc lang={lang} />
@@ -1618,6 +1618,12 @@ function App() {
               </ul>
             </div>
           </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <p className="text-sm text-muted-foreground text-center">
+              <a href={`mailto:${t.email}`} className="text-primary hover:underline">{t.experience.note}</a>
+            </p>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -1740,7 +1746,7 @@ function App() {
                       </div>
                       {/* Testimonial if exists */}
                       {'testimonial' in item && item.testimonial && (
-                        <a href="https://www.linkedin.com/in/santifer/details/recommendations/" target="_blank" rel="noopener noreferrer" className="block group">
+                        <a href="https://www.linkedin.com/in/ananya-rangaraju/details/recommendations/" target="_blank" rel="noopener noreferrer" className="block group">
                           <blockquote className="mt-4 p-4 rounded-xl bg-primary/5 border border-primary/10 group-hover:border-[hsl(var(--linkedin)/0.3)] transition-colors">
                             <p className="text-sm text-muted-foreground italic mb-4">
                               "{item.testimonial.quote}"
@@ -1895,6 +1901,16 @@ function App() {
               >
                 <Github className="w-4 h-4" />
                 GitHub
+                <ExternalLink className="w-3 h-3" aria-hidden="true" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ananya-rangaraju/"
+                target="_blank"
+                rel="me noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border hover:border-primary/50 transition-colors duration-200 hover:bg-primary/5"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
                 <ExternalLink className="w-3 h-3" aria-hidden="true" />
               </a>
             </div>

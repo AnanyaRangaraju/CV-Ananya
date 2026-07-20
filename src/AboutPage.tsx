@@ -7,6 +7,7 @@ import { aboutContent, type AboutLang } from './about-i18n'
 // Used here for cross-domain entity ownership signals (parsed by Mastodon, Bluesky, KG crawlers).
 const SOCIAL_LINKS: { name: string; url: string; rel?: string }[] = [
   { name: 'GitHub', url: 'https://github.com/AnanyaRangaraju', rel: 'me noopener noreferrer' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ananya-rangaraju/', rel: 'me noopener noreferrer' },
 ]
 
 export default function AboutPage({ lang = 'en' }: { lang?: AboutLang }) {

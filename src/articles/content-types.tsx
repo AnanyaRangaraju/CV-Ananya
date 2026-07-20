@@ -1022,7 +1022,7 @@ export function StoryBridge({ lines, className, editorId }: StoryBridgeProps) {
 // 17. ScreenshotGrid + ScreenshotCaption (moved from JacoboAgent)
 // ---------------------------------------------------------------------------
 
-function ScreenshotFigure({ src, alt, summaryEn, lang, width, height, className }: { src: string; alt: string; summaryEn: string; lang: 'es' | 'en'; width?: number; height?: number; className?: string }) {
+function ScreenshotFigure({ src, alt, summaryEn, lang, width, height, className }: { src: string; alt: string; summaryEn: string; lang: 'en'; width?: number; height?: number; className?: string }) {
   const showOverlay = lang === 'en'
   const [hovered, setHovered] = useState(false)
   return (
@@ -1047,7 +1047,6 @@ function ScreenshotFigure({ src, alt, summaryEn, lang, width, height, className 
 
 export interface ScreenshotItem {
   src: string
-  altEs: string
   altEn: string
   width?: number
   height?: number
@@ -1055,7 +1054,7 @@ export interface ScreenshotItem {
 
 interface ScreenshotGridProps {
   items: readonly ScreenshotItem[]
-  lang: 'es' | 'en'
+  lang: 'en'
   basePath?: string
   editorId?: string
 }
@@ -1069,7 +1068,7 @@ export function ScreenshotGrid({ items, lang, basePath = '/jacobo/screenshots', 
             <ScreenshotFigure
               key={n.src}
               src={`${basePath}/${n.src}`}
-              alt={lang === 'es' ? n.altEs : n.altEn}
+              alt={n.altEn}
               summaryEn={n.altEn}
               lang={lang}
               width={n.width}
@@ -1088,7 +1087,7 @@ export function ScreenshotGrid({ items, lang, basePath = '/jacobo/screenshots', 
           <ScreenshotFigure
             key={n.src}
             src={`${basePath}/${n.src}`}
-            alt={lang === 'es' ? n.altEs : n.altEn}
+            alt={n.altEn}
             summaryEn={n.altEn}
             lang={lang}
             width={n.width}
@@ -1101,16 +1100,15 @@ export function ScreenshotGrid({ items, lang, basePath = '/jacobo/screenshots', 
 }
 
 interface ScreenshotCaptionProps {
-  es: string
   en: string
-  lang: 'es' | 'en'
+  lang: 'en'
   editorId?: string
 }
 
-export function ScreenshotCaption({ es, en, lang, editorId }: ScreenshotCaptionProps) {
+export function ScreenshotCaption({ en, editorId }: ScreenshotCaptionProps) {
   return (
     <EditorLabel name="ScreenshotCaption" id={editorId}>
-      <p className="text-xs text-muted-foreground mb-6 -mt-4 px-1">{lang === 'es' ? es : en}</p>
+      <p className="text-xs text-muted-foreground mb-6 -mt-4 px-1">{en}</p>
     </EditorLabel>
   )
 }

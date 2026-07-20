@@ -29,11 +29,9 @@ const CHUNKS_DIR = resolve(root, 'scripts/chunks')
 interface ChunkMetadata {
   article_id: string
   article_slug_en: string
-  article_slug_es: string
   section_id: string
   section_anchor: string
   page_path_en: string
-  page_path_es: string
   source_file: string
   format: 'i18n' | 'markdown' | 'plaintext'
 }
@@ -146,9 +144,7 @@ function parseI18n(source: I18nSource): Chunk[] {
   const baseMetadata: Omit<ChunkMetadata, 'section_id' | 'section_anchor'> = {
     article_id: source.articleId,
     article_slug_en: `/${article.slugs.en}`,
-    article_slug_es: `/${article.slugs.es}`,
     page_path_en: `/${article.slugs.en}`,
-    page_path_es: `/${article.slugs.es}`,
     source_file: source.sourceFile,
     format: 'i18n',
   }
@@ -214,7 +210,7 @@ function parseI18n(source: I18nSource): Chunk[] {
   }
 
   // Extract top-level content keys — only those with a real page anchor
-  const skipKeys = new Set(['en', 'es', 'header', 'intro', 'tldr', 'heroMetrics', 'sections'])
+  const skipKeys = new Set(['en', 'header', 'intro', 'tldr', 'heroMetrics', 'sections'])
   for (const [key, value] of Object.entries(en)) {
     if (skipKeys.has(key)) continue
     if (sections && key in sections) continue
@@ -269,11 +265,9 @@ function parsePlaintext(filePath: string, articleId: string): Chunk[] {
       metadata: {
         article_id: articleId,
         article_slug_en: '',
-        article_slug_es: '',
         section_id: currentSection,
         section_anchor: '',
         page_path_en: '/llms.txt',
-        page_path_es: '/llms.txt',
         source_file: filePath,
         format: 'plaintext',
       },
@@ -309,11 +303,9 @@ function parseMarkdown(content: string, articleId: string, sourceFile: string): 
           metadata: {
             article_id: articleId,
             article_slug_en: '',
-            article_slug_es: '',
             section_id: sectionId,
             section_anchor: `#${sectionId}`,
             page_path_en: '',
-            page_path_es: '',
             source_file: sourceFile,
             format: 'markdown',
           },
@@ -340,11 +332,9 @@ function parseMarkdown(content: string, articleId: string, sourceFile: string): 
       metadata: {
         article_id: articleId,
         article_slug_en: '',
-        article_slug_es: '',
         section_id: sectionId,
         section_anchor: `#${sectionId}`,
         page_path_en: '',
-        page_path_es: '',
         source_file: sourceFile,
         format: 'markdown',
       },

@@ -3,52 +3,6 @@ import { Link } from 'react-router-dom'
 import { ArticleLayout } from './articles/components'
 
 const content = {
-  es: {
-    title: 'Politica de Privacidad',
-    lastUpdated: 'Ultima actualizacion: 15 de marzo de 2026',
-    intro: 'Esta politica describe como se recopilan y utilizan los datos cuando visitas santifer.io.',
-    sections: [
-      {
-        heading: 'Que datos se recopilan',
-        items: [
-          'Mensajes del chatbot: cuando interactuas con el chatbot "Santi", los mensajes se procesan para generar respuestas. No se solicita ni almacena informacion personal identificable.',
-          'Audio del modo voz: si activas el modo voz, el audio se procesa en tiempo real para la conversacion y no se almacena de forma permanente.',
-          'Analiticas de uso: se recopilan datos anonimos de navegacion (paginas visitadas, duracion, dispositivo) para mejorar el sitio.',
-        ],
-      },
-      {
-        heading: 'Como se utilizan los datos',
-        items: [
-          'Los mensajes del chatbot se utilizan exclusivamente para generar respuestas contextuales sobre la experiencia profesional de Santiago.',
-          'Las trazas de conversacion se almacenan de forma anonimizada para mejorar la calidad de las respuestas y detectar intentos de uso indebido.',
-          'Los datos de analiticas se utilizan para entender patrones de uso y mejorar el rendimiento del sitio.',
-        ],
-      },
-      {
-        heading: 'Terceros',
-        items: [
-          'Anthropic (Claude): procesa los mensajes del chatbot para generar respuestas.',
-          'OpenAI (Realtime API): procesa el audio del modo voz para la conversacion en tiempo real.',
-          'Langfuse: almacena trazas anonimizadas de conversaciones para observabilidad y mejora de calidad.',
-          'Vercel: aloja el sitio web y recopila analiticas anonimas de uso.',
-        ],
-      },
-      {
-        heading: 'Cookies y almacenamiento local',
-        body: 'Este sitio no utiliza cookies de seguimiento ni de terceros. Solo se utiliza localStorage del navegador para preferencias de interfaz (tema visual). No se almacena informacion personal.',
-      },
-      {
-        heading: 'No hay cuentas de usuario',
-        body: 'Este sitio no requiere registro ni inicio de sesion. No se recopilan nombres, emails ni contrasenas a traves del sitio web.',
-      },
-      {
-        heading: 'Contacto',
-        body: 'Para cualquier consulta sobre privacidad, puedes escribir a:',
-        email: 'hi@santifer.io',
-      },
-    ],
-    backHome: 'Volver al inicio',
-  },
   en: {
     title: 'Privacy Policy',
     lastUpdated: 'Last updated: March 15, 2026',
@@ -104,7 +58,7 @@ interface PrivacySection {
   email?: string
 }
 
-export default function PrivacyPolicy({ lang = 'es' }: { lang?: 'es' | 'en' }) {
+export default function PrivacyPolicy({ lang = 'en' }: { lang?: 'en' }) {
   const t = content[lang]
 
   useEffect(() => {
@@ -184,7 +138,7 @@ export default function PrivacyPolicy({ lang = 'es' }: { lang?: 'es' | 'en' }) {
 
         <div className="mt-12 pt-8 border-t border-border">
           <Link
-            to={lang === 'es' ? '/' : '/en'}
+            to="/"
             className="inline-flex items-center gap-2 text-primary hover:underline font-medium"
           >
             {'← '}{t.backHome}

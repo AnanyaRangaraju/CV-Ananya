@@ -26,18 +26,16 @@ export interface ArticleSeoMeta {
 
 export interface ArticleConfig {
   id: string
-  slugs: { es: string; en: string }
-  titles: { es: string; en: string }
-  seo: { es: ArticleSeo; en: ArticleSeo }
-  sectionLabels: { es: Record<string, string>; en: Record<string, string> }
+  slugs: { en: string }
+  titles: { en: string }
+  seo: { en: ArticleSeo }
+  sectionLabels: { en: Record<string, string> }
   type: 'collab' | 'case-study' | 'bridge'
   /** Absolute OG image URL for prerender (social cards: LinkedIn, Twitter) */
   ogImage?: string
   /** Hero image path for JSON-LD / GEO (what AI search engines see). Falls back to ogImage if not set. */
   heroImage?: string
-  component: () => Promise<{ default: ComponentType<{ lang: 'es' | 'en' }> }>
-  /** x-default hreflang slug (defaults to ES slug) */
-  xDefaultSlug?: string
+  component: () => Promise<{ default: ComponentType<{ lang: 'en' }> }>
   /** Whether this article is ready for RAG indexing (default: false) */
   ragReady?: boolean
   /** Path to i18n content file relative to project root (required when ragReady=true) */
@@ -57,7 +55,6 @@ export function getPageTitles(): Record<string, string> {
     '/about': 'About',
   }
   for (const article of articleRegistry) {
-    map[`/${article.slugs.es}`] = article.titles.es
     map[`/${article.slugs.en}`] = article.titles.en
   }
   return map
@@ -66,7 +63,6 @@ export function getPageTitles(): Record<string, string> {
 export function getSectionLabels(): Record<string, Record<string, string>> {
   const map: Record<string, Record<string, string>> = {}
   for (const article of articleRegistry) {
-    map[`/${article.slugs.es}`] = article.sectionLabels.es
     map[`/${article.slugs.en}`] = article.sectionLabels.en
   }
   return map

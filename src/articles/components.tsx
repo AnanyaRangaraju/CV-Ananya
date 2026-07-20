@@ -45,7 +45,7 @@ export { H2 as AnchorHeading } from './content-types'
 // Layout shells
 // ---------------------------------------------------------------------------
 
-export function ArticleLayout({ lang, children }: { lang?: 'es' | 'en'; children: React.ReactNode }) {
+export function ArticleLayout({ lang, children }: { lang?: 'en'; children: React.ReactNode }) {
   useEffect(() => {
     if (lang) document.documentElement.lang = lang
   }, [lang])
@@ -411,10 +411,9 @@ interface GitHubRepoBadgeProps {
   repo: string
   stars: string
   forks: string
-  lang: 'es' | 'en'
 }
 
-export function GitHubRepoBadge({ repo, stars, forks, lang }: GitHubRepoBadgeProps) {
+export function GitHubRepoBadge({ repo, stars, forks }: GitHubRepoBadgeProps) {
   return (
     <a
       href={`https://github.com/${repo}`}
@@ -433,7 +432,7 @@ export function GitHubRepoBadge({ repo, stars, forks, lang }: GitHubRepoBadgePro
       </span>
       <span className="w-px h-4 bg-border/50" />
       <span className="text-sm text-primary group-hover:underline flex items-center gap-1">
-        {lang === 'es' ? 'Ver en GitHub' : 'View on GitHub'}
+        {'View on GitHub'}
         <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7V17" /></svg>
       </span>
     </a>

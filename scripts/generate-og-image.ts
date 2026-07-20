@@ -1,17 +1,15 @@
 /**
- * Generates the home OG image (public/og-image.webp, 1200x630) from scripts/og-template.html,
- * injecting the current career-ops GitHub star count rounded to "XXK+".
+ * Generates the home OG image (public/og-image.webp, 1200x630) from scripts/og-template.html.
  *
  * - Renders the HTML with Playwright (Chromium) → PNG → webp via cwebp. Replicates the hero
  *   design tokens 1:1 (no AI-generated art).
- * - Idempotent: only regenerates when the rounded "K" value changes (tracked in og-image.state.json),
- *   so it doesn't churn the binary on every build.
+ * - Only regenerates when the template or source assets are newer than the committed webp.
  * - Graceful skip when Chromium isn't available (e.g. Vercel CI) — the committed webp is served as-is.
  *
- * Runs in the build pipeline AFTER update-github-stats.ts. Usage: npx tsx scripts/generate-og-image.ts
+ * Usage: npx tsx scripts/generate-og-image.ts
  */
 
-import { readFileSync, writeFileSync, existsSync, rmSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync, statSync, rmSync } from 'node:fs'
 import { resolve, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execFileSync } from 'node:child_process'
@@ -21,59 +19,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
 const TEMPLATE = join(__dirname, 'og-template.html')
 const OUT_WEBP = join(ROOT, 'public', 'og-image.webp')
-const STATE = join(__dirname, 'og-image.state.json')
-
-function roundStarsK(n: number): string {
-  // 56700 -> "56K+", 55990 -> "55K+" (floor to whole K so the claim is never inflated)
-  return `${Math.floor(n / 1000)}K+`
-}
-
-async function fetchStars(owner: string, repo: string): Promise<number | null> {
-  try {
-    const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-      headers: {
-        'User-Agent': 'santifer-build/1.0',
-        ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}),
-      },
-    })
-    if (!res.ok) {
-      console.warn(`  ⚠ GitHub API ${res.status} for ${owner}/${repo}`)
-      return null
-    }
-    const data = await res.json()
-    return data.stargazers_count ?? null
-  } catch (err) {
-    console.warn(`  ⚠ GitHub fetch failed:`, (err as Error).message)
-    return null
-  }
-}
-
-function readState(): { starsK?: string } {
-  try {
-    return JSON.parse(readFileSync(STATE, 'utf-8'))
-  } catch {
-    return {}
-  }
-}
 
 async function main() {
   console.log('🖼  Generating OG image...\n')
 
-  const stars = await fetchStars('santifer', 'career-ops')
-  if (stars == null) {
-    console.log('  ⏭ Could not read stars — leaving existing og-image.webp untouched')
-    return
-  }
-  const starsK = roundStarsK(stars)
-
-  // Idempotent: skip if the rounded value hasn't changed and the image already exists.
-  const prev = readState().starsK
-  if (prev === starsK && existsSync(OUT_WEBP)) {
-    console.log(`  ⏭ No change (${starsK}) — og-image.webp is current`)
+  // Skip if the committed image is already newer than the template (nothing changed).
+  if (existsSync(OUT_WEBP) && statSync(OUT_WEBP).mtimeMs >= statSync(TEMPLATE).mtimeMs) {
+    console.log('  ⏭ No change — og-image.webp is current')
     return
   }
 
-  // Resolve template with runtime file:// asset paths + the current star count.
+  // Resolve template with runtime file:// asset paths.
   const fontSG = 'file://' + join(ROOT, 'public', 'fonts', 'space-grotesk-latin.woff2')
   const fontDM = 'file://' + join(ROOT, 'public', 'fonts', 'dm-sans-latin.woff2')
   const avatar = 'file://' + join(ROOT, 'public', 'foto-avatar.png')
@@ -81,7 +37,6 @@ async function main() {
     .replaceAll('__FONT_SG__', fontSG)
     .replaceAll('__FONT_DM__', fontDM)
     .replaceAll('__AVATAR__', avatar)
-    .replaceAll('__STARS__', starsK)
 
   const tmpHtml = join(tmpdir(), `og-render-${Date.now()}.html`)
   const tmpPng = join(tmpdir(), `og-render-${Date.now()}.png`)
@@ -129,10 +84,9 @@ async function main() {
     return
   }
 
-  writeFileSync(STATE, JSON.stringify({ starsK, stars, updated: new Date().toISOString() }, null, 2) + '\n')
   rmSync(tmpHtml, { force: true })
   rmSync(tmpPng, { force: true })
-  console.log(`  ✓ og-image.webp regenerated (${prev ?? 'none'} → ${starsK})`)
+  console.log('  ✓ og-image.webp regenerated')
 }
 
 main()

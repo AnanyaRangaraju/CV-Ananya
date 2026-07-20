@@ -32,90 +32,32 @@ interface ProofPoint {
 const PROOF_POINTS: ProofPoint[] = [
   // -- Projects (i18n.ts → projects) --
   {
-    source: 'i18n.ts → projects → AI Solutions Playbook',
-    terms: ['AI Solutions Playbook', 'context switching', 'SESSION_BRIEF'],
+    source: 'i18n.ts → projects → Clearance',
+    terms: ['Clearance', 'Autonomy Readiness Console', 'GPT-4o'],
   },
   {
-    source: 'i18n.ts → projects → Content Digest',
-    terms: ['Content Digest'],
-  },
-  {
-    source: 'i18n.ts → projects → Life OS',
-    terms: ['Life OS'],
-  },
-  {
-    source: 'i18n.ts → projects → Career Ops',
-    terms: ['Career Ops'],
-  },
-  {
-    source: 'i18n.ts → projects → Claude Pulse',
-    terms: ['Claude Pulse'],
-  },
-  {
-    source: 'i18n.ts → projects → Claude Eye',
-    terms: ['Claude Eye'],
-  },
-  {
-    source: 'i18n.ts → projects → Claudeable',
-    terms: ['Claudeable'],
-  },
-  {
-    source: 'i18n.ts → projects → ProjectOS Predict',
-    terms: ['ProjectOS Predict'],
+    source: 'i18n.ts → projects → Everpure Trust Passport',
+    terms: ['Everpure Trust Passport', 'HIPAA', 'GDPR'],
   },
 
-  // -- Claude Code Power User (i18n.ts → claudeCode) --
+  // -- Work Experience (i18n.ts → experience) --
   {
-    source: 'i18n.ts → claudeCode',
-    terms: ['multi-agent', 'IPC', 'memory persistence', 'custom', 'skills'],
+    source: 'i18n.ts → experience → Oracle Health',
+    terms: ['Oracle Health', 'Cerner', 'clinical AI agents'],
+  },
+  {
+    source: 'i18n.ts → experience → Keany Produce',
+    terms: ['Keany Produce', 'Operations Intern'],
   },
 
-  // -- Speaking & Teaching (i18n.ts → speaking) --
+  // -- Education (about-i18n.ts → education) --
   {
-    source: 'i18n.ts → speaking → AI Fluency Educator',
-    terms: ['AI Fluency Educator', '4D', 'Delegation', 'Discernment'],
+    source: 'about-i18n.ts → education → Dartmouth',
+    terms: ['Dartmouth College', 'Master of Engineering Management'],
   },
   {
-    source: 'i18n.ts → speaking → Teaching Fellow',
-    terms: ['Teaching Fellow'],
-  },
-  {
-    source: 'i18n.ts → speaking → Hiperautomatiza',
-    terms: ['Hiperautomatiza'],
-  },
-
-  // -- Self-Healing Chatbot (chatbot-i18n.ts) --
-  {
-    source: 'chatbot-i18n.ts → defense',
-    terms: ['6-layer', 'canary token', 'fingerprint'],
-  },
-  {
-    source: 'chatbot-i18n.ts → evals',
-    terms: ['71', 'CI gate', 'trace-to-eval'],
-  },
-  {
-    source: 'chatbot-i18n.ts → cost',
-    terms: ['$0.005', '$0 infrastructure'],
-  },
-  {
-    source: 'chatbot-i18n.ts → batch eval',
-    terms: ['Sonnet', 'intent', 'quality', 'safety', 'jailbreak', 'Resend'],
-  },
-
-  // -- Articles published (registry.ts) --
-  {
-    source: 'articles/registry.ts',
-    terms: ['n8n for Product Managers', 'Jacobo', 'Programmatic'],
-  },
-
-  // -- Key experience points --
-  {
-    source: 'i18n.ts → experience → Jacobo',
-    terms: ['Jacobo', '90%', 'self-service'],
-  },
-  {
-    source: 'i18n.ts → experience → pSEO',
-    terms: ['Programmatic', 'Airtable', 'DataForSEO'],
+    source: 'about-i18n.ts → education → Manipal',
+    terms: ['Manipal University Jaipur', 'CGPA 3.9'],
   },
 ]
 

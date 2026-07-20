@@ -1,11 +1,10 @@
 /* TEAM */
-Builder: Santiago Fernandez de Valderrama Aparicio
-Role: Head of Applied AI · AI Product Manager · Solutions Architect
-Contact: hi@santifer.io
-Site: https://santifer.io
-Location: Seville, Spain
-LinkedIn: https://linkedin.com/in/santifer
-GitHub: https://github.com/santifer
+Builder: Ananya Rangaraju
+Role: Software Developer · AI Systems Engineer
+Contact: ananya.rangaraju@gmail.com
+Site: https://ananyarangaraju.com
+Location: Hanover, NH
+GitHub: https://github.com/AnanyaRangaraju
 
 /* THANKS */
 AI Pair: Claude Code (Anthropic)
@@ -13,7 +12,7 @@ AI Pair: Claude Code (Anthropic)
 /* SITE */
 Stack: React 19, TypeScript, Vite, Tailwind CSS, Motion
 AI: Claude API (claude-sonnet-4-6), streaming via Vercel Edge
-Quality: 71 evals, 6-layer security, Langfuse observability, closed-loop quality
+Quality: Langfuse observability
 Hosting: Vercel
 Standards: llms.txt, security.txt, JSON-LD, Open Graph
 

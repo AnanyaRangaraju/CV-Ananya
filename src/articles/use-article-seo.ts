@@ -133,7 +133,7 @@ export function useHomeSeo({ lang, title, description }: { lang: string; title: 
     document.querySelector('meta[property="og:description"]')?.setAttribute('content', description)
     document.querySelector('meta[property="og:locale"]')?.setAttribute('content', lang === 'en' ? 'en_US' : 'es_ES')
 
-    const canonical = 'https://cv-ananya.vercel.app/'
+    const canonical = 'https://ananyarangaraju.com/'
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonical)
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonical)
 

@@ -121,7 +121,7 @@ export default function PrivacyPolicy({ lang = 'es' }: { lang?: 'es' | 'en' }) {
 
     // Fix canonical (SPA fallback serves homepage canonical — override it)
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement
-    if (canonical) canonical.href = `https://cv-ananya.vercel.app/privacy`
+    if (canonical) canonical.href = `https://ananyarangaraju.com/privacy`
 
     // Fix meta description
     let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement

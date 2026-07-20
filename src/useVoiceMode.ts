@@ -40,6 +40,37 @@ const VOICE_MODE_LIVE = false;
 
 const CREDIT_LIMIT_MESSAGE = "Hey, thanks for trying voice mode! I'm running low on credits right now, so voice is limited to this one message. If you're interested in what I've built, reach out at ananya.rangaraju@gmail.com, I'd love to hear from you.";
 
+// Common cross-platform female voice names (macOS/iOS, Chrome, Windows) --
+// speechSynthesis has no reliable gender field, so match on known names.
+const FEMALE_VOICE_NAMES = [
+  'samantha', 'victoria', 'karen', 'moira', 'tessa', 'fiona', 'zira',
+  'susan', 'zoe', 'aria', 'jenny', 'female', 'google us english',
+  'google uk english female',
+];
+
+function pickFemaleVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | null {
+  const enVoices = voices.filter(v => v.lang.toLowerCase().startsWith('en'));
+  const pool = enVoices.length > 0 ? enVoices : voices;
+  return pool.find(v => FEMALE_VOICE_NAMES.some(name => v.name.toLowerCase().includes(name))) || null;
+}
+
+// Voice list loads asynchronously in most browsers -- the first call to
+// getVoices() often returns empty until the voiceschanged event fires.
+function getVoicesAsync(synth: SpeechSynthesis): Promise<SpeechSynthesisVoice[]> {
+  return new Promise((resolve) => {
+    const existing = synth.getVoices();
+    if (existing.length > 0) {
+      resolve(existing);
+      return;
+    }
+    const timeout = setTimeout(() => resolve(synth.getVoices()), 500);
+    synth.onvoiceschanged = () => {
+      clearTimeout(timeout);
+      resolve(synth.getVoices());
+    };
+  });
+}
+
 export function useVoiceMode() {
   const [status, setStatus] = useState<VoiceStatus>('idle');
   const [transcript, _setTranscript] = useState<TranscriptEntry[]>([]);
@@ -304,13 +335,16 @@ export function useVoiceMode() {
 
     if (!VOICE_MODE_LIVE) {
       setStatus('connecting');
-      setTimeout(() => {
+      setTimeout(async () => {
         setStatus('speaking');
         setTranscript([{ role: 'assistant', text: CREDIT_LIMIT_MESSAGE }]);
         const speak = typeof window !== 'undefined' ? window.speechSynthesis : null;
         if (speak) {
           try {
             const utterance = new SpeechSynthesisUtterance(CREDIT_LIMIT_MESSAGE);
+            const voices = await getVoicesAsync(speak);
+            const femaleVoice = pickFemaleVoice(voices);
+            if (femaleVoice) utterance.voice = femaleVoice;
             utterance.onend = () => setStatus('idle');
             utterance.onerror = () => setStatus('idle');
             speak.speak(utterance);

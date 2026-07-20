@@ -1049,6 +1049,20 @@ export const translations = {
           link: '/everpure-trust-passport.pdf',
           linkLabel: 'View the deck',
         },
+        {
+          title: 'Personal AI Router',
+          badge: 'AI Usage Explainability Layer',
+          desc: 'Self-hosted LiteLLM proxy that routes personal AI API usage to the cheapest model tier that fits the task, explains every routing decision in plain English, and separates real metered savings from estimated flat-subscription opportunity on a personal dashboard.',
+          tech: ['Python', 'TypeScript', 'LiteLLM', 'Redis'],
+          highlights: [
+            'Deterministic keyword/regex classifier decides routing with no LLM call spent on the decision itself, then routes to the cheapest model tier that fits the task.',
+            'Exact-match and semantic caching (Redis Stack, similarity-tuned) verified end-to-end against real requests, confirmed via matching completion IDs on repeated queries.',
+            'Full-stack dashboard (Express, Drizzle, React) clearly separates real dollars saved from estimated opportunity on flat-subscription tools, never conflating the two.',
+            "Built to test one question: does seeing AI usage explained in plain English, the way a budgeting app explains spending, actually change how people use these tools.",
+          ],
+          link: 'https://github.com/AnanyaRangaraju/personal-ai-router',
+          linkLabel: 'View on GitHub',
+        },
       ] as {
         title: string
         badge: string

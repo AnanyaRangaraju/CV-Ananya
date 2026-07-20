@@ -1138,6 +1138,7 @@ export const translations = {
       title: "Let's talk",
       desc: "I like building AI products, things that scale and solve real problems. If you're working on something hard and want someone who'll actually listen and dig in, let's talk.",
       contact: 'Contact',
+      footnote: "Want my latest resume, or something built? It's all just one email away.",
     },
     ui: {
       languageBanner: 'Este sitio está disponible en español',

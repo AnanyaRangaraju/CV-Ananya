@@ -1898,6 +1898,9 @@ function App() {
                 <ExternalLink className="w-3 h-3" aria-hidden="true" />
               </a>
             </div>
+            <p className="mt-6 text-sm text-muted-foreground/80 italic">
+              {t.cta.footnote}
+            </p>
           </AnimatedSection>
           <p className="mt-12 text-xs text-muted-foreground">
             &copy; {new Date().getFullYear()} Ananya Rangaraju

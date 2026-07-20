@@ -720,14 +720,6 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
                         className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                       >
                         <div className="max-w-[85%]">
-                          {/* Degradation banner */}
-                          {message.role === 'assistant' && message.ragDegraded && (
-                            <div className={`mb-1 px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 ${isMobile ? 'text-xs' : 'text-[11px]'}`}>
-                              {lang === 'en'
-                                ? 'Answering without full access to my articles.'
-                                : 'Respondiendo sin acceso completo a mis artículos.'}
-                            </div>
-                          )}
                           <div
                             className={`px-4 py-2.5 rounded-2xl leading-relaxed ${
                               message.role === 'user'

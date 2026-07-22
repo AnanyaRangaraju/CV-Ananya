@@ -1230,6 +1230,9 @@ function App() {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="text-center md:text-left"
             >
+              <p className="font-display text-2xl md:text-3xl text-foreground mb-4">
+                Hi, I&apos;m Ananya <span className="italic text-gradient-theme">Rangaraju</span>
+              </p>
               <p className="font-mono text-xs tracking-[0.16em] uppercase text-muted-foreground mb-5">
                 AI Systems &amp; Product Engineer
               </p>

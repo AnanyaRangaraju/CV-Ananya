@@ -764,11 +764,14 @@ export default function FloatingChat({ lang }: FloatingChatProps) {
                                   if (url.includes('@') && !url.startsWith('mailto:')) {
                                     return `mailto:${url}`;
                                   }
-                                  // Add https:// if missing
-                                  if (!url.startsWith('http') && !url.startsWith('mailto:')) {
-                                    return `https://${url}`;
+                                  // Leave same-site relative paths (e.g. /about, /clearance) and
+                                  // hash anchors alone, since prepending https:// would turn "/clearance"
+                                  // into the malformed "https:///clearance".
+                                  if (url.startsWith('/') || url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto:')) {
+                                    return url;
                                   }
-                                  return url;
+                                  // Otherwise it's a bare domain, so add https://
+                                  return `https://${url}`;
                                 }}
                               >
                                 {linkifyUrls(

@@ -254,9 +254,9 @@ export const HOME_SOURCE = {
   article_id: 'home',
   section_id: 'portfolio',
   section_anchor: '',
-  page_path_en: '/en',
+  page_path_en: '/',
   page_path_es: '/',
-  article_slug_en: 'en',
+  article_slug_en: '',
   article_slug_es: '',
 }
 
